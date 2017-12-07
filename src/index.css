@@ -14,3 +14,8 @@ body {
   src: url("./BebasNeue Regular.otf") format("opentype");
 }
 
+@font-face {
+  font-family: SourceSansPro;
+  src: url("./SourceSansPro-Regular.otf") format("opentype");
+}
+
