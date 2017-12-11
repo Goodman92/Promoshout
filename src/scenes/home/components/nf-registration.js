@@ -17,7 +17,7 @@ class NfRegistration extends Component {
                   </h2>
                 </div>
               </div>
-              <div class="col-lg-2 text-center">
+              <div className="col-lg-2 text-center">
                 <img src={require("../../../resources/images/insta.png")} height="100" width="100"/>
               </div>
             </div>

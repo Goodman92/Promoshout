@@ -33,11 +33,9 @@
     margin-top: 7%;
 }
 
-.heading-wrapper {
+
+h2.intro-heading {
+    color: #fff;
     border-left: 2px solid #fff;
     padding-left: 0.5em;
-}
-
-.intro-heading {
-    color: #fff;
 }
