@@ -23,3 +23,25 @@
     margin-top:1em;
     text-align:center;
 }
+
+i.carousel-toggle {
+    color:#fff;
+    cursor:pointer;
+}
+
+div.featured-slider {
+    padding-left:2rem;
+    padding-right:2rem;
+}
+div.featured-slider i.carousel-toggle {
+    position:absolute;
+    top: 50%;
+}
+
+div.featured-slider i.carousel-toggle:first-child {
+    left:1rem;
+}
+
+div.featured-slider i.carousel-toggle:last-child {
+    right:1rem;
+}

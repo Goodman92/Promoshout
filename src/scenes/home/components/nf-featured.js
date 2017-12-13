@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import NfFeaturedItem from './nf-featured-item';
-import {fetchFeatured} from '../../../actions/index';
+import {fetchFeatured, requestMore} from '../../../actions/index';
 
 import './nf-featured.css';
 
@@ -15,23 +15,20 @@ class NfFeatured extends Component {
     dispatch: PropTypes.func.isRequired
   };
 
-  constructor(props) {
-    super(props);
-    console.log("constructor");
-    this.items = props.items;
-    console.log(this.items);
-  }
-
   componentDidMount() {
-    console.log("componentDidMount");
     this.props.dispatch(fetchFeatured());
   }
 
-  // tää fain?
   componentWillReceiveProps(nextProps) {
-    console.log("componentWillReceiveProps");
-    this.items = nextProps.items;
   }
+
+  getPrevious = () => {
+    this.props.dispatch(requestMore(-1));
+  };
+
+  getNext = () => {
+    this.props.dispatch(requestMore(1));
+  };
 
   render() {
     return (
@@ -40,11 +37,18 @@ class NfFeatured extends Component {
             <div className="col-lg-12 mt-4 mb-4">
               <h1 className="featured-main-title"> Featured Promoshout users </h1>
             </div>
-            {this.items.map((item, index) => (
-                <div className="col-lg-3">
-                  <NfFeaturedItem item={item}/>
-                </div>
-            ))}
+            <div className="col-lg-12">
+              <div className="row featured-slider">
+                <i className="fa fa-2x fa-chevron-left carousel-toggle" aria-hidden="true" onClick={this.getPrevious}/>
+                {this.props.items.map((item, index) => (
+                    index >= this.props.index && index < this.props.size + this.props.index?
+                    <div className="col-lg-3" key={item.key}>
+                      <NfFeaturedItem item={item}/>
+                    </div> : null
+                ))}
+                <i className="fa fa-2x fa-chevron-right carousel-toggle" aria-hidden="true" onClick={this.getNext}/>
+              </div>
+            </div>
           </div>
         </div>
     );
@@ -53,10 +57,7 @@ class NfFeatured extends Component {
 
 // kapisch?
 const mapStateToProps = (state) => {
-  console.log("mapStateToProps");
-  let test = state || {fetching: true, items: []};
-  console.log(test);
-  return test;
+  return state || {fetching: true, items: [], index: 0, size: 4};
 };
 
 export default connect(mapStateToProps)(NfFeatured);

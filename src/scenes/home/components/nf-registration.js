@@ -18,20 +18,20 @@ class NfRegistration extends Component {
                 </div>
               </div>
               <div className="col-lg-2 text-center">
-                <img src={require("../../../resources/images/insta.png")} height="100" width="100"/>
+                <img src={require("../../../resources/images/insta.png") } alt="Instagram logo" height="100" width="100"/>
               </div>
             </div>
             <div className="row mt-5">
               <div className="col-lg-6 col-xs-12 text-right">
                 <div className="registration-box">
-                  <a href="#">
+                  <a href="/">
                     Register as a product
                   </a>
                 </div>
               </div>
               <div className="col-lg-6 col-xs-12">
                 <div className="registration-box">
-                  <a href="#">
+                  <a href="/">
                     Register as a influencer
                   </a>
                 </div>

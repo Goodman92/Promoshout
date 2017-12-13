@@ -4,9 +4,17 @@ body {
 
 .registration-wrapper {
     background-image: url("../../resources/images/straiz.jpg");
-     background-size: cover;
+    background-size: cover;
     background-position: center;
     min-height: 500px;
     padding-top: 1px;
     margin-top: -1px;
+}
+
+.white {
+    color:#fff;
+}
+
+.pointer {
+    cursor:pointer;
 }

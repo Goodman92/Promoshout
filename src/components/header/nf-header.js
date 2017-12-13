@@ -11,20 +11,20 @@ class NfHeader extends Component {
                   aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
-          <a className="navbar-brand main-logo" href="#">Promoshout</a>
+          <a className="navbar-brand main-logo" href="/">Promoshout</a>
           <div className="collapse navbar-collapse nf-navbar-list" id="navbarSupportedContent">
             <ul className="navbar-nav nf-nav">
               <li className="nav-item active">
-                <a className="nav-link" href="#">Browse influencers <span className="sr-only">(current)</span></a>
+                <a className="nav-link" href="/">Browse influencers <span className="sr-only">(current)</span></a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">Browse brands</a>
+                <a className="nav-link" href="/">Browse brands</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">What we do</a>
+                <a className="nav-link" href="/">What we do</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#"> Login </a>
+                <a className="nav-link" href="/"> Login </a>
               </li>
             </ul>
           </div>
