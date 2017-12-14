@@ -74,11 +74,7 @@ export const requestMore = (amount, size = 4) => (dispatch, getState) => {
 
 export const fetchFeatured = () => (dispatch) => {
   dispatch(requestFeatured());
-
-  return setTimeout(() => {
-    dispatch(receiveFeatured(mockFeatured));
-  });
-
+  return dispatch(receiveFeatured(mockFeatured));
 };
 
 export const REQUEST_POSTS = 'REQUEST_POSTS';

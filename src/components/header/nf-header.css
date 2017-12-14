@@ -4,16 +4,17 @@
 
 .header-wrapper > nav.navbar {
     background: #fff;
-    /*background: -webkit-linear-gradient(#033244, #000000);*/
-    /*background: -o-linear-gradient(#033244, #000000);*/
-    /*background: -moz-linear-gradient(#033244, #000000);*/
-    /*background: linear-gradient(#033244, #000000);*/
 }
 
 .navbar-brand.main-logo {
     font-family: BebasNeue, serif;
     color: #000;
     position: absolute;
+}
+
+.navbar-brand.main-logo:hover {
+    color: #000;
+    font-size: 1.35em;
 }
 
 li.nav-item > a.nav-link {
@@ -30,7 +31,7 @@ h1, h2, h3 {
 }
 
 a.nav-link {
-    color: rgba(0,0,0,0.6) !important;
+    color: rgba(0, 0, 0, 0.6) !important;
     font-family: SourceSansPro, sans-serif !important;
     padding: 0;
 }
@@ -40,11 +41,11 @@ li.nav-item.active > a.nav-link {
 }
 
 li.nav-item {
-    position:relative;
+    position: relative;
 }
 
 li.nav-item:hover::after {
-    border-bottom: 1px solid rgba(0,0,0,0.6);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.6);
     position: absolute;
     width: 50%;
     content: "";
@@ -61,7 +62,7 @@ ul.nf-nav {
 }
 
 ul.navbar-nav.nf-nav li:nth-child(-n+2) {
-    border-right: 1px solid rgba(0,0,0,0.6);
+    border-right: 1px solid rgba(0, 0, 0, 0.6);
 }
 
 ul.navbar-nav.nf-nav li:last-child a {
