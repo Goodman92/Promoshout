@@ -1,0 +1,39 @@
+.general-search input, .general-search select {
+    height: 60px !important;
+    border: 1px solid #fff !important;
+}
+
+.general-search select {
+    flex-direction: row !important;
+}
+
+.general-search span.input-group-addon {
+    background-color: #fff;
+    border: 0;
+}
+
+.general-search .form-control {
+    border-left: 1px solid #fff;
+    border-radius: 0;
+}
+
+.general-search .form-control:focus {
+    background-color: #fff;
+    border: 1px solid #5cb3fd !important;
+}
+
+@media (min-width: 767px) {
+    .general-search {
+        display: flex;
+    }
+
+    .general-search div.input-group:last-of-type span.input-group-addon {
+        border-radius: 0;
+        border-left: 1px solid rgba(0, 0, 0, .15);
+    }
+}
+
+.general-search button.btn-success {
+    background: #00cc67;
+    cursor: pointer;
+}

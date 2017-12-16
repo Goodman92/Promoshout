@@ -17,6 +17,19 @@
     font-size: 1.35em;
 }
 
+.logo-first-part {
+    border:1px solid black;
+    padding-left:2px;
+    padding-right:1px;
+}
+
+.logo-last-part {
+    border:1px solid black;
+    background-color: #000;
+    color:#fff;
+    padding-right:1px;
+}
+
 li.nav-item > a.nav-link {
     text-transform: uppercase;
     color: #000;

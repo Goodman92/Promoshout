@@ -1,0 +1,7 @@
+.search-box-top {
+    background-color: rgba(54, 59, 77, 0.88);
+    padding:1em;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    color:#fff;
+}

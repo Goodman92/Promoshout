@@ -10,9 +10,13 @@ body {
     font-family: sans-serif;
 }
 
-p, span {
+*:not(a) {
     font-family: BebasNeue, serif;
     letter-spacing: 1px;
+}
+
+input, button, select, textarea, optgroup, option {
+    font-family: inherit;
 }
 
 @font-face {
