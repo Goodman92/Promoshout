@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import App from './scenes/home/App';
 import Influencers from './scenes/influencers/influencers';
@@ -17,22 +17,36 @@ import './index.css';
 
 const store = createStore(featured, applyMiddleware(...[thunk]));
 
+class RouteWrapper extends Component {
+  render() {
+    return (
+      <div>
+        <section role="navigation">
+          <NfHeader/>
+        </section>
+        {this.props.component}
+        <section role="footer">
+          <NfFooter/>
+        </section>
+      </div>
+    );
+  }
+}
+
 ReactDOM.render(
-    <Provider store={store}>
-      <Router>
-        <div>
-          <section role="navigation">
-            <NfHeader/>
-          </section>
-          <Route exact path="/" component={App}/>
-          <Route path="/influencers" component={Influencers}/>
-          <section role="footer">
-            <NfFooter/>
-          </section>
-        </div>
-      </Router>
-    </Provider>,
-    document.getElementById('root')
+  <Provider store={store}>
+    <Router>
+      <div>
+        <Route exact path="/" component={() => (
+          <RouteWrapper component={<App/>}/>
+        )}/>
+        <Route path="/influencers" component={() => (
+          <RouteWrapper component={<Influencers/>}/>
+        )}/>
+      </div>
+    </Router>
+  </Provider>,
+  document.getElementById('root')
 );
 
 registerServiceWorker();

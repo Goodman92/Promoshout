@@ -1,0 +1,9 @@
+.icon-input-wrapper {
+    position:relative;
+}
+
+.icon-input-wrapper i:last-child {
+    position:absolute;
+    right: 5%;
+    top: 29%;
+}

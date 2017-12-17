@@ -1,0 +1,58 @@
+.slider-input-wrapper {
+    height: 50px;
+}
+
+.slider-unit-block {
+    position: relative;
+    width: 100%;
+}
+
+.slider-min-unit {
+    width: 50%;
+    display: inline-block;
+    text-align: left;
+}
+
+.slider-max-unit {
+    width: 50%;
+    display: inline-block;
+    text-align: right;
+}
+
+.slider-content {
+    background-color: grey;
+    border-radius: 6px;
+    height: 15px;
+    position: relative;
+}
+
+.slider-min-knob {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 15px;
+    width: 15px;
+    content: " ";
+    border-radius: 9px;
+    background-color: green;
+    cursor: pointer;
+    z-index: 99;
+}
+
+.slider-max-knob {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 15px;
+    width: 15px;
+    content: " ";
+    border-radius: 9px;
+    background-color: green;
+    cursor: pointer;
+    z-index: 99;
+}
+
+.slider-ticks {
+
+}
+
