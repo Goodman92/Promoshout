@@ -6,28 +6,40 @@ class NfSliderInput extends Component {
 
   constructor(props) {
     super(props);
-
-    this.state = {
-      left: {
-        left: 10
-      },
-      right: {
-        right: 10
-      }
-    }
+    this.state = {};
   }
 
-  onDrag = (e) => {
-    console.log("onDrag");
-    if (e.nativeEvent.x === 0 || e.nativeEvent.screenX === 0)
-      return false;
-    const movement = e.nativeEvent.screenX - this.movementStart;
-    this.setState({left: {left: movement}});
+  componentDidMount = () => {
+    this.rect = this.sliderContainer.getBoundingClientRect();
   };
 
-  onDragStart = (e) => {
-    const position = this.leftKnob.getBoundingClientRect();
-    this.movementStart = position.x;
+  onMouseMoveHandler = (event) => {
+    event.preventDefault();
+    let newValue = null;
+    let handleWidth = this.handleR.getBoundingClientRect().width;
+    if (event.pageX < this.rect.left)
+      newValue = 0;
+    else if (event.pageX + handleWidth > this.rect.right)
+      newValue = this.rect.width - handleWidth;
+    else {
+      newValue = event.pageX - this.rect.left;
+
+    }
+    this.setState({[this.direction]: newValue});
+
+  };
+
+  onMouseUpHandler = () => {
+    console.log("onMouseUpHandler");
+    window.removeEventListener("mousemove", this.onMouseMoveHandler);
+    window.removeEventListener("mouseup", this.onMouseUpHandler);
+  };
+
+  onMouseDown = (direction, e) => {
+    console.log("onMouseDown");
+    this.direction = direction;
+    window.addEventListener("mousemove", this.onMouseMoveHandler);
+    window.addEventListener("mouseup", this.onMouseUpHandler);
   };
 
   render() {
@@ -40,20 +52,18 @@ class NfSliderInput extends Component {
         <div className="slider-content" ref={(element) => {
           this.sliderContainer = element;
         }}>
-          <span className="slider-min-knob" draggable="true"
-                onDrag={this.onDrag } style={this.state.left}
-                onDragStart={this.onDragStart }
-                onDragEnd={this.onDragEnd }
+          <span className="slider-min-knob"
+                onMouseDown={this.onMouseDown.bind(this, 'left')} style={{left: this.state.left}}
                 ref={(element) => {
-                  this.leftKnob = element;
+                  this.handleL = element;
                 }}/>
-          <span className="slider-max-knob" draggable="true"
+          <span className="slider-max-knob"
+                onMouseDown={this.onMouseDown.bind(this, 'right')} style={{left: this.state.right}}
                 ref={(element) => {
-                  this.rightKnob = element;
+                  this.handleR = element;
                 }}/>
         </div>
-        <div className="slider-ticks">
-        </div>
+        <div className="slider-ticks"></div>
       </div>
     );
   }
