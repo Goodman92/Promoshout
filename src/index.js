@@ -6,8 +6,11 @@ import thunk from 'redux-thunk';
 import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
+import { combineReducers } from 'redux'
 
 import featured from './reducers/index';
+import filters from './reducers/filters';
+
 import registerServiceWorker from './registerServiceWorker';
 
 import NfHeader from './components/header/nf-header';
@@ -15,7 +18,13 @@ import NfFooter from './components/footer/nf-footer';
 
 import './index.css';
 
-const store = createStore(featured, applyMiddleware(...[thunk]));
+const nfReducers = combineReducers({
+  featured,
+  filters
+});
+
+
+const store = createStore(nfReducers, applyMiddleware(...[thunk]));
 
 class RouteWrapper extends Component {
   render() {

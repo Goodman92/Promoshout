@@ -44,7 +44,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec risus dolor, rutr
 ];
 
 function canMove(state, amount, size) {
-  return state.index + amount + size <= state.items.length && state.index + amount >= 0;
+  return state.featured.index + amount + size <= state.featured.items.length && state.featured.index + amount >= 0;
 }
 
 export const requestFeatured = () => {

@@ -22,7 +22,7 @@ class NfCollapseItem extends Component {
             <a data-toggle="collapse" href={'#collapse' + this.props.toggle} aria-expanded="true"
                aria-controls="collapseOne" onClick={this.onItemCollapse}>
               <i className={(() => {
-                return this.state.hasCollapsed ? 'fa fa-caret-right' : 'fa fa-caret-down';
+                return this.state.hasCollapsed ? 'fa fa-angle-right' : 'fa fa-angle-down';
               })()} aria-hidden="true"/>
               {this.props.header}
             </a>

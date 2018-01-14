@@ -1,13 +1,9 @@
-import {STORE_FILTERS} from '../actions/index';
-
+import {STORE_FILTERS} from '../actions/filters';
 
 const filters = (state = {}, action) => {
   switch (action.type) {
     case STORE_FILTERS:
-      return {
-        ...state,
-        index: action.amount + state.index
-      };
+      return Object.assign({}, state, action.filters);
     default:
       return state;
   }
