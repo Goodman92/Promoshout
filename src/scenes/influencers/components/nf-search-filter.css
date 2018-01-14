@@ -1,7 +1,21 @@
 .search-box-top {
     background-color: rgba(54, 59, 77, 0.88);
-    padding:1em;
+    padding: 1em;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
-    color:#fff;
+    color: #fff;
 }
+
+.search-box-apply {
+    border: 1px solid rgba(0, 0, 0, .125);
+    text-align: center;
+    padding: 1.5em 2em 1.5em 2em
+}
+
+button.btn-apply {
+    background-color: #00cc67;
+    padding: 0.8em 2.5em 0.8em 2.5em;
+    border-radius: 29px;
+    cursor: pointer;
+}
+

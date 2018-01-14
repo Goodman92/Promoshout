@@ -6,7 +6,6 @@ import {fetchFeatured, requestMore} from '../../../actions/index';
 
 import './nf-featured.css';
 
-
 class NfFeatured extends Component {
 
   static propTypes = {
@@ -17,9 +16,6 @@ class NfFeatured extends Component {
 
   componentDidMount() {
     this.props.dispatch(fetchFeatured());
-  }
-
-  componentWillReceiveProps(nextProps) {
   }
 
   getPrevious = () => {
@@ -40,8 +36,8 @@ class NfFeatured extends Component {
             <div className="col-lg-12">
               <div className="row featured-slider">
                 <i className="fa fa-2x fa-chevron-left carousel-toggle" aria-hidden="true" onClick={this.getPrevious}/>
-                {this.props.items.map((item, index) => (
-                    index >= this.props.index && index < this.props.size + this.props.index?
+                {this.props.featured.items.map((item, index) => (
+                    index >= this.props.featured.index && index < this.props.featured.size + this.props.featured.index?
                     <div className="col-lg-3" key={item.key}>
                       <NfFeaturedItem item={item}/>
                     </div> : null

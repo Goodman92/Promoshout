@@ -34,3 +34,6 @@ input, button, select, textarea, optgroup, option {
     src: url("./SourceSansPro-Regular.otf") format("opentype");
 }
 
+.pointer {
+    cursor:pointer;
+}

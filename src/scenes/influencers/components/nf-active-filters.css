@@ -1,0 +1,32 @@
+.selected-filter {
+    border: 1px solid rgba(0, 0, 0, .125);
+    padding: 0.3em;
+    position: relative;
+    border-right: 0;
+    font-size: 0.8em;
+    padding-right:1.5em;
+}
+
+.selected-filter::after, .selected-filter::before {
+    border-top: 13px solid transparent;
+    border-bottom: 13px solid transparent;
+    content: "";
+    position: absolute;
+}
+
+.selected-filter::after {
+    border-right: 13px solid rgba(0, 0, 0, .125);
+    right: 0;
+    z-index: 1;
+}
+
+.selected-filter::before {
+    border-right: 13px solid #fff;
+    right: -1px;
+    z-index: 2;
+}
+
+span.selected-clear {
+    color: #f91942;
+    cursor: pointer;
+}
