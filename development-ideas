@@ -1,0 +1,4 @@
+- Is it against redux paragdim to copy state to local state temporarilly before pushing changes to tree(nf-search-filters)
+- Could nf-search-filters be more dynamic
+
+- moment.js

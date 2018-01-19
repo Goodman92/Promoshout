@@ -28,7 +28,7 @@ class NfCollapseItem extends Component {
             </a>
           </h6>
         </div>
-        <div id={'collapse' + this.props.toggle} className="collapse" role="tabpanel" aria-labelledby="headingOne"
+        <div id={'collapse' + this.props.toggle} className="collapse show" role="tabpanel" aria-labelledby="headingOne"
              data-parent="#accordion">
           <div className="card-body collapse-body">
             {this.props.content}

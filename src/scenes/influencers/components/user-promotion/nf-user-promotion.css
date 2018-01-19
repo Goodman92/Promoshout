@@ -1,0 +1,79 @@
+div.user-promotion {
+    -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.10);
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.10);
+    padding: 1.5em 1em 0.5em 1em;
+    height: 100%;
+    position: relative;
+}
+
+div.user-promotion:hover {
+    -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.25);
+}
+
+div.user-promotion-header {
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
+    padding-bottom: 0.5em;
+}
+
+div.user-promotion-header > h5 {
+    margin-bottom: 0;
+    font-size: 1.1em;
+}
+
+.user-promotion-title {
+    text-align: left;
+}
+
+div.user-promotion-body {
+    padding-top: 0.5em;
+    margin-bottom: 2em;
+}
+
+div.user-promotion * {
+    font-family: Quicksand, "Lucida Grande", sans-serif;
+    letter-spacing: -1px;
+}
+
+span.highlighted {
+    font-size: 1.09em;
+    margin-left: 0.3em;
+}
+
+div.user-promotion-desc {
+    font-weight: 600;
+    font-size: 1.15em;
+}
+
+div.user-promotion-body p {
+    margin-bottom: 0.2em;
+}
+
+div.user-promotion-footer {
+    position: absolute;
+    bottom: 5px;
+    right: 1em;
+}
+
+div.user-promotion-footer a:hover {
+    text-decoration: none;
+}
+
+.user-profile {
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+    padding: 0.2em 0.5em 0.2em 0.5em;
+    font-size: 0.93em;
+    color: #fff;
+}
+
+img.user-promotion-picture {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    position: absolute;
+    top: -15px;
+    left: -10px;
+    -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.20);
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.20);
+}

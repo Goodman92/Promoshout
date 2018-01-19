@@ -22,7 +22,7 @@
 
 .selected-filter::before {
     border-right: 13px solid #fff;
-    right: -1px;
+    right: -2px;
     z-index: 2;
 }
 

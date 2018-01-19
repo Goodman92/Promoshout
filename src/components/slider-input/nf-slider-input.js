@@ -115,7 +115,7 @@ class NfSliderInput extends Component {
           <span className="slider-range-overlay" style={{left: this.state.overlayLeft, width: this.state.width}}
                 ref={(element) => {this.overlay = element;}}/>
         </div>
-        <div className="slider-ticks"></div>
+        <div className="slider-ticks"/>
       </div>
     );
   }

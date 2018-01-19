@@ -34,6 +34,22 @@ input, button, select, textarea, optgroup, option {
     src: url("./SourceSansPro-Regular.otf") format("opentype");
 }
 
+@font-face {
+    font-family: Quicksand;
+    src: url("./Quicksand-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: QuicksandBold;
+    src: url("./Quicksand-Bold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: QuicksandDash;
+    src: url("./Quicksand_Dash.otf") format("opentype");
+}
+
+
 .pointer {
     cursor:pointer;
 }
