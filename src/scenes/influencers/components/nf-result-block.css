@@ -1,0 +1,17 @@
+div.pagination-wrapper {
+    text-align: center;
+}
+
+div.pagination-wrapper > nav {
+    display: inline-block;
+}
+
+div.result-toggle div.two-state-toggle {
+    display: inline-block;
+    margin-left: 1em;
+}
+
+.result-top-block {
+    align-items: center;
+    margin-bottom:0.4em;
+}

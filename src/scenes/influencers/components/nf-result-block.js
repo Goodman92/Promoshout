@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import NfUserPromotion from './user-promotion/nf-user-promotion';
+import NfPagination from '../../../components/pagination/nf-pagination';
+import NfTwoStateToggle from '../../../components/two-state-toggle/nf-two-state-toggle';
 
 import './nf-result-block.css';
 
@@ -7,7 +9,7 @@ class NfResultBlock extends Component {
 
   constructor(props) {
     super(props);
-    this.mock = [
+    let mock = [
       {
         category: 'Cars',
         username: 'Showcar',
@@ -19,7 +21,7 @@ class NfResultBlock extends Component {
       },
       {
         category: 'Design',
-        username: 'Näyttelyauto',
+        username: 'Designer123',
         last_online: '2018-01-16 20:44',
         charge: 100,
         followers: 33,
@@ -28,7 +30,7 @@ class NfResultBlock extends Component {
       },
       {
         category: 'Free time',
-        username: 'Pyörävaras',
+        username: 'leiZureguY',
         last_online: '2016-10-10',
         charge: 50,
         followers: 1200,
@@ -37,7 +39,7 @@ class NfResultBlock extends Component {
       },
       {
         category: 'Music',
-        username: 'Roristi',
+        username: 'bigPumpz',
         last_online: '2016-10-10',
         charge: 300,
         followers: 120495,
@@ -45,26 +47,68 @@ class NfResultBlock extends Component {
         description: 'Dem music'
       },
     ];
+    for (let i = 0; i < 4; i++)
+      mock = mock.concat(mock);
+    this.mock = mock;
+
+    this.state = {
+      page: 1,
+      grid: true
+    };
+  };
+
+  move = (page) => {
+    this.setState({page: page});
+  };
+
+  stackSize = () => {
+    return this.mock.length;
+  };
+
+  onToggleChange = (curState) => {
+    this.setState({grid: curState});
   };
 
   render() {
+    const displayItems = () => {
+      const first = this.state.page * 5;
+      let rows = [];
+      for (let i = first; i < first + 9; i++)
+        rows.push(<div className="col-lg-4 col-xs-12 mb-4" key={i}>
+          <NfUserPromotion item={this.mock[i]}/>
+        </div>)
+      return rows;
+    };
+
     return (
-        <div>
-          <div className="row">
-            <div className="col-lg-12 text-right">
-              <h6> 1,997,263 Results</h6>
-            </div>
+      <div>
+        <div className="row result-top-block">
+          <div className="col-lg-6 text-left">
+            <h6> {this.mock.length} Results</h6>
           </div>
-          <div className="row">
-            {
-              this.mock.map((item, index) => (
-                  <div className="col-lg-4 col-xs-12 mb-4" key={index}>
-                    <NfUserPromotion item={item}/>
-                  </div>
-              ))
-            }
+          <div className="col-lg-6 text-right result-toggle">
+            <h6>
+              View as {this.state.grid ? 'list' : 'grid'}
+              <NfTwoStateToggle first={
+                <i className="fa fa-th-large"/>
+              } second={
+                <i className="fa fa-reorder"/>
+              } active={this.state.grid} toggleChange={this.onToggleChange}/>
+            </h6>
           </div>
         </div>
+        <div className="row">
+          {
+            displayItems()
+          }
+        </div>
+        <div className="row">
+          <div className="col-lg-12 pagination-wrapper">
+            <NfPagination data={this.mock} pageSize={9} stackSize={this.stackSize}
+                          boxCount={5} move={this.move}/>
+          </div>
+        </div>
+      </div>
     );
   }
 }

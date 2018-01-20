@@ -1,0 +1,27 @@
+div.two-state-toggle {
+    padding: 0.15em;
+    border-radius: 20px;
+    border: 2px solid #dbdbdb;
+}
+
+div.toggle-wrapper {
+    border-radius: 50%;
+    display: inline-block;
+    height: 1.9em;
+    width: 1.9em;
+    padding: 0.44em;
+    cursor:pointer;
+}
+
+div.toggle-wrapper i {
+    color: #00cc67;
+}
+
+div.toggle-wrapper.active {
+    background-color: #00cc67;
+}
+
+div.toggle-wrapper.active i {
+    color: #fff;
+}
+
