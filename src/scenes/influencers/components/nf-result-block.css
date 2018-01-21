@@ -11,7 +11,17 @@ div.result-toggle div.two-state-toggle {
     margin-left: 1em;
 }
 
+div.result-header-row {
+    font-weight: bold;
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
+    padding: 0 0.7em 0 0.5em;
+}
+
 .result-top-block {
     align-items: center;
-    margin-bottom:0.4em;
+    margin-bottom: 0.4em;
+}
+
+div.result-items-wrapper > div.user-promotion-row-wrapper:nth-child(2n) > div.user-promotion-row {
+    background-color: #f7f7f9;
 }

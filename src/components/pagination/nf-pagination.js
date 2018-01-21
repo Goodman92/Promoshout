@@ -26,16 +26,14 @@ class NfPagination extends Component {
   onPageClick = (e, page) => {
     e.preventDefault();
     this.setState({pages: this.pagination.jumpToPage(page)});
-    const currentPage = this.pagination.getCurrentPage();
-    this.props.move(currentPage);
+    this.props.move(this.pagination.getCurrentPage());
   };
 
   onPreviousClick = (e) => {
     e.preventDefault();
     if (this.pagination.canMove(-1)) {
       this.setState({pages: this.pagination.previousPage()});
-      const currentPage = this.pagination.getCurrentPage();
-      this.props.move(currentPage);
+      this.props.move(this.pagination.getCurrentPage());
     }
   };
 
@@ -43,8 +41,7 @@ class NfPagination extends Component {
     e.preventDefault();
     if (this.pagination.canMove(1)) {
       this.setState({pages: this.pagination.nextPage()});
-      const currentPage = this.pagination.getCurrentPage();
-      this.props.move(currentPage);
+      this.props.move(this.pagination.getCurrentPage());
     }
   };
 

@@ -77,3 +77,8 @@ img.user-promotion-picture {
     -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.20);
     box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.20);
 }
+
+/* User promotion row */
+div.user-promotion-row {
+    padding: 0.7em 0.7em 0.7em 0.5em;
+}

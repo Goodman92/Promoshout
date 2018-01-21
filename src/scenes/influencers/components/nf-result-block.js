@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import NfUserPromotion from './user-promotion/nf-user-promotion';
+import NfUserRowPromotion from './user-promotion/nf-user-row-promotion';
 import NfPagination from '../../../components/pagination/nf-pagination';
 import NfTwoStateToggle from '../../../components/two-state-toggle/nf-two-state-toggle';
 
@@ -50,7 +51,6 @@ class NfResultBlock extends Component {
     for (let i = 0; i < 4; i++)
       mock = mock.concat(mock);
     this.mock = mock;
-
     this.state = {
       page: 1,
       grid: true
@@ -61,23 +61,49 @@ class NfResultBlock extends Component {
     this.setState({page: page});
   };
 
-  stackSize = () => {
-    return this.mock.length;
-  };
-
   onToggleChange = (curState) => {
     this.setState({grid: curState});
   };
 
   render() {
-    const displayItems = () => {
+
+    const headerRow = () => {
+      return (
+        <div className="col-lg-12">
+          <div className="result-header-row">
+            <div className="row">
+              <div className="col">Instagram</div>
+              <div className="col">Followers</div>
+              <div className="col">Charge</div>
+              <div className="col text-right">Last online</div>
+            </div>
+          </div>
+        </div>
+      )
+    };
+
+    const displayGrid = () => {
       const first = this.state.page * 5;
-      let rows = [];
-      for (let i = first; i < first + 9; i++)
-        rows.push(<div className="col-lg-4 col-xs-12 mb-4" key={i}>
-          <NfUserPromotion item={this.mock[i]}/>
-        </div>)
-      return rows;
+      return Array.from(Array(9).keys(), (_, i) => (
+        <div className="col-lg-4 col-xs-12 mb-4" key={i + first}>
+          <NfUserPromotion item={this.mock[i + first]}/>
+        </div>
+      ));
+    };
+
+    const displayList = () => {
+      const first = this.state.page * 5;
+      return [headerRow()].concat(Array.from(Array(30).keys(), (_, i) => (
+        <div className="col-lg-12 user-promotion-row-wrapper" key={i + first}>
+          <NfUserRowPromotion item={this.mock[i + first]}/>
+        </div>
+      )));
+    };
+
+    const display = () => {
+      if (this.state.grid)
+        return displayList();
+      return displayGrid();
     };
 
     return (
@@ -89,22 +115,18 @@ class NfResultBlock extends Component {
           <div className="col-lg-6 text-right result-toggle">
             <h6>
               View as {this.state.grid ? 'list' : 'grid'}
-              <NfTwoStateToggle first={
-                <i className="fa fa-th-large"/>
-              } second={
-                <i className="fa fa-reorder"/>
-              } active={this.state.grid} toggleChange={this.onToggleChange}/>
+              <NfTwoStateToggle first={<i className="fa fa-th-large"/>}
+                                second={<i className="fa fa-reorder"/>}
+                                active={this.state.grid} toggleChange={this.onToggleChange}/>
             </h6>
           </div>
         </div>
-        <div className="row">
-          {
-            displayItems()
-          }
+        <div className="row result-items-wrapper">
+          { display() }
         </div>
         <div className="row">
           <div className="col-lg-12 pagination-wrapper">
-            <NfPagination data={this.mock} pageSize={9} stackSize={this.stackSize}
+            <NfPagination data={this.mock} pageSize={9} stackSize={() => this.mock.length}
                           boxCount={5} move={this.move}/>
           </div>
         </div>
