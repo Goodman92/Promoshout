@@ -1,47 +1,6 @@
-const mockFeatured = [
-  {
-    key: 1,
-    desc: `
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec risus dolor, rutrum eget eros eu, bibendum vulputate leo. Suspendisse consequat massa id diam mattis porttitor. Duis ligula magn`,
-    image: '../../../resources/images/random/1.jpg'
-  },
-  {
-    key: 2,
-    desc: `
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec risus dolor, rutrum eget eros eu, bibendum vulputate leo. Suspendisse consequat massa id diam mattis porttitor. Duis ligula magn`,
-    image: '../../../resources/images/random/2.jpg'
-  },
-  {
-    key: 3,
-    desc: `
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec risus dolor, rutrum eget eros eu, bibendum vulputate leo. Suspendisse consequat massa id diam mattis porttitor. Duis ligula magn`,
-    image: '../../../resources/images/random/3.jpg'
-  },
-  {
-    key: 4,
-    desc: `
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec risus dolor, rutrum eget eros eu, bibendum vulputate leo. Suspendisse consequat massa id diam mattis porttitor. Duis ligula magn`,
-    image: '../../../resources/images/random/4.jpg'
-  },
-  {
-    key: 5,
-    desc: `
-      rutrum eget eros eu, bibendum vulputate leo. Suspendisse consequat massa id diam mattis porttitor. Duis ligula magn`,
-    image: '../../../resources/images/random/4.jpg'
-  },
-  {
-    key: 6,
-    desc: `
-      Lorem ipsum dolor sit amet, consectetur aequat massa id diam mattis porttitor. Duis ligula magn`,
-    image: '../../../resources/images/random/4.jpg'
-  },
-  {
-    key: 7,
-    desc: `
-    uspendisse consequat massa id diam mattis porttitor. Duis ligula magn`,
-    image: '../../../resources/images/random/4.jpg'
-  },
-];
+import {featuredMocks} from '../mock-data';
+
+const mockFeatured = featuredMocks;
 
 function canMove(state, amount, size) {
   return state.featured.index + amount + size <= state.featured.items.length && state.featured.index + amount >= 0;

@@ -7,7 +7,6 @@ import './nf-pagination.css';
 class NfPagination extends Component {
 
   static propTypes = {
-    data: PropTypes.array.isRequired,
     pageSize: PropTypes.number.isRequired,
     boxCount: PropTypes.number.isRequired,
     move: PropTypes.func.isRequired,
@@ -46,7 +45,6 @@ class NfPagination extends Component {
   };
 
   render() {
-
     const getActive = (page) => {
       if (this.pagination.isActivePage(page))
         return "page-item active";
@@ -57,17 +55,17 @@ class NfPagination extends Component {
       <nav aria-label="Page navigation example">
         <ul className="pagination">
           <li className="page-item">
-            <a className="page-link" href="#" onClick={this.onPreviousClick}>Previous</a>
+            <a className="page-link" href="" onClick={this.onPreviousClick}>Previous</a>
           </li>
           {
             this.state.pages.map((item) => (
               <li className={getActive(item)} key={item}>
-                <a className="page-link" href="#" onClick={(e) => this.onPageClick(e, item)}>{item}</a>
+                <a className="page-link" href="" onClick={(e) => this.onPageClick(e, item)}>{item}</a>
               </li>
             ))
           }
           <li className="page-item">
-            <a className="page-link" href="#" onClick={this.onNextClick}>Next</a>
+            <a className="page-link" href="" onClick={this.onNextClick}>Next</a>
           </li>
         </ul>
       </nav>

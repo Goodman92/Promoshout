@@ -24,7 +24,7 @@ class Pagination {
   };
 
   previousPage = () => {
-    if (this.currentPage == 1)
+    if (this.currentPage === 1)
       return this.getPages();
     this.currentPage = this.currentPage - 1;
     return this.getPages();
