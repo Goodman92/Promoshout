@@ -1,15 +1,19 @@
 import React, {Component} from 'react';
 import './nf-perks.css';
 
-class NfPerkBlock extends Component {
+export default class NfPerkBlock extends Component {
   render() {
     return (
       <div className="perk-block">
-        <h2 className="perk-title"> {this.props.title}</h2>
-        <p className="perk-desc"> {this.props.desc}</p>
+      	<div className="perk-icon-wrapper">
+      		<i className={this.props.icon} aria-hidden="true"></i>
+      	</div>
+      	<div>
+	        <h6 className="perk-title"> {this.props.title}</h6>
+	        <p className="perk-desc"> {this.props.desc}</p>
+        </div>
       </div>
     );
   }
 }
 
-export default NfPerkBlock;
