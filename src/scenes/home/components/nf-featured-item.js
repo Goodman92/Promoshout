@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './nf-featured.css';
 
-class NfFeaturedItem extends Component {
+export default class NfFeaturedItem extends Component {
 
   constructor(props) {
     super(props);
@@ -10,11 +10,14 @@ class NfFeaturedItem extends Component {
   render() {
     return (
         <div className="featured-item">
-          <img src={require('../../../resources/images/random/' + this.index + '.jpg')} alt="Promoted post" className="img-fluid"/>
-          <p className="featured-desc"> {this.props.item.desc}</p>
+          <img src={require('../../../resources/images/random/' + this.index + '.jpg')} 
+            alt="Promoted post"
+            className="img-fluid"
+           />
+          <div className="featured-desc-wrapper">
+            <p className="featured-desc"> {this.props.item.desc}</p>
+          </div>
         </div>
     );
   }
 }
-
-export default NfFeaturedItem;
