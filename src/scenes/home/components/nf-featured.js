@@ -9,8 +9,7 @@ import './nf-featured.css';
 class NfFeatured extends Component {
 
   static propTypes = {
-    items: PropTypes.array.isRequired,
-    fetching: PropTypes.bool.isRequired,
+    featured: PropTypes.object.isRequired,
     dispatch: PropTypes.func.isRequired
   };
 
