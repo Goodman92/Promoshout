@@ -30,8 +30,7 @@ class NfPerks extends Component {
         icon: 'c-dark-blue fa fa-star-o fa-1x'
       },
       {
-        key: 6, title: 'Support', desc: 'Consectetur adipicing elit sed dotam eiusmod tempor incididunt labe etae magna aliqua.' +
-      'Paypal\'s secure services.', 
+        key: 6, title: 'Support', desc: 'Is something bugging you? With our experienced support we are happy to answer your questions',
         icon: 'c-orange fa fa-comment-o fa-1x'
       },
     ]
