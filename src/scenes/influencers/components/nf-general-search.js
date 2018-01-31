@@ -23,6 +23,7 @@ class NfGeneralSearch extends Component {
   };
 
   render() {
+    const filters = this.state;
     const optionMock = ['Fitness', 'Sports', 'Animals', 'Traveling', 'Stuff', 'More stuff'];
 
     return (
@@ -31,12 +32,12 @@ class NfGeneralSearch extends Component {
             <div className="input-group">
               <span className="input-group-addon"><i className="fa fa-bullhorn" aria-hidden="true"/></span>
               <input type="text" className="form-control" placeholder="What are you looking for? Try"
-                     value={this.state.q.value} onChange={(e) => this.setState({q: {value: e.target.value}})}/>
+                     value={filters.q.value} onChange={(e) => this.setState({q: {...filters.q, value: e.target.value}})}/>
             </div>
             <div className="input-group">
               <span className="input-group-addon"><i className="fa fa-tags" aria-hidden="true"/></span>
-              <select type="text" className="form-control" placeholder="Category" value={this.state.category.value}
-                      onChange={(e) => this.setState({category: {value: e.target.value}})}>
+              <select type="text" className="form-control" placeholder="Category" value={filters.category.value}
+                      onChange={(e) => this.setState({category: {...filters.category, value: e.target.value}})}>
                 <option value="">Select Category</option>
                 {optionMock.map((item, index) => (
                     <option key={index} value={item}> {item}</option>

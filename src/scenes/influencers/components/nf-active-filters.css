@@ -1,27 +1,29 @@
 .selected-filter {
     border: 1px solid rgba(0, 0, 0, .125);
-    padding: 0.3em;
     position: relative;
     border-right: 0;
     font-size: 0.8em;
     padding-right:1.5em;
+    padding-bottom:0.1em;
+    float:left;
+    margin-bottom: 0.2em;
 }
 
 .selected-filter::after, .selected-filter::before {
-    border-top: 13px solid transparent;
-    border-bottom: 13px solid transparent;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
     content: "";
     position: absolute;
 }
 
 .selected-filter::after {
-    border-right: 13px solid rgba(0, 0, 0, .125);
+    border-right: 11px solid rgba(0, 0, 0, .125);
     right: 0;
     z-index: 1;
 }
 
 .selected-filter::before {
-    border-right: 13px solid #fff;
+    border-right: 10px solid #fff;
     right: -2px;
     z-index: 2;
 }

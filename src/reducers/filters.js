@@ -1,13 +1,13 @@
 import {STORE_FILTERS, REMOVE_FILTER, CLEAR_ALL} from '../actions/filters';
 
 const initial = {
-  q: {value: ''},
-  category: {value: ''},
-  age: {value:''},
-  location: {value:''},
-  price: {value_min: '', value_max:'', type: 'range'},
-  followers: {value_min: '', value_max:'', type: 'range'},
-  rate: {value_min: '', value_max:'', type: 'range'},
+  q: {value: '', label: 'text'},
+  category: {value: '', label: 'category'},
+  age: {value: '', label: 'age'},
+  location: {value: '', label: 'location'},
+  price: {value_min: '', value_max: '', type: 'range', label: 'price'},
+  followers: {value_min: '', value_max: '', type: 'range', label: 'followers'},
+  rate: {value_min: '', value_max: '', type: 'range', label: 'rate'},
 };
 
 const filters = (state = initial, action) => {

@@ -23,7 +23,7 @@ class NfActiveFilters extends Component {
       return (
           <span key={index} className="selected-filter mr-4">
               <i className="fa fa-times mr-1 pointer" aria-hidden="true" onClick={this.props.onRemove.bind(null, key)}/>
-            {filters[key].value}
+            {filters[key].label}: {filters[key].value}
           </span>
       )
     };
@@ -32,13 +32,13 @@ class NfActiveFilters extends Component {
       return (
           <span key={index} className="selected-filter mr-4">
               <i className="fa fa-times mr-1 pointer" aria-hidden="true" onClick={this.props.onRemove.bind(null, key)}/>
-            {filters[key].value_min || 0} - {filters[key].value_max || '∞'}
+            {filters[key].label}: {filters[key].value_min || 0}-{filters[key].value_max || '∞'}
           </span>
       )
     };
 
     return (
-        <div>
+        <div className="clearfix">
           { renderItems() }
         </div>
     );
