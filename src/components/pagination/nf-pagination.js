@@ -6,13 +6,6 @@ import './nf-pagination.css';
 
 class NfPagination extends Component {
 
-  static propTypes = {
-    pageSize: PropTypes.number.isRequired,
-    boxCount: PropTypes.number.isRequired,
-    move: PropTypes.func.isRequired,
-    stackSize: PropTypes.func.isRequired
-  };
-
   constructor(props) {
     super(props);
     this.pagination = new Pagination(props.pageSize, props.stackSize(), props.boxCount);
@@ -21,7 +14,6 @@ class NfPagination extends Component {
     };
   };
 
-  // update redux
   onPageClick = (e, page) => {
     e.preventDefault();
     this.setState({pages: this.pagination.jumpToPage(page)});

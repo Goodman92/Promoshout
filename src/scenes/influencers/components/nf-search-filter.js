@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 
 import NfCollapseItem from '../../../components/collapse-item/nf-collapse-item';
-import NfIconInput from '../../../components/icon-input/nf-icon-input';
 import NfSliderInput from '../../../components/slider-input/nf-slider-input';
 
 import './nf-search-filter.css';
@@ -50,7 +48,7 @@ class NfSearchFilter extends Component {
                 </div>
               }/>
 
-              <NfCollapseItem toggle="4" header={<span> By Location </span>} content={
+              <NfCollapseItem toggle="4" header={<span> By Estimated Audience Location </span>} content={
                 <select className="form-control" value={filters.location.value}
                         onChange={(e) => this.setState({location: {...filters.location, value: e.target.value}})}>
                   <option value="Finland"> Finland</option>
@@ -69,7 +67,7 @@ class NfSearchFilter extends Component {
                                onChange={this.onRateChange}/>
               }/>
 
-              <NfCollapseItem toggle="8" header={<span> By Average age </span>} content={
+              <NfCollapseItem toggle="8" header={<span> By Age </span>} content={
                 <select className="form-control" value={filters.age.value}
                         onChange={(e) => this.setState({age: {...filters.age, value: e.target.value}})}>
                   <option/>
