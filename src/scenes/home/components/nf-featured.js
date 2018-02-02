@@ -37,7 +37,7 @@ class NfFeatured extends Component {
                 <i className="fa fa-2x fa-angle-right fa-rotate-180 carousel-toggle featured-button-wrapper" aria-hidden="true" onClick={this.getPrevious}/>
                 {this.props.featured.items.map((item, index) => (
                     index >= this.props.featured.index && index < this.props.featured.size + this.props.featured.index?
-                    <div className="col-lg-3" key={item.key}>
+                    <div className="col-lg-3 col-md-6 col-sm-6" key={item.key}>
                       <NfFeaturedItem item={item}/>
                     </div> : null
                 ))}
