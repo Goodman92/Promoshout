@@ -13,7 +13,12 @@ class NfHeader extends Component {
               <span className="navbar-toggler-icon"></span>
             </button>
             <Link to="/" className="navbar-brand main-logo">
-              <span className="logo-first-part">Promo</span><span className="logo-last-part">shout</span>
+              <div className="logo-desktop-wrapper">
+                <span className="logo-first-part">Promo</span><span className="logo-last-part">shout</span>
+              </div>
+              <div className="logo-phone-wrapper">
+                <span className="logo-first-part">P</span><span className="logo-last-part">S</span>
+              </div>
             </Link>
             <div className="collapse navbar-collapse nf-navbar-list" id="navbarSupportedContent">
               <ul className="navbar-nav nf-nav">

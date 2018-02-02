@@ -22,14 +22,14 @@ class NfRegistration extends Component {
               </div>
             </div>
             <div className="row mt-5">
-              <div className="col-lg-6 col-xs-12 text-right">
+              <div className="col-lg-6 col-xs-12 text-right registration-box-wrapper">
                 <div className="registration-box">
                   <a href="/">
                     Register as a product
                   </a>
                 </div>
               </div>
-              <div className="col-lg-6 col-xs-12">
+              <div className="col-lg-6 col-xs-12 registration-box-wrapper">
                 <div className="registration-box">
                   <a href="/">
                     Register as a influencer

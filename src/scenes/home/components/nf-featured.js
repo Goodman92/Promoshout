@@ -7,7 +7,7 @@ import {fetchFeatured, requestMore} from '../../../actions/index';
 import './nf-featured.css';
 
 class NfFeatured extends Component {
-
+  
   static propTypes = {
     featured: PropTypes.object.isRequired,
     dispatch: PropTypes.func.isRequired
@@ -30,18 +30,18 @@ class NfFeatured extends Component {
         <div className="container-fluid featured-wrapper">
           <div className="row pb-5">
             <div className="col-lg-12 mt-4 mb-4">
-              <h1 className="featured-main-title"> Featured Promoshout users </h1>
+              <h1 className="featured-main-title"> Featured Offers </h1>
             </div>
             <div className="col-lg-12">
               <div className="row featured-slider">
-                <i className="fa fa-2x fa-chevron-left carousel-toggle" aria-hidden="true" onClick={this.getPrevious}/>
+                <i className="fa fa-2x fa-angle-right fa-rotate-180 carousel-toggle featured-button-wrapper" aria-hidden="true" onClick={this.getPrevious}/>
                 {this.props.featured.items.map((item, index) => (
                     index >= this.props.featured.index && index < this.props.featured.size + this.props.featured.index?
                     <div className="col-lg-3" key={item.key}>
                       <NfFeaturedItem item={item}/>
                     </div> : null
                 ))}
-                <i className="fa fa-2x fa-chevron-right carousel-toggle" aria-hidden="true" onClick={this.getNext}/>
+                <i className="fa fa-2x fa-angle-right carousel-toggle featured-button-wrapper" aria-hidden="true" onClick={this.getNext}/>
               </div>
             </div>
           </div>
