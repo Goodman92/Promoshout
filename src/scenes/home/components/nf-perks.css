@@ -40,7 +40,7 @@
 }
 
 .perk-block:hover {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 2px 4px 0 #343a4026, 0 5px 15px 0 #dee2e6;
     -webkit-transition: box-shadow 0.3s ease-in;
     -moz-transition: box-shadow 0.3s ease-in;
     -o-transition: box-shadow 0.3s ease-in;

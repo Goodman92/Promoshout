@@ -55,42 +55,63 @@ console.log(influencerMock);
 const mockFeatured = [
   {
     key: 1,
+    name: '@test',
+    price: 1337,
+    followers: '50k',
     desc: `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec risus dolor, rutrum eget eros eu, bibendum vulputate leo. Suspendisse consequat massa id diam mattis porttitor. Duis ligula magn`,
     image: '../../../resources/images/random/1.jpg'
   },
   {
     key: 2,
+    name: '@chitywok',
+    price: 130,
+    followers: '5M',
     desc: `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec risus dolor, rutrum eget eros eu, bibendum vulputate leo. Suspendisse consequat massa id diam mattis porttitor. Duis ligula magn`,
     image: '../../../resources/images/random/2.jpg'
   },
   {
     key: 3,
+    name: '@keewwl',
+    price: 100,
+    followers: '32k',
     desc: `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec risus dolor, rutrum eget eros eu, bibendum vulputate leo. Suspendisse consequat massa id diam mattis porttitor. Duis ligula magn`,
     image: '../../../resources/images/random/3.jpg'
   },
   {
     key: 4,
+    name: '@John',
+    price: 1311,
+    followers: '1.3M',
     desc: `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec risus dolor, rutrum eget eros eu, bibendum vulputate leo. Suspendisse consequat massa id diam mattis porttitor. Duis ligula magn`,
     image: '../../../resources/images/random/4.jpg'
   },
   {
     key: 5,
+    name: '@Lad',
+    price: 1337,
+    followers: '50k',
     desc: `
       rutrum eget eros eu, bibendum vulputate leo. Suspendisse consequat massa id diam mattis porttitor. Duis ligula magn`,
     image: '../../../resources/images/random/4.jpg'
   },
   {
     key: 6,
+    name: '@sickmeit',
+    price: 14,
+    followers: '10k',
     desc: `
       Lorem ipsum dolor sit amet, consectetur aequat massa id diam mattis porttitor. Duis ligula magn`,
     image: '../../../resources/images/random/4.jpg'
   },
   {
     key: 7,
+    name: '@test',
+    price: 5,
+    followers: '5000',
     desc: `
     uspendisse consequat massa id diam mattis porttitor. Duis ligula magn`,
     image: '../../../resources/images/random/4.jpg'

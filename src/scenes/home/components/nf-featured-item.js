@@ -15,7 +15,21 @@ export default class NfFeaturedItem extends Component {
             className="img-fluid"
            />
           <div className="featured-desc-wrapper">
-            <p className="featured-desc"> {this.props.item.desc}</p>
+            <div className="row">
+
+              <div className="col-lg-6">
+                <p className="featured-desc-name"> {this.props.item.name}</p>
+              </div>
+
+              <div className="col-lg-6">
+                <p className="featured-desc-followers"> Followers: {this.props.item.followers}</p>
+              </div>
+
+            </div>
+              <p className="featured-desc"> {this.props.item.desc}</p>
+          </div>
+          <div className="featured-desc-button-wrapper">
+            <button>From <span className="featured-desc-price-span">${this.props.item.price}</span></button>
           </div>
         </div>
     );
