@@ -1,0 +1,12 @@
+div.lift-box-header {
+    background: #f7f7f7;
+    border: 1px solid #eaedef;
+    color: #000;
+    border-radius: 0;
+    padding: 1em;
+}
+
+div.lift-box-content {
+    padding: 1em 1em 1em 1em;
+    border: 1px solid #eaedef;
+}

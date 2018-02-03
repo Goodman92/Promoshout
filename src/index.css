@@ -77,3 +77,18 @@ input, button, select, textarea, optgroup, option {
     color: #FF6600;
 }
 
+.c-white {
+    color: #fff;
+}
+
+.bg-dark-blue {
+    background: #363b4d;
+
+}
+
+
+h6.h7 {
+    font-size: 0.9em;
+}
+
+
