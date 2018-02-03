@@ -65,7 +65,7 @@ class NfResultBlock extends Component {
         <div>
           <div className="row result-top-block">
             <div className="col-lg-6 text-left">
-              <h6> ??? Results</h6>
+              <h6> {this.props.data.total} Results</h6>
             </div>
             <div className="col-lg-6 text-right result-toggle">
               <h6>
@@ -80,7 +80,7 @@ class NfResultBlock extends Component {
           </div>
           <div className="row">
             <div className="col-lg-12 pagination-wrapper">
-              <NfPagination pageSize={16} stackSize={() => 160} boxCount={5} move={this.move}/>
+              <NfPagination pageSize={16} stackSize={() => 160} boxCount={5} move={this.move} page={this.props.page}/>
             </div>
           </div>
         </div>

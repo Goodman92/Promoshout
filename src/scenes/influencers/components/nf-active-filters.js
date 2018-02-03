@@ -3,45 +3,43 @@ import './nf-active-filters.css';
 
 class NfActiveFilters extends Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const filters = this.props.filters;
-    const renderItem = (key, index) => {
-      if (filters[key].value)
-        return (
-            <span key={index} className="selected-filter mr-4">
-              <i className="fa fa-times mr-1 pointer" aria-hidden="true"
-                 onClick={this.props.onRemove.bind(null, key)}/>
-              {filters[key].value}
-          </span>
-        )
+
+    const renderItems = () => {
+      const items = [];
+      Object.keys(filters).map((key, index) => {
+        if (filters[key].value)
+          items.push(renderItem(key, index));
+        if (filters[key].value_max || filters[key].value_min)
+          items.push(renderRangeItem(key, index));
+      });
+      if (items.length)
+        items.push(<span className="selected-clear pull-right" onClick={this.props.onClear} key={"f"}>Clear All</span>);
+      return items;
     };
 
-    const renderClear = () => {
-      const filtered = Object.keys(filters).reduce((res, key) => {
-        if (filters[key].value)
-          res.push(filters[key].value);
-        return res;
-      }, []);
-      if (filtered.length)
-        return (
-            <span className="selected-clear pull-right" onClick={this.props.onClear}> Clear All </span>
-        )
+    const renderItem = (key, index) => {
+      return (
+          <span key={index} className="selected-filter mr-4">
+              <i className="fa fa-times mr-1 pointer" aria-hidden="true" onClick={this.props.onRemove.bind(null, key)}/>
+            {filters[key].label}: {filters[key].value}
+          </span>
+      )
+    };
+
+    const renderRangeItem = (key, index) => {
+      return (
+          <span key={index} className="selected-filter mr-4">
+              <i className="fa fa-times mr-1 pointer" aria-hidden="true" onClick={this.props.onRemove.bind(null, key)}/>
+            {filters[key].label}: {filters[key].value_min || 0}-{filters[key].value_max || '∞'}
+          </span>
+      )
     };
 
     return (
-        <div>
-          {
-            Object.keys(filters).map((key, index) => (
-                renderItem(key, index)
-            ))
-          }
-          {
-            renderClear()
-          }
+        <div className="clearfix">
+          { renderItems() }
         </div>
     );
   }

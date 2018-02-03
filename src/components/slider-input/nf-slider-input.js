@@ -45,6 +45,7 @@ class NfSliderInput extends Component {
   releaseListeners = () => {
     window.removeEventListener("mousemove", this.eventCallback);
     window.removeEventListener("mouseup", this.releaseListeners);
+    this.props.onChange({value_min:this.state.low, value_max:this.state.high});
   };
 
   setListeners = (callback) => {
