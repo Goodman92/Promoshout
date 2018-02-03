@@ -48,7 +48,7 @@ class NfPerks extends Component {
           </div>
           <div className="row perk-blocks"> {
             this.mock.map((item, index) => (
-                <div className="col-xs-12 col-lg-4" key={item.key}>
+                <div className="col-xs-12 col-lg-4 col-md-6" key={item.key}>
                   <NfPerkBlock title={item.title} desc={item.desc} icon={item.icon} />
                 </div>
             ))
