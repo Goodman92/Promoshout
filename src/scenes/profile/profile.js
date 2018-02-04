@@ -73,6 +73,13 @@ class Profile extends Component {
                   </h3>
                 }/>
               </div>
+              <div className="mt-1">
+                <NfLiftBox header={<span> Deals made thru Promoshout</span>} content={
+                  <h3 className="text-center">
+                    3
+                  </h3>
+                }/>
+              </div>
             </aside>
           </div>
           <div className="col-lg-9">
@@ -124,7 +131,7 @@ class Profile extends Component {
                 }/>
               </div>
               <div className="mt-1">
-                <NfLiftBox header={<span> Reviews</span>} content={
+                <NfLiftBox header={<span> Reviews from customers</span>} content={
                   <div>
                     <div className="review-box mb-1">
                       <div className="review-item">

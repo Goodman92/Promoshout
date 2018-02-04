@@ -14,4 +14,5 @@ const NfLiftBox = (transcluded) => {
   )
 };
 
+
 export default NfLiftBox;
