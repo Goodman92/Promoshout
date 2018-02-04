@@ -41,7 +41,7 @@ class NfPerks extends Component {
         <div className="container">
           <div className="row mb-3">
             <div className="col-lg-12 mt-4">
-              <h1 className="perks-main-title"> Why We Are Best </h1>
+              <h1 className="perks-main-title"> Why We Are The Best </h1>
               <p className="perks-main-content">Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore etae magna aliqua. 
               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut ea commodo consequat.</p>
             </div>
