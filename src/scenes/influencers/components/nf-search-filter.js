@@ -22,11 +22,14 @@ class NfSearchFilter extends Component {
     super(props);
     this.state = {
       ...props.filters,
-      low: 0, 
-      high: 100000
+      followersLow: 0, 
+      followersHigh: 100000,
+      engagementLow: 0, 
+      engagementHigh: 100
     };
 
-    this.handleChange = this.handleChange.bind(this);
+    this.handleFollowerChange = this.handleFollowerChange.bind(this);
+    this.handleEngagementChange = this.handleEngagementChange.bind(this);
     this.componentWillReceiveProps = this.componentWillReceiveProps.bind(this);
   }
 
@@ -39,10 +42,16 @@ class NfSearchFilter extends Component {
     this.setState({...nextProps.filters});
   };
 
-  handleChange(values) {
+  handleFollowerChange(values) {
     this.setState({
-      low: values[0],
-      high: values[1]
+      followersLow: values[0],
+      followersHigh: values[1]
+    })
+  }
+  handleEngagementChange(values) {
+    this.setState({
+      engagementLow: values[0],
+      engagementHigh: values[1]
     })
   }
 
@@ -83,7 +92,20 @@ class NfSearchFilter extends Component {
               <NfCollapseItem 
                 toggle="5" 
                 header={ <span> By Followers </span> } 
-                content={ <NfSliderInput/> }
+                content={  
+                <div>
+                  <div className="row">
+                    <div className="col"><p> {this.state.followersLow} </p> </div>
+                    <div className="col text-right"><p> {this.state.followersHigh} </p> </div>
+                  </div>
+                  <Range 
+                    min={0} 
+                    max={100000} 
+                    value={[this.state.followersLow, this.state.followersHigh]} 
+                    onChange={this.handleFollowerChange} 
+                  /> 
+                </div>
+                }
               />
 
               <NfCollapseItem 
@@ -92,18 +114,16 @@ class NfSearchFilter extends Component {
                 content={  
                 <div>
                   <div className="row">
-                    <div className="col-lg-6 col-md-6"><p> {this.state.low} </p> </div>
-                    <div className="col-lg-6 col-md-6 text-right"><p> {this.state.high} </p> </div>
+                    <div className="col"><p> {this.state.engagementLow} </p> </div>
+                    <div className="col text-right"><p> {this.state.engagementHigh} </p> </div>
                   </div>
-
                   <Range 
                     min={0} 
-                    max={100000} 
-                    value={[this.state.low, this.state.high]} 
-                    onChange={this.handleChange} 
+                    max={100} 
+                    value={[this.state.engagementLow, this.state.engagementHigh]} 
+                    onChange={this.handleEngagementChange} 
                   />
-                </div>  
-
+                </div>
                 }
               />
 
@@ -127,17 +147,6 @@ class NfSearchFilter extends Component {
               <button type="submit" className="btn btn-success btn-apply"> Apply filters
               </button>
             </div>
-          </div>
-          <div>
-            <p> Range </p>
-            <p> {this.state.low} </p>
-            <p> {this.state.high} </p>
-            <Range 
-              min={0} 
-              max={100000} 
-              value={[this.state.low, this.state.high]} 
-              onChange={this.handleChange} 
-            />
           </div>
         </form>
     );
