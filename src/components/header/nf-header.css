@@ -114,9 +114,3 @@ li.nav-item > span.nav-link {
     cursor: pointer;
 }
 
-.nf-popover {
-    z-index: 9;
-    position: fixed;
-    right:0;
-}
-

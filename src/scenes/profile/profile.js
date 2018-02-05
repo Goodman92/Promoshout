@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import NfLiftBox from '../../components/utility/nf-lift-box';
+import {NfLiftBox} from '../../components/utility/nf-utility';
 
 import './profile.css';
 
