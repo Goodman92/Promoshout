@@ -1,0 +1,78 @@
+div.green-box {
+    position: relative;
+    background: #00cc67;
+    color: #fff;
+}
+
+div.profile-box-intro {
+    background: #f7f7f7;
+    border: 1px solid #eaedef;
+    color: #000;
+    border-radius: 0;
+    padding: 1em;
+}
+
+div.profile-box-bottom {
+    padding: 1em 1em 1em 1em;
+    border: 1px solid #eaedef;
+}
+
+div.profile-box-details {
+    display: flex;
+    align-items: center;
+}
+
+div.profile-box-info {
+    padding-left: 0.5em;
+}
+
+div.offer-box {
+    background: #00cc67;
+    color: #fff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.7em;
+}
+
+div.offer-icon {
+    flex: 0.2;
+    text-align: center;
+    /*background: rgba(0, 0, 0, 0.10); */
+}
+
+div.offer-content {
+    flex: 0.8;
+    text-align: center;
+}
+
+div.offer-content h5, h6 {
+    margin: 0;
+}
+
+/* REVIEW ITEM */
+div.review-item {
+    display: flex;
+    align-items: center;
+}
+
+div.review-item figure {
+    margin: 0;
+}
+
+div.review-info {
+    margin-left: 1em;
+}
+
+div.review-text {
+    padding: 0.8em;
+    background: #f7f7f7;
+    border-radius: 10px 10px 10px 0px;
+}
+
+
+
+
+

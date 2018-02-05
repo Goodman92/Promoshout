@@ -2,11 +2,12 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import App from './scenes/home/App';
 import Influencers from './scenes/influencers/influencers';
+import Profile from './scenes/profile/profile';
 import thunk from 'redux-thunk';
 import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-import { combineReducers } from 'redux'
+import {combineReducers} from 'redux'
 
 import featured from './reducers/index';
 import filters from './reducers/filters';
@@ -53,6 +54,9 @@ ReactDOM.render(
         )}/>
         <Route path="/influencers" component={() => (
           <RouteWrapper component={<Influencers/>}/>
+        )}/>
+        <Route path="/profile" component={() => (
+          <RouteWrapper component={<Profile/>}/>
         )}/>
       </div>
     </Router>

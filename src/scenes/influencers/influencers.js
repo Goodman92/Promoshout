@@ -20,10 +20,6 @@ class Influencers extends Component {
     dispatch: PropTypes.func.isRequired
   };
 
-  constructor(props) {
-    super(props);
-  };
-
   filterOnRemove = (key) => {
     this.props.dispatch(removeFilter(key));
   };
@@ -85,7 +81,7 @@ class Influencers extends Component {
 const mapStateToProps = (state) => {
   const {influencers, filters} = state;
   const page = influencers.page;
-  const items = influencers.postsByInfluencers[page] || {items: []};
+  const items = influencers.postsByInfluencers[page] || {count:0, items: []};
 
   return {filters, items, page};
 };

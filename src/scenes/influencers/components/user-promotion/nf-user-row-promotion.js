@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 import './nf-user-promotion.css';
 import moment from 'moment'
 
@@ -22,7 +23,7 @@ class NfUserRowPromotion extends Component {
       <div className="user-promotion-row">
         <div className="row">
           <div className="col">
-            <a href="">@{this.props.item.username}</a>
+            <Link to="/profile">@{this.props.item.username}</Link>
           </div>
           <div className="col">{this.suffixedNumber(this.props.item.followers)}</div>
           <div className="col">${this.props.item.charge}</div>

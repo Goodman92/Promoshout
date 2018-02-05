@@ -50,7 +50,6 @@ Array.from(Array(10).keys(), (_, i) => {
   };
   return null;
 });
-console.log(influencerMock);
 /* mock data for featured */
 const mockFeatured = [
   {
