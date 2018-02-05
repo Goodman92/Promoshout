@@ -1,0 +1,38 @@
+div.nf-carousel-slider {
+    padding-left:4rem;
+    padding-right:4rem;
+}
+
+i.nf-carousel-toggle {
+    color:#fff;
+    cursor:pointer;
+}
+
+div.nf-carousel-slider i.nf-carousel-toggle {
+    position:absolute;
+    top: 50%;
+}
+div.nf-carousel-slider i.nf-carousel-toggle:first-child {
+    left: 1rem;
+}
+div.nf-carousel-slider i.nf-carousel-toggle:last-child {
+    right: 1rem;
+}
+
+.nf-carousel-button-wrapper {
+    padding: 1rem;
+    background-color: #363B4D;
+    border-radius: 50%;
+    padding: 7px 13px 8px 18px;
+    opacity: .3;
+}
+
+.nf-carousel-button-wrapper:hover {
+    opacity: .8;
+    -webkit-transition: opacity 0.3s ease-in;
+    -moz-transition: opacity 0.3s ease-in;
+    -o-transition: opacity 0.3s ease-in;
+    -ms-transition: opacity 0.3s ease-in;
+    transition: opacity 0.3s ease-in;
+}
+

@@ -1,5 +1,15 @@
 - Is it against redux paragdim to copy state to local state temporarilly before pushing changes to tree(nf-search-filters)
 - Could nf-search-filters be more dynamic
-
+- moment.js
 - näyttää palikalta t. valtteri
 - moment.js
+
+* TODO *
+
+- change slider to https://github.com/react-component/slider
+
+
+* WHAT WE DO topics *
+
+- Mention about instant instagram account activation  					(in shoutcart this takes 2-3 days)
+- Mention about that we only charge fees on completed shoutouts (shoutcart robs fees even buyer does not get a shoutout)

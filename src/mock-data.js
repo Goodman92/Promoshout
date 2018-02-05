@@ -57,6 +57,7 @@ const mockFeatured = [
     name: '@test',
     price: 1337,
     followers: '50k',
+    following: '122',
     desc: `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec risus dolor, rutrum eget eros eu, bibendum vulputate leo. Suspendisse consequat massa id diam mattis porttitor. Duis ligula magn`,
     image: '../../../resources/images/random/1.jpg'
@@ -66,6 +67,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec risus dolor, rutr
     name: '@chitywok',
     price: 130,
     followers: '5M',
+    following: '15k',
     desc: `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec risus dolor, rutrum eget eros eu, bibendum vulputate leo. Suspendisse consequat massa id diam mattis porttitor. Duis ligula magn`,
     image: '../../../resources/images/random/2.jpg'
@@ -75,6 +77,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec risus dolor, rutr
     name: '@keewwl',
     price: 100,
     followers: '32k',
+    following: '12k',
     desc: `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec risus dolor, rutrum eget eros eu, bibendum vulputate leo. Suspendisse consequat massa id diam mattis porttitor. Duis ligula magn`,
     image: '../../../resources/images/random/3.jpg'
@@ -84,6 +87,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec risus dolor, rutr
     name: '@John',
     price: 1311,
     followers: '1.3M',
+    following: '142',
     desc: `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec risus dolor, rutrum eget eros eu, bibendum vulputate leo. Suspendisse consequat massa id diam mattis porttitor. Duis ligula magn`,
     image: '../../../resources/images/random/4.jpg'
@@ -93,6 +97,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec risus dolor, rutr
     name: '@Lad',
     price: 1337,
     followers: '50k',
+    following: '1k',
     desc: `
       rutrum eget eros eu, bibendum vulputate leo. Suspendisse consequat massa id diam mattis porttitor. Duis ligula magn`,
     image: '../../../resources/images/random/4.jpg'
@@ -102,6 +107,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec risus dolor, rutr
     name: '@sickmeit',
     price: 14,
     followers: '10k',
+    following: '1k',
     desc: `
       Lorem ipsum dolor sit amet, consectetur aequat massa id diam mattis porttitor. Duis ligula magn`,
     image: '../../../resources/images/random/4.jpg'
@@ -111,6 +117,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec risus dolor, rutr
     name: '@test',
     price: 5,
     followers: '5000',
+    following: '1k',
     desc: `
     uspendisse consequat massa id diam mattis porttitor. Duis ligula magn`,
     image: '../../../resources/images/random/4.jpg'

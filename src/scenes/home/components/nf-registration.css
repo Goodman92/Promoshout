@@ -11,6 +11,8 @@
 }
 
 .registration-box a {
+    width: 19rem;
+    text-align: center;
     border: 1px solid #fff !important;
     color: #fff;
     padding: 2rem;
@@ -43,9 +45,6 @@ h2.intro-heading {
 @media (max-width: 991px) {
     .registration-box-wrapper {
         text-align: center!important;
-    }
-
-    .registration-box-wrapper {
         margin-bottom: 2rem;
     }
 }
