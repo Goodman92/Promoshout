@@ -94,4 +94,8 @@ h6.h7 {
     font-size: 0.9em;
 }
 
+.td-underline {
+    text-decoration: underline !important;
+}
+
 

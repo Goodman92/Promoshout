@@ -14,29 +14,66 @@ const liftBox = (transcluded) => {
   )
 };
 
-const loginForm = () => {
+class loginForm extends Component {
 
-  return (
-      <form className="mw-350">
+  constructor(props) {
+    super(props);
+    this.state = {showForgotForm: false};
+  };
+
+  onForgotClick = () => {
+    this.setState({showForgotForm: !this.state.showForgotForm});
+  };
+
+
+  render() {
+    const renderForgotGroup = () => (
         <div className="form-group">
-          <label>Email address</label>
-          <input type="email" className="form-control" placeholder="Enter email"/>
+          <button type="submit" className="btn btn-danger form-control">Reset password</button>
         </div>
-        <div className="form-group">
-          <label>Password</label>
-          <input type="password" className="form-control" placeholder="Password"/>
-          <small className="form-text text-muted">Forgot your password? Click <a> here </a></small>
+    );
+
+    const renderSubmitGroup = () => (
+        <div>
+          <button type="submit" className="btn btn-success form-control">
+            Sign in!
+          </button>
+          <small className="form-text text-muted text-center">or</small>
+          <button type="submit" className="btn btn-success form-control">
+            Sign in with Instagram
+          </button>
         </div>
-        <button type="submit" className="btn btn-success form-control">
-          Sign in!
-        </button>
-        <small className="form-text text-muted text-center">or</small>
-        <button type="submit" className="btn btn-success form-control">
-          Sign in with Instagram
-        </button>
-      </form>
-  );
-};
+    );
+
+    const renderButtons = () => {
+      if (this.state.showForgotForm)
+        return renderForgotGroup();
+      return renderSubmitGroup();
+    };
+
+    return (
+        <form className="mw-350">
+          <div className="form-group">
+            <label>Email address</label>
+            <input type="email" className="form-control" placeholder="Email"/>
+          </div>
+          <div className="form-group"> { this.state.showForgotForm ? null :
+              <div>
+                <label>Password</label>
+                <input type="password" className="form-control" placeholder="Password"/>
+              </div>}
+
+            <small className="form-text text-muted">
+              Forgot your password? Click
+              <span className="pointer td-underline" onClick={this.onForgotClick}> here </span>
+            </small>
+          </div>
+          { renderButtons()}
+        </form>
+    );
+  }
+}
+
 
 export const NfLoginForm = loginForm;
 export const NfLiftBox = liftBox;
