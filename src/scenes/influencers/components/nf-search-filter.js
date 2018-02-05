@@ -5,6 +5,10 @@ import NfCollapseItem from '../../../components/collapse-item/nf-collapse-item';
 import NfIconInput from '../../../components/icon-input/nf-icon-input';
 import NfSliderInput from '../../../components/slider-input/nf-slider-input';
 
+import Slider, { Range } from 'rc-slider';
+import Tooltip from 'rc-tooltip';
+import 'rc-slider/assets/index.css';
+
 import './nf-search-filter.css';
 
 class NfSearchFilter extends Component {
@@ -16,7 +20,14 @@ class NfSearchFilter extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {...props.filters};
+    this.state = {
+      ...props.filters,
+      low: 0, 
+      high: 100000
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.componentWillReceiveProps = this.componentWillReceiveProps.bind(this);
   }
 
   onSubmit = (e) => {
@@ -27,6 +38,13 @@ class NfSearchFilter extends Component {
   componentWillReceiveProps = (nextProps) => {
     this.setState({...nextProps.filters});
   };
+
+  handleChange(values) {
+    this.setState({
+      low: values[0],
+      high: values[1]
+    })
+  }
 
   render() {
 
@@ -44,30 +62,51 @@ class NfSearchFilter extends Component {
                   <NfIconInput icon="fa fa-usd" styles="mb-1">
                     <input className="form-control" placeholder="Min Price"/>
                   </NfIconInput>
-                  < NfIconInput icon="fa fa-usd">
+                  <NfIconInput icon="fa fa-usd">
                     <input className="form-control" placeholder="Max Price"/>
                   </NfIconInput>
                 </div>
               }/>
-              <NfCollapseItem toggle="4" header={
-                <span> By Location </span>
-              } content={
-                <select className="form-control" value={this.props.filters.country}>
-                  <option value="Finland"> Finland</option>
-                  <option value="Sweden"> Sweden</option>
-                  <option value="Norway"> Norway</option>
-                </select>
-              }/>
-              <NfCollapseItem toggle="5" header={
-                <span> By Followers </span>
-              } content={
-                <NfSliderInput/>
-              }/>
-              <NfCollapseItem toggle="6" header={
-                <span> By Engagement Rate </span>
-              } content={
-                <NfSliderInput/>
-              }/>
+
+              <NfCollapseItem 
+                toggle="4" 
+                header={ <span> By Location </span> } 
+                content={
+                  <select className="form-control" value={this.props.filters.country}>
+                    <option value="Finland"> Finland</option>
+                    <option value="Sweden"> Sweden</option>
+                    <option value="Norway"> Norway</option>
+                  </select>
+                }
+              />
+
+              <NfCollapseItem 
+                toggle="5" 
+                header={ <span> By Followers </span> } 
+                content={ <NfSliderInput/> }
+              />
+
+              <NfCollapseItem 
+                toggle="6" 
+                header={ <span> By Engagement Rate </span> } 
+                content={  
+                <div>
+                  <div className="row">
+                    <div className="col-lg-6 col-md-6"><p> {this.state.low} </p> </div>
+                    <div className="col-lg-6 col-md-6 text-right"><p> {this.state.high} </p> </div>
+                  </div>
+
+                  <Range 
+                    min={0} 
+                    max={100000} 
+                    value={[this.state.low, this.state.high]} 
+                    onChange={this.handleChange} 
+                  />
+                </div>  
+
+                }
+              />
+
               <NfCollapseItem toggle="8" header={
                 <span> By Average age </span>
               } content={
@@ -88,6 +127,17 @@ class NfSearchFilter extends Component {
               <button type="submit" className="btn btn-success btn-apply"> Apply filters
               </button>
             </div>
+          </div>
+          <div>
+            <p> Range </p>
+            <p> {this.state.low} </p>
+            <p> {this.state.high} </p>
+            <Range 
+              min={0} 
+              max={100000} 
+              value={[this.state.low, this.state.high]} 
+              onChange={this.handleChange} 
+            />
           </div>
         </form>
     );
