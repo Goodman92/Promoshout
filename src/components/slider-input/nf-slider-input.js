@@ -5,8 +5,12 @@ class NfSliderInput extends Component {
 
   constructor(props) {
     super(props);
-    this.mockProps = {low: 0, high: 100000, ticks: 1000};
-    this.state = {...this.mockProps};
+    this.mockProps = {
+      low: 0,
+      high: 100000,
+      ticks: 1000
+    };
+    this.state = { ...this.mockProps };
   }
 
   getPosition = (event, blocker, target, canMove) => {
