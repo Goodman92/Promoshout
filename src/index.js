@@ -17,6 +17,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 import NfHeader from './components/header/nf-header';
 import NfFooter from './components/footer/nf-footer';
+import NfSideNav from './components/side-nav/nf-side-nav';
 
 import './index.css';
 
@@ -29,39 +30,53 @@ const nfReducers = combineReducers({
 
 const store = createStore(nfReducers, applyMiddleware(...[thunk]));
 
+class RouteWrapperPlatform extends Component {
+  render() {
+    return (
+        <div className="platform-wrapper">
+          <NfSideNav/>
+        </div>
+    );
+  }
+}
+
 class RouteWrapper extends Component {
   render() {
     return (
-      <div>
-        <section role="navigation">
-          <NfHeader/>
-        </section>
-        {this.props.component}
-        <section role="footer">
-          <NfFooter/>
-        </section>
-      </div>
+        <div>
+          <section role="navigation">
+            <NfHeader/>
+          </section>
+          {this.props.component}
+          <section role="footer">
+            <NfFooter/>
+          </section>
+        </div>
     );
   }
 }
 
 ReactDOM.render(
-  <Provider store={store}>
-    <Router>
-      <div>
-        <Route exact path="/" component={() => (
-          <RouteWrapper component={<App/>}/>
-        )}/>
-        <Route path="/influencers" component={() => (
-          <RouteWrapper component={<Influencers/>}/>
-        )}/>
-        <Route path="/profile" component={() => (
-          <RouteWrapper component={<Profile/>}/>
-        )}/>
-      </div>
-    </Router>
-  </Provider>,
-  document.getElementById('root')
+    <Provider store={store}>
+      <Router>
+        <div>
+          <Route exact path="/" component={() => (
+              <RouteWrapper component={<App/>}/>
+          )}/>
+          <Route path="/influencers" component={() => (
+              <RouteWrapper component={<Influencers/>}/>
+          )}/>
+          <Route path="/profile" component={() => (
+              <RouteWrapper component={<Profile/>}/>
+          )}/>
+          <Route path="/dashboard" component={() => (
+              <RouteWrapperPlatform component={<Profile/>}/>
+          )}/>
+        </div>
+      </Router>
+    </Provider>
+    ,
+    document.getElementById('root')
 );
 
 registerServiceWorker();

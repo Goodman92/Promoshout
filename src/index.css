@@ -19,6 +19,14 @@ input, button, select, textarea, optgroup, option {
     font-family: inherit;
 }
 
+#root {
+    height: 100%;
+}
+
+.platform-wrapper {
+    display: flex;
+}
+
 @font-face {
     font-family: SinaloaStd;
     src: url("./SinaloaStd.otf") format("opentype");

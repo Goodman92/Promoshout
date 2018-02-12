@@ -1,0 +1,41 @@
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    height: 100vh;
+}
+
+nav.nf-sidebar a {
+    color: #a7b1c2;
+    padding: 1em;
+    position: relative;
+    display: block;
+}
+
+nav.nf-sidebar a:hover {
+    background-color: #293846;
+    color: white;
+    text-decoration: none;
+}
+
+nav.nf-sidebar li {
+    background: #2f4050;
+}
+
+nav.nf-sidebar a > i {
+    padding-right: 1em;
+}
+
+ul.nav-list-items {
+    height: 100%;
+    background: #2f4050;
+}
+
+div.sidebar-header {
+    background-color: #2f4050;
+    background-image: url(http://webapplayers.com/inspinia_admin-v2.7.1/css/patterns/header-profile.png);
+}
+
+div.sidebar-header {
+    color: #fff;
+    padding: 1em;
+}
