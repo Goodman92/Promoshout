@@ -6,22 +6,19 @@
 - näyttää palikalta t. valtteri
 - moment.js
 
-git commit -m "Navigation + Register modals"
-
 * TODO *
 
-tarjous modaali
-	- Campaign name
-	- Website / Product URL
-	- image / vid
-	- Caption (TIPS: Influencers will post exactly what you write in the caption message. Instagram will only allow 30 max hashtags. You can include @username in captions. You may also include emojis and basic formatting.)
-	- Date / Deadline?
-
+	tarjous modaali
+		- Campaign name
+		- Website / Product URL
+		- image / vid
+		- Caption (TIPS: Influencers will post exactly what you write in the caption message. Instagram will only allow 30 max hashtags. You can include @username in captions. You may also include emojis and basic formatting.)
+		- Date / Deadline?
 
 * WHAT WE DO topics *
 
-- Mention about instant instagram account activation  					(in shoutcart this takes 2-3 days)
-- Mention about that we only charge fees on completed shoutouts (shoutcart robs fees even buyer does not get a shoutout)
+	- Mention about instant instagram account activation  					(in shoutcart this takes 2-3 days)
+	- Mention about that we only charge fees on completed shoutouts (shoutcart robs fees even buyer does not get a shoutout)
 
 
 

@@ -1,26 +1,9 @@
 import React, {Component} from 'react';
 import Modal from 'react-modal';
+import customStyles from './nf-modal-styles.js';
+import { NfInput } from '../../components/utility/nf-utility';
+
 import './nf-modal-register-product.css';
-
-const customStyles = {
-
-  overlay: {
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    backgroundColor: 'rgba(0, 0, 0, 0.75)',
-  },
-  content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)',
-  }
-};
 
 
 class NfModalProductRegistration extends Component {
@@ -93,46 +76,12 @@ class NfModalProductRegistration extends Component {
               <div className="modal-logo-desktop-wrapper">
                 <span className="modal-logo-first-part">Promo</span><span className="modal-logo-last-part">shout</span>
               </div>
-             <div className="page__section">
-                <label className="field field_type2">
-                  <input className="field__input" type="text" value={this.state.registerForm.firstName} onChange={this.handleChangeFor('firstName')} placeholder=" " />
-                  <span className="field__label-wrap">
-                    <span className="field__label">First Name</span>
-                  </span>
-                </label>
-              </div>
-              <div className="page__section">
-                <label className="field field_type2">
-                  <input className="field__input" type="text" value={this.state.registerForm.lastName} onChange={this.handleChangeFor('lastName')} placeholder=" " />
-                  <span className="field__label-wrap">
-                    <span className="field__label">Last Name</span>
-                  </span>
-                </label>
-              </div>
-              <div className="page__section">
-                <label className="field field_type2">
-                  <input className="field__input" type="email" value={this.state.registerForm.email} onChange={this.handleChangeFor('email')} placeholder=" " />
-                  <span className="field__label-wrap">
-                    <span className="field__label">Email</span>
-                  </span>
-                </label>
-              </div>
-              <div className="page__section">
-                <label className="field field_type2">
-                  <input className="field__input" type="password" value={this.state.registerForm.password} onChange={this.handleChangeFor('password')} placeholder=" " />
-                  <span className="field__label-wrap">
-                    <span className="field__label">Password</span>
-                  </span>
-                </label>
-              </div>
-              <div className="page__section">
-                <label className="field field_type2">
-                  <input className="field__input" type="password" value={this.state.registerForm.confirmPassword} onChange={this.handleChangeFor('confirmPassword')} placeholder=" " />
-                  <span className="field__label-wrap">
-                    <span className="field__label">Confirm Password</span>
-                  </span>
-                </label>
-              </div>
+
+              <NfInput type={'text'} value={this.state.registerForm.firstName} label={'First Name'} param={this.handleChangeFor('firstName')} />
+              <NfInput type={'text'} value={this.state.registerForm.lastName} label={'Last Name'} param={this.handleChangeFor('lastName')} />
+              <NfInput type={'email'} value={this.state.registerForm.email} label={'Email'} param={this.handleChangeFor('email')} />
+              <NfInput type={'password'} value={this.state.registerForm.password} label={'Password'} param={this.handleChangeFor('password')} />
+              <NfInput type={'password'} value={this.state.registerForm.confirmPassword} label={'Confirm Password'} param={this.handleChangeFor('confirmPassword')} />
 
               {this.state.showError ? 
                 <div className="alert alert-danger">
