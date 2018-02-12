@@ -1,15 +1,34 @@
 - Is it against redux paragdim to copy state to local state temporarilly before pushing changes to tree(nf-search-filters)
 - Could nf-search-filters be more dynamic
 - moment.js
+
+
 - näyttää palikalta t. valtteri
 - moment.js
 
+git commit -m "Navigation + Register modals"
+
 * TODO *
 
-- change slider to https://github.com/react-component/slider
+tarjous modaali
+	- Campaign name
+	- Website / Product URL
+	- image / vid
+	- Caption (TIPS: Influencers will post exactly what you write in the caption message. Instagram will only allow 30 max hashtags. You can include @username in captions. You may also include emojis and basic formatting.)
+	- Date / Deadline?
 
 
 * WHAT WE DO topics *
 
 - Mention about instant instagram account activation  					(in shoutcart this takes 2-3 days)
 - Mention about that we only charge fees on completed shoutouts (shoutcart robs fees even buyer does not get a shoutout)
+
+
+
+
+
+
+
+
+
+

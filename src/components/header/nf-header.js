@@ -21,12 +21,17 @@ class NfHeader extends Component {
 
     return (
         <div className="header-wrapper">
-          <nav className="navbar navbar-inverse navbar-toggleable-md bg-faded nf-navbar">
+          <nav className="navbar navbar-inverse navbar-toggleable-md nf-navbar">
+
+
             <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"/>
             </button>
+
+
+
             <Link to="/" className="navbar-brand main-logo">
               <div className="logo-desktop-wrapper">
                 <span className="logo-first-part">Promo</span><span className="logo-last-part">shout</span>
@@ -37,21 +42,23 @@ class NfHeader extends Component {
             </Link>
             <div className="collapse navbar-collapse nf-navbar-list" id="navbarSupportedContent">
               <ul className="navbar-nav nf-nav">
-                <li className="nav-item active">
-                  <Link to="/influencers" className="nav-link">
-                    Browse influencers <span className="sr-only">(current)</span>
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link to="/influencers" className="nav-link">
-                    Browse brand
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link to="/influencers" className="nav-link">
-                    What we do
-                  </Link>
-                </li>
+                <div className="partial-nav-items">
+                  <li className="nav-item active">
+                    <Link to="/" className="nav-link">
+                      Home
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/influencers" className="nav-link">
+                      Browse influencers
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/influencers" className="nav-link">
+                      What we do
+                    </Link>
+                  </li>
+                </div>
                 <li className="nav-item" key="loginParent" id="loginParent">
                   <span className="nav-link" onClick={(e) => onLoginClick(e)}>Login</span>
                   <NfPopover show={this.state.showLogin}>

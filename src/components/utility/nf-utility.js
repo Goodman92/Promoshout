@@ -39,9 +39,9 @@ class loginForm extends Component {
             Sign in!
           </button>
           <small className="form-text text-muted text-center">or</small>
-          <button type="submit" className="btn btn-success form-control">
-            Sign in with Instagram
-          </button>
+          <div className="gl-align-center">
+            <button type="button" className="gl-insta-button"><i className="fa fa-instagram left"></i> Sign In With Instagram</button>
+          </div>
         </div>
     );
 
@@ -52,7 +52,7 @@ class loginForm extends Component {
     };
 
     return (
-        <form className="mw-350">
+        <form className="mw-326">
           <div className="form-group">
             <label>Email address</label>
             <input type="email" className="form-control" placeholder="Email"/>

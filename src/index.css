@@ -94,8 +94,8 @@ input, button, select, textarea, optgroup, option {
 
 }
 
-.mw-350 {
-    min-width: 350px;
+.mw-326 {
+    min-width: 326px;
 }
 
 h6.h7 {
@@ -106,4 +106,36 @@ h6.h7 {
     text-decoration: underline !important;
 }
 
+.gl-button-wrapper {
+    width: 100%;
+    background-color: #00CC67;
+    border: 1px solid #fff;
+    padding: 11px 0px;
+    color: white;
+}
 
+.gl-button-wrapper:hover {
+    background-color: #00a352;
+    -webkit-transition: background-color 0.3s ease-in;
+    -moz-transition: background-color 0.3s ease-in;
+    -o-transition: background-color 0.3s ease-in;
+    -ms-transition: background-color 0.3s ease-in;
+    transition: background-color 0.3s ease-in;
+}
+
+.gl-insta-button {
+    background-color: #2E5E86;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.gl-align-center {
+  text-align: center;
+}
