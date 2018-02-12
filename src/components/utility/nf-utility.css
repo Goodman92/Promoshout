@@ -1,3 +1,6 @@
+
+/* liftBox styles*/
+
 div.lift-box-header {
     background: #f7f7f7;
     border: 1px solid #eaedef;
@@ -10,4 +13,107 @@ div.lift-box-content {
     padding: 1em 1em 1em 1em;
     border: 1px solid #eaedef;
     background: #fff;
+}
+
+
+/* CustomInput styles */
+
+.page__section {
+    margin-top: 1.5rem;
+}
+
+.field__input{
+  width: 100%;
+  box-sizing: border-box;
+  background-color: transparent;
+
+  /*for iOS */
+  appearance: none;
+  border-radius: 0;
+
+  border-style: solid;
+  border-color: transparent;
+
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+
+  font-family: Quicksand;
+  letter-spacing: 0px;
+  font-size: 100%;
+  color: inherit;
+}
+
+.field__input:focus{
+  outline: none;  
+}
+
+.field__input:focus::-webkit-input-placeholder{ 
+  transition: opacity .3s ease-out .3s;
+  opacity: 1;
+}
+
+.field__input:focus::-moz-placeholder{ 
+  transition: opacity .3s ease-out .3s;
+  opacity: 1;
+}
+
+.field__label-wrap{
+  height: 100%;
+  display: block;
+}
+
+.field__label{
+  position: absolute;
+  top: calc(0px + 0px + 0px);
+  left: calc(0px + 0px + 0px);
+
+  pointer-events: none;
+  font-size: .9em;
+
+  transition: top .3s cubic-bezier(0.9,-0.15, 0.1, 1.15), opacity .3s ease-out;
+  will-change: top, opacity;
+}
+
+
+.field__input:not(:placeholder-shown) ~ .field__label-wrap .field__label{
+  opacity: 1;
+  top: calc(-1 * calc(0px + 0px + 15px));
+}
+
+.field__input:focus ~ .field__label-wrap .field__label{
+  opacity: 1;
+  top: calc(-1 * calc(0px + 0px + 15px));
+}
+
+.field_type2{
+  position: relative;  
+  display: block;
+  border-bottom-width: 2px;
+  padding-top: 5px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+}
+
+.field_type2 .field__label-wrap:after{
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  will-change: width;
+  transition: width .3s ease-out;
+}
+
+.field_type2 .field__input:focus ~ .field__label-wrap:after{
+  width: 100%;
 }

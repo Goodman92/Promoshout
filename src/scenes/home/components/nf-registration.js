@@ -4,26 +4,6 @@ import NfModalProductRegistration from '../../../components/modal/nf-modal-regis
 import NfModalInfluencerRegistration from '../../../components/modal/nf-modal-register-influencer.js';
 import './nf-registration.css';
 
-const customStyles = {
-
-  overlay: {
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    backgroundColor: 'rgba(0, 0, 0, 0.75)',
-  },
-  content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)',
-  }
-};
-
 
 class NfRegistration extends Component {
 
@@ -34,27 +14,6 @@ class NfRegistration extends Component {
         ProductModalIsOpen: false,
         InfluencerModalIsOpen: false
       };
-
-      this.openProductModal = this.openProductModal.bind(this);
-      this.closeProductModal = this.closeProductModal.bind(this);
-      this.openInfluencerModal = this.openInfluencerModal.bind(this);
-      this.closeInfluencerModal = this.closeInfluencerModal.bind(this);
-    }
-
-    /* Product Modal */
-    openProductModal() {
-      this.setState({ProductModalIsOpen: true});
-    }
-    closeProductModal() {
-      this.setState({ProductModalIsOpen: false});
-    }
-
-    /* Influencer Modal */
-    openInfluencerModal() {
-      this.setState({InfluencerModalIsOpen: true});
-    }
-    closeInfluencerModal() {
-      this.setState({InfluencerModalIsOpen: false});
     }
 
   render() {
@@ -79,22 +38,22 @@ class NfRegistration extends Component {
             <div className="row mt-5">
               <div className="col-lg-6 col-xs-12 text-right registration-box-wrapper">
                 <div className="registration-box">
-                  <a onClick={this.openProductModal}>
+                  <a onClick={ () => this.setState({ProductModalIsOpen: true}) }>
                     Register as a product
                   </a>
                 </div>
               </div>
               <div className="col-lg-6 col-xs-12 registration-box-wrapper">
                 <div className="registration-box">
-                  <a onClick={this.openInfluencerModal} >
+                  <a onClick={() => this.setState({InfluencerModalIsOpen: true}) } >
                     Register as a influencer
                   </a>
                 </div>
               </div>
             </div>
           </div>
-            <NfModalProductRegistration isModalOpen={this.state.ProductModalIsOpen} closeModal={this.closeProductModal}/>
-            <NfModalInfluencerRegistration isModalOpen={this.state.InfluencerModalIsOpen} closeModal={this.closeInfluencerModal}/>
+            <NfModalProductRegistration isModalOpen={this.state.ProductModalIsOpen} closeModal={ () => this.setState({ProductModalIsOpen: false}) }/>
+            <NfModalInfluencerRegistration isModalOpen={this.state.InfluencerModalIsOpen} closeModal={() => this.setState({InfluencerModalIsOpen: false}) }/>
         </div>
     );
   }

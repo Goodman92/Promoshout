@@ -14,6 +14,37 @@ const liftBox = (transcluded) => {
   )
 };
 
+class CustomField extends Component {
+
+  render() {
+    return(
+      <div className="page__section">
+        <label className="field field_type2">
+          {this.props.children}
+          <span className="field__label-wrap">
+            <span className="field__label">{this.props.label}</span>
+          </span>
+        </label>
+      </div>
+    );
+  }
+}
+const customTextarea = (transcluded) => {
+  return (
+      <CustomField label={transcluded.label}>
+          <textarea className="field__input" type={transcluded.type} value={transcluded.value} onChange={transcluded.param} placeholder=" " />
+      </CustomField>    
+  )
+};
+const customInput = (transcluded) => {
+  return (
+      <CustomField label={transcluded.label}>
+         <input className="field__input" type={transcluded.type} value={transcluded.value} onChange={transcluded.param} placeholder=" " />
+      </CustomField> 
+  )
+};
+
+
 class loginForm extends Component {
 
   constructor(props) {
@@ -77,3 +108,6 @@ class loginForm extends Component {
 
 export const NfLoginForm = loginForm;
 export const NfLiftBox = liftBox;
+export const NfTextarea = customTextarea;
+export const NfInput = customInput;
+export const NfCustomField = CustomField;
