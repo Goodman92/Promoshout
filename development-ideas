@@ -2,17 +2,20 @@
 - Could nf-search-filters be more dynamic
 - moment.js
 
-git commmit -m "fixed indentation + "
+
+- näyttää palikalta t. valtteri
+- moment.js
+
+git commit -m "Navigation + Register modals"
 
 * TODO *
 
-- fix navigation bar
-	- clean nf-header.css file when navigation is ready
-
-- register modals
-- change slider to https://github.com/react-component/slider
-- suffixNumber method to component influencers\components\user-promotion\nf-user-promotion.js:
-
+tarjous modaali
+	- Campaign name
+	- Website / Product URL
+	- image / vid
+	- Caption (TIPS: Influencers will post exactly what you write in the caption message. Instagram will only allow 30 max hashtags. You can include @username in captions. You may also include emojis and basic formatting.)
+	- Date / Deadline?
 
 
 * WHAT WE DO topics *
@@ -27,50 +30,5 @@ git commmit -m "fixed indentation + "
 
 
 
-
-
-      <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-        <Link to="/" className="navbar-brand main-logo">
-          <div className="logo-desktop-wrapper">
-            <span className="logo-first-part">Promo</span><span className="logo-last-part">shout</span>
-          </div>
-          <div className="logo-phone-wrapper">
-            <span className="logo-first-part">P</span><span className="logo-last-part">S</span>
-          </div>
-      </Link>   
-        <button class="navbar-toggler navbar-toggler-right" 
-            type="button" 
-            data-toggle="collapse"
-            data-target="#navbarNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-
-
-
-
-
-
-
-
-
-
-* OLD NAVIGATION *
 
 

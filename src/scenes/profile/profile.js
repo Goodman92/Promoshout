@@ -1,13 +1,35 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import NfLiftBox from '../../components/utility/nf-lift-box';
+import {NfLiftBox} from '../../components/utility/nf-utility';
+import NfModalOffer from '../../components/modal/nf-modal-offer.js';
 
 import './profile.css';
 
 class Profile extends Component {
 
+    constructor(props) {
+      super(props);
+
+      this.state = {
+        OfferModalIsOpen: false
+      };
+
+      this.openOfferModal = this.openOfferModal.bind(this);
+      this.closeOfferModal = this.closeOfferModal.bind(this);
+    }
+
+    /* Offer Modal */
+    openOfferModal() {
+      this.setState({OfferModalIsOpen: true});
+    }
+    closeOfferModal() {
+      this.setState({OfferModalIsOpen: false});
+    }
+
   render() {
     return (
+      
+
       <div className="container-fluid">
         <div className="row mt-3 mb-1">
           <div className="col-lg-3">
@@ -55,21 +77,33 @@ class Profile extends Component {
                       <span> Member since Jun 27, 2017</span>
                     </div>
                   </div>
-                  <div className="offer-box">
-                    <div className="offer-icon">
-                      <i className="fa fa-2x fa-briefcase"/>
-                    </div>
-                    <div className="offer-content">
-                      <h5> Make an offer</h5>
-                      <h6 className="h7">Place your best offer now</h6>
-                    </div>
-                  </div>
+                    <a onClick={this.openOfferModal}>
+                      <div className="offer-box">
+                        <div className="offer-icon">
+                          <i className="fa fa-2x fa-briefcase"/>
+                        </div>
+                        <div className="offer-content">
+                            <h5> Make an offer</h5>
+                            <h6 className="h7">Place your best offer now</h6>
+                        </div>
+                      </div>
+                    </a>
                 </div>
               }/>
+
+              <NfModalOffer isModalOpen={this.state.OfferModalIsOpen} closeModal={this.closeOfferModal} />
+
               <div className="mt-1">
                 <NfLiftBox header={<span> Engament rate</span>} content={
                   <h3 className="text-center">
                     7.3%
+                  </h3>
+                }/>
+              </div>
+              <div className="mt-1">
+                <NfLiftBox header={<span> Deals made through Promoshout</span>} content={
+                  <h3 className="text-center">
+                    3
                   </h3>
                 }/>
               </div>
@@ -124,7 +158,7 @@ class Profile extends Component {
                 }/>
               </div>
               <div className="mt-1">
-                <NfLiftBox header={<span> Reviews</span>} content={
+                <NfLiftBox header={<span> Reviews from customers</span>} content={
                   <div>
                     <div className="review-box mb-1">
                       <div className="review-item">
