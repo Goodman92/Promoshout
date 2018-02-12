@@ -71,7 +71,7 @@ class loginForm extends Component {
           </button>
           <small className="form-text text-muted text-center">or</small>
           <div className="gl-align-center">
-            <button type="button" className="gl-insta-button"><i className="fa fa-instagram left"></i> Sign In With Instagram</button>
+            <button type="button" className="gl-insta-button"><i className="fa fa-instagram left"/> Sign In With Instagram</button>
           </div>
         </div>
     );
@@ -110,4 +110,3 @@ export const NfLoginForm = loginForm;
 export const NfLiftBox = liftBox;
 export const NfTextarea = customTextarea;
 export const NfInput = customInput;
-export const NfCustomField = CustomField;
