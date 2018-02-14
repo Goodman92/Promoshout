@@ -27,6 +27,11 @@ input, button, select, textarea, optgroup, option {
     display: flex;
 }
 
+.platform-content {
+    background-color: #f3f3f4;
+    width: 100%;
+}
+
 @font-face {
     font-family: SinaloaStd;
     src: url("./SinaloaStd.otf") format("opentype");
@@ -137,5 +142,16 @@ h6.h7 {
 }
 
 .gl-align-center {
-  text-align: center;
+    text-align: center;
+}
+
+button.platform-btn {
+    background-color: #1ab394;
+    border-color: #1ab394;
+    color: #FFFFFF;
+    cursor:pointer;
+}
+
+.w-auto {
+    width:auto !important;
 }

@@ -1,0 +1,21 @@
+nav.platform-top-nav {
+    flex-direction:row;
+    justify-content: space-between;
+}
+
+button.platform-nav-toggler {
+    height: 30px;
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+ul.platform-top-right li.nav-item:not(:last-child) {
+    margin-right:1em;
+}
+
+ul.platform-top-right a.nav-link:hover {
+    border-bottom:0;
+}

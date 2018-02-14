@@ -1,58 +1,53 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import './nf-side-nav.css';
 
 
 class NfSideNav extends Component {
 
   render = () => {
+
+    const getCollapseClass = () => {
+      return this.props.collapsed ? "collapse-nav" : "";
+    };
+
     return (
-        <nav id="sidebar" className="nf-sidebar">
+        <nav id="sidebar" className={["nf-sidebar", getCollapseClass()].join(" ")}>
           <div className="sidebar-header">
             <figure>
               <img src="http://exprostudio.com/html/classified/images/author/img-02.jpg"
-                   className="rounded-circle" height="70" width="70"/>
+                   className="rounded-circle img-fluid" height="70" width="70"/>
             </figure>
-            <h4 className="text-left"> @SHRG</h4>
+            <h4 className="text-left nav-item-label"> @SHRG</h4>
           </div>
 
           <ul className="list-unstyled nav-list-items">
             <li className="active">
               <a href="#">
                 <i className="fa fa-th-large"/>
-                <span> Dashboard </span>
+                <span className="nav-item-label"> Dashboard </span>
               </a>
             </li>
             <li>
               <a href="#"> <i className="fa fa-suitcase"/>
-                <span> Open Offers </span></a>
+                <span className="nav-item-label"> Open Offers </span></a>
             </li>
             <li>
-              <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
+              <a href="#">
                 <i className="fa fa-check"/>
-                <span> Past Deals </span></a>
-              <ul className="collapse list-unstyled" id="homeSubmenu">
-                <li>
-                  <a href="#">Page</a>
-                </li>
-                <li>
-                  <a href="#">Page</a>
-                </li>
-                <li>
-                  <a href="#">Page</a>
-                </li>
-              </ul>
-              <li>
-                <a href="#"> <i className="fa fa-cog"/>
-                  <span> Settings </span></a>
-              </li>
-              <li>
-                <a href="#"> <i className="fa fa-ticket"/>
-                  <span> Tickets </span></a>
-              </li>
-              <li>
-                <a href="#"> <i className="fa fa-university"/>
-                  <span> Bank </span></a>
-              </li>
+                <span className="nav-item-label"> Past Deals </span></a>
+            </li>
+            <li>
+              <a href="#"> <i className="fa fa-cog"/>
+                <span className="nav-item-label"> Settings </span></a>
+            </li>
+            <li>
+              <a href="#"> <i className="fa fa-ticket"/>
+                <span className="nav-item-label"> Tickets </span></a>
+            </li>
+            <li>
+              <a href="#"> <i className="fa fa-university"/>
+                <span className="nav-item-label"> Bank </span></a>
             </li>
           </ul>
         </nav>
@@ -60,5 +55,7 @@ class NfSideNav extends Component {
   }
 }
 
-export default NfSideNav;
+const mapStateToProps = (state) => state.nav;
+export default connect(mapStateToProps)(NfSideNav);
+
 
