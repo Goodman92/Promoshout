@@ -17,11 +17,13 @@
 		- Date when campaign should be shown? OR Deadline?
 
 
-git commit -m "Offer modal + new packages react-tippy & react-transition-group + navlink active fixed + arrow functions to profile.js + login transition effect + WhatWeDo page template"
+git commit -m "Sign in link to register modal"
 
 
 * WHAT WE DO topics *
 
+	- what is promoshout
+	- How promoshout works
 	- Mention about instant instagram account activation  					(in shoutcart this takes 2-3 days)
 	- Mention about that we only charge fees on completed shoutouts (shoutcart robs fees even buyer does not get a shoutout)
 

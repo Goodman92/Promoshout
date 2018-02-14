@@ -28,8 +28,13 @@ input, button, select, textarea, optgroup, option {
 }
 
 @font-face {
-    font-family: LatoBlack;
+    font-family: LatoItalic;
     src: url("./Lato-Italic.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: LatoLight;
+    src: url("./Lato-Light.ttf") format("truetype");
 }
 
 @font-face {

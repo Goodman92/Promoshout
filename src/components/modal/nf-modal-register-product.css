@@ -31,3 +31,15 @@
   margin: unset;
   font-size: 12px;
 }
+
+
+.sign-in-desc, .sign-in-link {
+  font-family: Quicksand;
+  letter-spacing: 0;
+  color:#b2b2b2;
+}
+
+.sign-in-link {
+  color: #323232;
+  cursor: pointer;
+}

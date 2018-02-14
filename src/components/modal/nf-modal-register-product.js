@@ -11,6 +11,9 @@ class NfModalProductRegistration extends Component {
   constructor(props) {
     super(props);
 
+    console.log("thiethie");
+    console.log(props);
+
     this.state = {
       showError: false,
       errorMessage: '',
@@ -61,6 +64,10 @@ class NfModalProductRegistration extends Component {
     }
   }
 
+  openSignIn() {
+    // this.props.closeModal; 
+  }
+
   render() {
     return (
         <Modal
@@ -96,6 +103,7 @@ class NfModalProductRegistration extends Component {
               <div className="modal-button-wrapper">
                 <input className="gl-button-wrapper" type="submit" value="Register"/>
               </div>
+              <span className="sign-in-desc">Already have an account?<span className="sign-in-link" onClick={this.openSignIn}> Sign In</span></span>
             </div>
           </form>
         </Modal>
