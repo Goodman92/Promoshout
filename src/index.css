@@ -28,6 +28,11 @@ input, button, select, textarea, optgroup, option {
 }
 
 @font-face {
+    font-family: LatoBlack;
+    src: url("./Lato-Italic.ttf") format("truetype");
+}
+
+@font-face {
     font-family: SinaloaStd;
     src: url("./SinaloaStd.otf") format("opentype");
 }

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './scenes/home/App';
 import Influencers from './scenes/influencers/influencers';
 import Profile from './scenes/profile/profile';
+import WhatWeDo from './scenes/whatwedo/whatwedo';
 import thunk from 'redux-thunk';
 import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
@@ -68,6 +69,9 @@ ReactDOM.render(
           )}/>
           <Route path="/profile" component={() => (
               <RouteWrapper component={<Profile/>}/>
+          )}/>
+          <Route path="/whatwedo" component={() => (
+              <RouteWrapper component={<WhatWeDo/>}/>
           )}/>
           <Route path="/dashboard" component={() => (
               <RouteWrapperPlatform component={<Profile/>}/>

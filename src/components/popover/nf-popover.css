@@ -1,4 +1,16 @@
 .nf-popover {
     z-index: 9;
     position: fixed;
+    -webkit-transition: opacity 2s;
 }
+
+
+@keyframes slideInFromDown {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+

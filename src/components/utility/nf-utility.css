@@ -1,4 +1,5 @@
 
+
 /* liftBox styles*/
 
 div.lift-box-header {
@@ -78,7 +79,7 @@ div.lift-box-content {
   font-size: .9em;
 
   transition: top .3s cubic-bezier(0.9,-0.15, 0.1, 1.15), opacity .3s ease-out;
-  will-change: top, opacity;
+  /*will-change: top, opacity;*/
 }
 
 

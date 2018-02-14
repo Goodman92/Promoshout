@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+
+
 import './nf-utility.css';
 
 const liftBox = (transcluded) => {
@@ -83,7 +85,9 @@ class loginForm extends Component {
     };
 
     return (
-        <form className="mw-326">
+
+
+        <form key={1} className="mw-326">
           <div className="form-group">
             <label>Email address</label>
             <input type="email" className="form-control" placeholder="Email"/>
@@ -101,6 +105,7 @@ class loginForm extends Component {
           </div>
           { renderButtons()}
         </form>
+
     );
   }
 }

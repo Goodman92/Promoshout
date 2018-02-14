@@ -13,7 +13,12 @@
 		- Website / Product URL
 		- image / vid
 		- Caption (TIPS: Influencers will post exactly what you write in the caption message. Instagram will only allow 30 max hashtags. You can include @username in captions. You may also include emojis and basic formatting.)
-		- Date / Deadline?
+		- How long?
+		- Date when campaign should be shown? OR Deadline?
+
+
+git commit -m "Offer modal + new packages react-tippy & react-transition-group + navlink active fixed + arrow functions to profile.js + login transition effect + WhatWeDo page template"
+
 
 * WHAT WE DO topics *
 

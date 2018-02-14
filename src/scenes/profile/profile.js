@@ -13,23 +13,11 @@ class Profile extends Component {
       this.state = {
         OfferModalIsOpen: false
       };
-
-      this.openOfferModal = this.openOfferModal.bind(this);
-      this.closeOfferModal = this.closeOfferModal.bind(this);
     }
 
-    /* Offer Modal */
-    openOfferModal() {
-      this.setState({OfferModalIsOpen: true});
-    }
-    closeOfferModal() {
-      this.setState({OfferModalIsOpen: false});
-    }
 
   render() {
     return (
-      
-
       <div className="container-fluid">
         <div className="row mt-3 mb-1">
           <div className="col-lg-3">
@@ -77,7 +65,8 @@ class Profile extends Component {
                       <span> Member since Jun 27, 2017</span>
                     </div>
                   </div>
-                    <a onClick={this.openOfferModal}>
+
+                    <a onClick={ () => this.setState({OfferModalIsOpen: true}) }>
                       <div className="offer-box">
                         <div className="offer-icon">
                           <i className="fa fa-2x fa-briefcase"/>
@@ -91,7 +80,7 @@ class Profile extends Component {
                 </div>
               }/>
 
-              <NfModalOffer isModalOpen={this.state.OfferModalIsOpen} closeModal={this.closeOfferModal} />
+              <NfModalOffer isModalOpen={this.state.OfferModalIsOpen} closeModal={() => this.setState({OfferModalIsOpen: false}) } />
 
               <div className="mt-1">
                 <NfLiftBox header={<span> Engament rate</span>} content={
@@ -112,7 +101,7 @@ class Profile extends Component {
           <div className="col-lg-9">
             <main>
               <NfLiftBox header={<span> Description</span>} content={
-                <p>
+                <p className="profile-description">
                   Hi there! I'm an influencer, blogger, on-camera host, actor and a professional bicycle thief.
                   My audience is primarily made up of the active millennial
                   that loves all things fashion, beauty, lifestyle, fitness, health,
@@ -168,10 +157,10 @@ class Profile extends Component {
                         </figure>
                         <div className="review-info">
                           <div className="review-text">
-                            Was glad to do business with you, recommended.
+                            <p>Was glad to do business with you, recommended.</p>
                           </div>
                           <div className="review-left">
-                            January 12th, 2011
+                            <p>January 12th, 2011</p>
                           </div>
                         </div>
                       </div>
@@ -184,10 +173,10 @@ class Profile extends Component {
                         </figure>
                         <div className="review-info">
                           <div className="review-text">
-                            Did deliver what we had agreed.
+                            <p>Did deliver what we had agreed.</p>
                           </div>
                           <div className="review-left">
-                            February 2th, 2010
+                            <p>February 2th, 2010</p>
                           </div>
                         </div>
                       </div>
