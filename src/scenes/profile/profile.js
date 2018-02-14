@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {connect} from 'react-redux';
 import {NfLiftBox} from '../../components/utility/nf-utility';
 import NfModalOffer from '../../components/modal/nf-modal-offer.js';
 
@@ -192,14 +191,4 @@ class Profile extends Component {
   }
 }
 
-/*
- const mapStateToProps = (state) => {
- const {influencers, filters} = state;
- const page = influencers.page;
- const items = influencers.postsByInfluencers[page] || {count:0, items: []};
-
- return {filters, items, page};
- };
- export default connect(mapStateToProps)(Influencers);
- */
 export default Profile;

@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import PropTypes from 'prop-types';
 import {storeFilters, removeFilter, clearAll} from '../../actions/filters';
 import {fetchInfluencersIfNeeded, pageChanged} from '../../actions/influencers';
 
@@ -12,13 +11,6 @@ import NfActiveFilters from './components/nf-active-filters';
 import './influencers.css';
 
 class Influencers extends Component {
-
-  static propTypes = {
-    filters: PropTypes.object.isRequired,
-    items: PropTypes.object.isRequired,
-    page: PropTypes.number,
-    dispatch: PropTypes.func.isRequired
-  };
 
   filterOnRemove = (key) => {
     this.props.dispatch(removeFilter(key));
