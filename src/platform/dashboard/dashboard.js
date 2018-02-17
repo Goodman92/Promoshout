@@ -2,12 +2,17 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {NfLiftBox} from '../../components/utility/nf-utility';
 import {Bar} from 'react-chartjs-2';
+
+import BigCalendar from 'react-big-calendar';
 import NfOrderController from './components/nf-order-controller';
 import NfRecentFeed from './components/nf-recent-feed';
 import Configurations from '../../configurations/configurations';
 import GraphTimeController from '../../components/graph-controller/graph-time-controller';
 
 import './dashboard.css';
+import moment from 'moment';
+import 'react-big-calendar/lib/css/react-big-calendar.css';
+BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment));
 
 
 class Dashboard extends Component {
@@ -86,7 +91,14 @@ class Dashboard extends Component {
               } content={
                 <div className="row">
                   <div className="col-lg-12">
-                    <p> Kalenteri </p>
+                    <BigCalendar
+                        selectable
+                        events={[]}
+                        defaultView="week"
+                        scrollToTime={new Date(1970, 1, 1, 6)}
+                        defaultDate={new Date(2015, 3, 12)}
+                        onSelectEvent={event => console.log(event.title)}
+                        onSelectSlot={slotInfo => console.log(slotInfo)}/>
                   </div>
                 </div>
               }/>
