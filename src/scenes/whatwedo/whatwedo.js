@@ -19,7 +19,7 @@ class WhatWeDo extends Component {
             </p>
             
             <div className="gl-align-center whatwedo-icon-wrapper">
-              <i class="c-red fa fa-star fa-1x" aria-hidden="true"></i>
+              <i className="c-red fa fa-star fa-1x" aria-hidden="true"></i>
             </div>
 
             <p className="whatwedo-content">Sed arcu lectus auctor vitae, consectetuer et venenatis eget velit. 

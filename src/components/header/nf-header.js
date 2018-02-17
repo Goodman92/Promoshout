@@ -62,6 +62,7 @@ class NfHeader extends Component {
                 </div>
                 <li key="loginParent" id="loginParent">
                   <span className="nav-link" onClick={(e) => onLoginClick(e)}>Login</span>
+                      
                       <NfPopover show={this.state.showLogin}>
                         <CSSTransitionGroup
                           transitionName="example"

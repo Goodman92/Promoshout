@@ -3,6 +3,8 @@ import Modal from 'react-modal';
 import customStyles from './nf-modal-styles.js';
 import {NfInput} from '../../components/utility/nf-utility';
 
+import NfPopover from '../popover/nf-popover';
+
 import './nf-modal-register-product.css';
 
 
@@ -64,11 +66,12 @@ class NfModalProductRegistration extends Component {
     }
   }
 
-  openSignIn() {
-    // this.props.closeModal; 
-  }
-
   render() {
+    
+    const onLoginClick = (e) => {
+      this.props.closeModal();
+    };
+
     return (
         <Modal
             isOpen={this.props.isModalOpen}
@@ -103,7 +106,7 @@ class NfModalProductRegistration extends Component {
               <div className="modal-button-wrapper">
                 <input className="gl-button-wrapper" type="submit" value="Register"/>
               </div>
-              <span className="sign-in-desc">Already have an account?<span className="sign-in-link" onClick={this.openSignIn}> Sign In</span></span>
+              <span className="sign-in-desc">Already have an account?<span className="sign-in-link" onClick={(e) => onLoginClick(e)}> Sign In</span></span>
             </div>
           </form>
         </Modal>
