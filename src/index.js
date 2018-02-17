@@ -15,6 +15,7 @@ import featured from './reducers/index';
 import filters from './reducers/filters';
 import nav from './reducers/nav';
 import orders from './reducers/orders';
+import feed from './reducers/feed';
 import influencers from './reducers/influencers';
 
 import registerServiceWorker from './registerServiceWorker';
@@ -27,7 +28,7 @@ import NfPlatformHeader from './components/platform-header/nf-platform-header';
 import './index.css';
 
 const nfReducers = combineReducers({
-  featured, filters,
+  featured, filters, feed,
   nav, influencers, orders
 });
 

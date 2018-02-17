@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import GraphTimeController from '../../../../components/graph-controller/graph-time-controller';
 import './nf-user-promotion.css';
-import moment from 'moment'
+
 
 class NfUserRowPromotion extends Component {
 
@@ -9,10 +10,6 @@ class NfUserRowPromotion extends Component {
     super(props);
     this.index = Math.floor(Math.random() * 20) + 1;
   }
-
-  humanReadableTime = (time) => {
-    return moment(time).fromNow();
-  };
 
   suffixedNumber = (number) => {
     return number > 999 ? (number / 1000).toFixed(1) + 'k' : number;
@@ -27,7 +24,7 @@ class NfUserRowPromotion extends Component {
           </div>
           <div className="col">{this.suffixedNumber(this.props.item.followers)}</div>
           <div className="col">${this.props.item.charge}</div>
-          <div className="col text-right">{this.humanReadableTime(this.props.item.last_online)}</div>
+          <div className="col text-right">{GraphTimeController.humanReadableTime(this.props.item.last_online)}</div>
         </div>
       </div>
     );

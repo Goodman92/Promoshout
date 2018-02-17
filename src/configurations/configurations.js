@@ -2,7 +2,7 @@ class Configurations {
 
   static dealGraphData = () => {
     return {
-      labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+      labels: [],
       datasets: [
         {
           id: 'orders',

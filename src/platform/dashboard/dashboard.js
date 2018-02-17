@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {NfLiftBox} from '../../components/utility/nf-utility';
 import {Bar} from 'react-chartjs-2';
 import NfOrderController from './components/nf-order-controller';
+import NfRecentFeed from './components/nf-recent-feed';
 import Configurations from '../../configurations/configurations';
 import GraphTimeController from '../../components/graph-controller/graph-time-controller';
 
@@ -52,6 +53,19 @@ class Dashboard extends Component {
           <div className="row mt-1">
             <div className="col-lg-12">
               <NfLiftBox header={
+                <span> Recent Feed</span>
+              } content={
+                <div className="row">
+                  <div className="col-lg-12">
+                    <NfRecentFeed/>
+                  </div>
+                </div>
+              }/>
+            </div>
+          </div>
+          <div className="row mt-1">
+            <div className="col-lg-12">
+              <NfLiftBox header={
                 <div className="row ai-center">
                   <div className="col-lg-6">
                     <span> Deal history</span>
@@ -62,6 +76,19 @@ class Dashboard extends Component {
                 </div>
               } content={
                 <Bar data={data} options={options} height={50}/>
+              }/>
+            </div>
+          </div>
+          <div className="row mt-1">
+            <div className="col-lg-12">
+              <NfLiftBox header={
+                <span> Your Calendar</span>
+              } content={
+                <div className="row">
+                  <div className="col-lg-12">
+                    <p> Kalenteri </p>
+                  </div>
+                </div>
               }/>
             </div>
           </div>

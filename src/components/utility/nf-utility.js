@@ -19,30 +19,32 @@ const liftBox = (transcluded) => {
 class CustomField extends Component {
 
   render() {
-    return(
-      <div className="page__section">
-        <label className="field field_type2">
-          {this.props.children}
-          <span className="field__label-wrap">
+    return (
+        <div className="page__section">
+          <label className="field field_type2">
+            {this.props.children}
+            <span className="field__label-wrap">
             <span className="field__label">{this.props.label}</span>
           </span>
-        </label>
-      </div>
+          </label>
+        </div>
     );
   }
 }
 const customTextarea = (transcluded) => {
   return (
       <CustomField label={transcluded.label}>
-          <textarea className="field__input" type={transcluded.type} value={transcluded.value} onChange={transcluded.param} placeholder=" " />
-      </CustomField>    
+        <textarea className="field__input" type={transcluded.type} value={transcluded.value}
+                  onChange={transcluded.param} placeholder=" "/>
+      </CustomField>
   )
 };
 const customInput = (transcluded) => {
   return (
       <CustomField label={transcluded.label}>
-         <input className="field__input" type={transcluded.type} value={transcluded.value} onChange={transcluded.param} placeholder=" " />
-      </CustomField> 
+        <input className="field__input" type={transcluded.type} value={transcluded.value} onChange={transcluded.param}
+               placeholder=" "/>
+      </CustomField>
   )
 };
 
@@ -73,7 +75,9 @@ class loginForm extends Component {
           </button>
           <small className="form-text text-muted text-center">or</small>
           <div className="gl-align-center">
-            <button type="button" className="gl-insta-button"><i className="fa fa-instagram left"/> Sign In With Instagram</button>
+            <button type="button" className="gl-insta-button"><i className="fa fa-instagram left"/> Sign In With
+              Instagram
+            </button>
           </div>
         </div>
     );
@@ -110,8 +114,36 @@ class loginForm extends Component {
   }
 }
 
+const simplePagination = (props) => {
+  const renderShowMore = () => {
+    if(props.page < props.lastPage)
+      return (
+          <button className="btn platform-btn btn-lg-sides" onClick={props.onShowMore}>
+            <i className="fa fa-arrow-down"/> Show More
+          </button>
+      );
+  };
+
+  const renderShowLess = () => {
+    if(props.page > 1)
+      return (
+          <button className="btn platform-btn btn-lg-sides" onClick={props.onShowLess}>
+            <i className="fa fa-arrow-up"/> Show Less
+          </button>
+      );
+  };
+
+  return (
+      <div>
+        {renderShowMore()}
+        {renderShowLess()}
+      </div>
+  )
+};
+
 
 export const NfLoginForm = loginForm;
 export const NfLiftBox = liftBox;
 export const NfTextarea = customTextarea;
 export const NfInput = customInput;
+export const NfSimplePagination = simplePagination;

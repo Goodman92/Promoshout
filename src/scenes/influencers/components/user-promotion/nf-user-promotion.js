@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './nf-user-promotion.css';
-import moment from 'moment'
+import GraphTimeController from '../../../../components/graph-controller/graph-time-controller';
 
 class NfUserPromotion extends Component {
 
@@ -8,10 +8,6 @@ class NfUserPromotion extends Component {
     super(props);
     this.index = Math.floor(Math.random() * 20) + 1;
   }
-
-  humanReadableTime = (time) => {
-    return moment(time).fromNow();
-  };
 
   suffixedNumber = (number) => {
     return number > 999 ? (number / 1000).toFixed(1) + 'k' : number;
@@ -37,7 +33,7 @@ class NfUserPromotion extends Component {
             <div className="user-promotion-desc">
               <p title={this.props.item.description}> {this.cutText(this.props.item.description)}</p>
             </div>
-            <p> Last online: <span className="highlighted">{this.humanReadableTime(this.props.item.last_online)}</span>
+            <p> Last online: <span className="highlighted">{GraphTimeController.humanReadableTime(this.props.item.last_online)}</span>
             </p>
             <p> Followers: <span className="highlighted">{this.suffixedNumber(this.props.item.followers)}</span></p>
             <p> Avg. price: <span className="highlighted">${this.props.item.charge}</span></p>

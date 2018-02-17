@@ -174,3 +174,8 @@ button.platform-btn {
 button {
     cursor:pointer;
 }
+
+.btn-lg-sides {
+    padding-left: 4rem;
+    padding-right: 4rem;
+}

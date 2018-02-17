@@ -32,9 +32,6 @@ const moveOnTimeDispatcher = (date) => {
 const fetchOrders = (state, extra) => {
   // AJAX
   return dispatch => {
-    console.log("fetchOrders");
-    console.log(state);
-    console.log(extra);
     dispatch(receiveOrdersDispatcher());
   }
 };

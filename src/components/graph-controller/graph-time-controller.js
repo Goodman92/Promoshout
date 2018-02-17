@@ -2,6 +2,10 @@ import moment from 'moment';
 
 class GraphTimeController {
 
+  static humanReadableTime = (time) => {
+    return moment(time).fromNow();
+  };
+
   static moveOnTimeByUnits = (mode, date, units) => {
     date = GraphTimeController.parseToMoment(date);
     date = GraphTimeController.incrementDateByUnits(mode, date, units);

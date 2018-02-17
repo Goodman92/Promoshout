@@ -124,5 +124,51 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec risus dolor, rutr
   },
 ];
 
+/* mock data for feed */
+const mockFeed = [
+  {
+    sender: 'Monica Smith',
+    date: '2018-01-01',
+    type: 'offer',
+    image: '../../../resources/images/random/1.jpg'
+  },
+  {
+    sender: 'John Doe',
+    date: '2018-02-12',
+    type: 'offer',
+    image: '../../../resources/images/random/2.jpg'
+  },
+  {
+    sender: 'Shougar',
+    date: '2018-05-10',
+    type: 'offer',
+    image: '../../../resources/images/random/3.jpg'
+  },
+  {
+    sender: 'BigBoy',
+    date: '2017-12-10',
+    type: 'offer',
+    image: '../../../resources/images/random/4.jpg'
+  },
+  {
+    sender: 'Fiona Moonala',
+    date: '2018-01-01',
+    type: 'offer',
+    image: '../../../resources/images/random/4.jpg'
+  },
+  {
+    sender: 'Monica Smith',
+    date: '2018-01-01',
+    type: 'offer',
+    image: '../../../resources/images/random/4.jpg'
+  },
+  {
+    sender: 'Monica Smith',
+    date: '2018-01-01',
+    type: 'offer',
+    image: '../../../resources/images/random/4.jpg'
+  },
+];
 export const featuredMocks = mockFeatured;
 export const influencerMocks = influencerMock;
+export const feedMocks = mockFeed;
