@@ -1,12 +1,21 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import {NfLiftBox} from '../../components/utility/nf-utility';
 import {Bar} from 'react-chartjs-2';
+import NfOrderController from './components/nf-order-controller';
+import Configurations from '../../configurations/configurations';
+import GraphTimeController from '../../components/graph-controller/graph-time-controller';
+
+import './dashboard.css';
 
 
 class Dashboard extends Component {
 
   render() {
-    const data = [{x:'2016-12-25', y:20}, {x:'2016-12-26', y:10}];
+    const props = this.props;
+    const data = Configurations.dealGraphData();
+    const options = Configurations.dealGraphOptions();
+    data.labels = GraphTimeController.buildTimeAxisFromDate(props.mode, props.date, props.units);
 
     return (
         <div className="container-fluid mt-2">
@@ -40,9 +49,20 @@ class Dashboard extends Component {
               }/>
             </div>
           </div>
-          <div className="row">
+          <div className="row mt-1">
             <div className="col-lg-12">
-              <Bar data={data} height={100}/>
+              <NfLiftBox header={
+                <div className="row ai-center">
+                  <div className="col-lg-6">
+                    <span> Deal history</span>
+                  </div>
+                  <div className="col-lg-6 text-right">
+                    <NfOrderController/>
+                  </div>
+                </div>
+              } content={
+                <Bar data={data} options={options} height={50}/>
+              }/>
             </div>
           </div>
         </div>
@@ -50,4 +70,6 @@ class Dashboard extends Component {
   }
 }
 
-export default Dashboard;
+
+const mapStateToProps = (state) => state.orders;
+export default connect(mapStateToProps)(Dashboard);

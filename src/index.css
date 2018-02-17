@@ -165,3 +165,12 @@ button.platform-btn {
 .w-auto {
     width:auto !important;
 }
+
+.ai-center {
+    align-items:center;
+}
+
+
+button {
+    cursor:pointer;
+}

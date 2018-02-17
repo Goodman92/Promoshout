@@ -14,6 +14,7 @@ import {combineReducers} from 'redux'
 import featured from './reducers/index';
 import filters from './reducers/filters';
 import nav from './reducers/nav';
+import orders from './reducers/orders';
 import influencers from './reducers/influencers';
 
 import registerServiceWorker from './registerServiceWorker';
@@ -27,7 +28,7 @@ import './index.css';
 
 const nfReducers = combineReducers({
   featured, filters,
-  nav, influencers
+  nav, influencers, orders
 });
 
 
