@@ -1,3 +1,7 @@
+nav.nf-sidebar {
+    position:fixed;
+}
+
 nav.nf-sidebar a {
     color: #a7b1c2;
     padding: 1em;
@@ -37,39 +41,4 @@ div.sidebar-header {
 div.sidebar-header {
     color: #fff;
     padding: 1em;
-}
-
-@media (min-width: 767px) {
-    #sidebar {
-        min-width: 250px;
-        max-width: 250px;
-        height: 100vh;
-    }
-
-    .collapse-nav .nav-item-label {
-        display: none;
-    }
-
-    .collapse-nav#sidebar {
-        min-width: 60px;
-        max-width: 60px;
-        height: 100vh;
-    }
-}
-
-@media (max-width: 767px) {
-
-    .nav-item-label {
-        display: none;
-    }
-
-    #sidebar {
-        min-width: 60px;
-        max-width: 60px;
-        height: 100vh;
-    }
-
-    .collapse-nav#sidebar {
-        display:none;
-    }
 }

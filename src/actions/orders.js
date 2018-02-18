@@ -42,7 +42,7 @@ export const changeMode = (mode) => {
     const {orders} = getState();
     dispatch(changeModeDispatcher(mode));
     dispatch(requestOrdersDispatcher());
-    dispatch(fetchOrders(orders, {mode: mode}));
+    dispatch(fetchOrders(orders, {mode}));
   }
 };
 
@@ -52,7 +52,7 @@ export const moveOnTime = (date) => {
     dispatch(requestOrdersDispatcher());
     dispatch(moveOnTimeDispatcher(date));
     date = GraphTimeController.parseFromMoment(date);
-    dispatch(fetchOrders(orders, {date: date}));
+    dispatch(fetchOrders(orders, {date}));
   }
 };
 

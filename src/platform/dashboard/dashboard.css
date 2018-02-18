@@ -1,0 +1,41 @@
+.rbc-time-header.rbc-overflowing {
+    margin-right: 0px !important;
+    border-right: 16px solid #f3f3f3 !important;
+}
+
+.rbc-time-header > .rbc-row:nth-child(2) {
+    display: none;
+}
+
+.rbc-time-header > .rbc-row:first-child {
+    border-bottom: 0;
+}
+
+.rbc-header, .rbc-header-gutter {
+    background-color: #f3f3f3;
+}
+
+.rbc-row > .rbc-header:last-child {
+    border-right: 1px solid #DDD;
+}
+
+.rbc-header {
+    font-weight: 100 !important;
+}
+
+.rbc-day-slot .rbc-timeslot-group .rbc-time-slot:first-child {
+    border-bottom: 1px solid #dfdfdf;
+    border-top:0 !important;
+}
+.rbc-day-slot .rbc-timeslot-group .rbc-time-slot:last-child {
+    border: 0;
+}
+
+.rbc-time-content {
+    border-top: 0 !important;
+}
+
+.rbc-calendar .rbc-event {
+  z-index: 11;
+}
+
