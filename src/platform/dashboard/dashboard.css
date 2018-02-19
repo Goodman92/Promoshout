@@ -25,8 +25,9 @@
 
 .rbc-day-slot .rbc-timeslot-group .rbc-time-slot:first-child {
     border-bottom: 1px solid #dfdfdf;
-    border-top:0 !important;
+    border-top: 0 !important;
 }
+
 .rbc-day-slot .rbc-timeslot-group .rbc-time-slot:last-child {
     border: 0;
 }
@@ -36,6 +37,20 @@
 }
 
 .rbc-calendar .rbc-event {
-  z-index: 11;
+    z-index: 11;
 }
 
+.rbc-timeslot-group {
+    min-height: 55px !important;
+
+}
+
+.order-confirmation-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.order-confirmation-block > button {
+    flex: 0.495;
+}

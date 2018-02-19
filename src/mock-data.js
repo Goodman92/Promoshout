@@ -1,3 +1,6 @@
+import moment from 'moment';
+
+
 /* mock data for influencers */
 let influencerMock = {};
 
@@ -169,6 +172,15 @@ const mockFeed = [
     image: '../../../resources/images/random/4.jpg'
   },
 ];
+
+const mockBookings = Array.from(Array(15).keys(), (_, i) => {
+  return {
+    start: moment().add(i + 2, 'hours').toDate(),
+    end: moment().add(i + 4, 'hours').toDate()
+  }
+});
+
+export const bookingsMocks = mockBookings;
 export const featuredMocks = mockFeatured;
 export const influencerMocks = influencerMock;
 export const feedMocks = mockFeed;
