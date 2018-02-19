@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import NfCarousel from './nf-carousel';
 import {fetchFeatured, requestMore} from '../../../actions/index';
+
+
 import './nf-featured.css';
 
 class NfFeatured extends Component {
@@ -11,11 +13,11 @@ class NfFeatured extends Component {
   }
 
   getPrevious = () => {
-    this.props.dispatch(requestMore(-1));
+    this.props.dispatch(requestMore(-4));
   };
 
   getNext = () => {
-    this.props.dispatch(requestMore(1));
+    this.props.dispatch(requestMore(4));
   };
 
   render() {
@@ -26,7 +28,9 @@ class NfFeatured extends Component {
               <h1 className="featured-main-title"> Featured Offers </h1>
             </div>
             <div className="col-lg-12"> 
+
               <NfCarousel data={this.props.featured} getNext={this.getNext} getPrevious={this.getPrevious} />
+              
             </div>
           </div>
         </div>

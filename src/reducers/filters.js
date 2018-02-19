@@ -6,8 +6,8 @@ const initial = {
   age: {value: '', label: 'age'},
   location: {value: '', label: 'location'},
   price: {value_min: '', value_max: '', type: 'range', label: 'price'},
-  followers: {value_min: '', value_max: '', type: 'range', label: 'followers'},
-  rate: {value_min: '', value_max: '', type: 'range', label: 'rate'},
+  followers: {value_min: null, value_max: null, type: 'range', label: 'followers'},
+  rate: {value_min: null, value_max: null, type: 'range', label: 'rate'},
 };
 
 const filters = (state = initial, action) => {

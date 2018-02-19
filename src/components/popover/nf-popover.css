@@ -1,16 +1,20 @@
 .nf-popover {
     z-index: 9;
     position: fixed;
-    -webkit-transition: opacity 2s;
+    right: 0;
 }
 
-
-@keyframes slideInFromDown {
-  0% {
-    transform: translateY(100%);
-  }
-  100% {
-    transform: translateY(0);
-  }
+.nf-popover-overlay {
+    z-index: 10;
+    opacity: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    margin-top: -8rem;
+    left: 0;
 }
 
+.nf-popover-component {
+    z-index: 11;
+    position:relative;
+}

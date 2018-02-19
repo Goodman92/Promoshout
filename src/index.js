@@ -18,6 +18,7 @@ import orders from './reducers/orders';
 import feed from './reducers/feed';
 import bookings from './reducers/bookings';
 import influencers from './reducers/influencers';
+import login from './reducers/login';
 
 import registerServiceWorker from './registerServiceWorker';
 
@@ -30,7 +31,7 @@ import './index.css';
 
 const nfReducers = combineReducers({
   featured, filters, feed,
-  nav, influencers, orders, bookings
+  nav, influencers, orders, bookings, login
 });
 
 

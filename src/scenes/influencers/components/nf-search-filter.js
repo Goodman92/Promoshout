@@ -1,125 +1,139 @@
-import React, {Component} from 'react';
+import React, { Component } from "react";
 
-import NfCollapseItem from '../../../components/collapse-item/nf-collapse-item';
-import NfSliderInput from '../../../components/slider-input/nf-slider-input';
+import NfCollapseItem from "../../../components/collapse-item/nf-collapse-item";
+import NfSliderInput from "../../../components/slider-input/nf-slider-input";
 
-import Slider, { Range } from 'rc-slider';
-import Tooltip from 'rc-tooltip';
-import 'rc-slider/assets/index.css';
+import Slider, { Range } from "rc-slider";
+import Tooltip from "rc-tooltip";
+import "rc-slider/assets/index.css";
 
-import './nf-search-filter.css';
+import "./nf-search-filter.css";
 
 class NfSearchFilter extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      ...props.filters,
-      followersLow: 0, 
-      followersHigh: 100000,
-      engagementLow: 0, 
-      engagementHigh: 100
-    };
-
-    this.handleFollowerChange = this.handleFollowerChange.bind(this);
-    this.handleEngagementChange = this.handleEngagementChange.bind(this);
-    this.componentWillReceiveProps = this.componentWillReceiveProps.bind(this);
-  }
-
-  componentWillReceiveProps = (nextProps) => {
-    this.setState({...nextProps.filters});
-  };
-
-  onSubmit = (e) => {
+  onSubmit = e => {
     e.preventDefault();
     this.props.filtersOnUpdate(this.state);
   };
 
-  onFollowerChange = (values) => {
-    this.setState({followers: {...this.state.followers, ...values}});
+  handlePriceMinChange = (values) =>  {
+    this.props.filtersOnUpdate({price: {...this.props.filters.price, value_min: values.target.value}});
+  };
+  handlePriceMaxChange = (values) =>  {
+    this.props.filtersOnUpdate({price: {...this.props.filters.price, value_max: values.target.value}});
+  };
+  handleLocationChange = (values) =>  {
+    this.props.filtersOnUpdate({location: {...this.props.filters.location, value: values.target.value}});
+  };
+  handleFollowerChange = (values) =>  {
+    this.props.filtersOnUpdate({followers: {...this.props.filters.followers, value_min: values[0], value_max: values[1] }});
+  };
+  handleEngagementChange = (values) =>  {
+    this.props.filtersOnUpdate({rate: {...this.props.filters.rate, value_min: values[0], value_max: values[1] }});
+  };
+  handleAgeChange = (values) =>  {
+    this.props.filtersOnUpdate({age: {...this.props.filters.age, value: values.target.value }});
   };
 
-
-  handleFollowerChange(values) {
-    this.setState({
-      followersLow: values[0],
-      followersHigh: values[1]
-    })
-  }
-  handleEngagementChange(values) {
-    this.setState({
-      engagementLow: values[0],
-      engagementHigh: values[1]
-    })
-  }
-
   render() {
-    const filters = this.state;
+    const filters = this.props.filters;
     return (
-        <form onSubmit={this.onSubmit}>
-          <div className="search-box">
-            <div className="search-box-top">
-              <span> Narrow Your Search </span>
-            </div>
-            <div className="search-box-bottom">
-              <NfCollapseItem toggle="3" header={<span> By Price Range </span>} content={
+      <form onSubmit={this.onSubmit}>
+        <div className="search-box">
+          <div className="search-box-top">
+            <span> Narrow Your Search </span>
+          </div>
+          <div className="search-box-bottom">
+            <NfCollapseItem
+              toggle="3"
+              header={<span> By Price Range </span>}
+              content={
                 <div className="input-group">
-                  <input className="form-control" type="number" placeholder="min" value={filters.price.value_min}
-                         onChange={(e) => this.setState({price: {...filters.price, value_min: e.target.value}})}/>
+                  <input
+                    className="form-control"
+                    type="number"
+                    placeholder="min"
+                    value={filters.price.value_min}
+                    onChange={this.handlePriceMinChange}
+                  />
                   <span className="input-group-addon">-</span>
-                  <input className="form-control" type="number" placeholder="max" value={filters.price.value_max}
-                         onChange={(e) => this.setState({price: {...filters.price, value_max: e.target.value}})}/>
+                  <input
+                    className="form-control"
+                    type="number"
+                    placeholder="max"
+                    value={filters.price.value_max}
+                    onChange={this.handlePriceMaxChange}
+                  />
                 </div>
-              }/>
+              }
+            />
 
-              <NfCollapseItem toggle="4" header={<span> By Estimated Audience Location </span>} content={
-                <select className="form-control" value={filters.location.value}
-                        onChange={(e) => this.setState({location: {...filters.location, value: e.target.value}})}>
+            <NfCollapseItem
+              toggle="4"
+              header={<span> By Estimated Audience Location </span>}
+              content={
+                <select
+                  className="form-control"
+                  value={filters.location.value}
+                  onChange={this.handleLocationChange}
+                >
                   <option value="Finland"> Finland</option>
                   <option value="Sweden"> Sweden</option>
                   <option value="Norway"> Norway</option>
                 </select>
-              }/>
-              <NfCollapseItem 
-                toggle="5" 
-                header={ <span> By Followers </span> } 
-                content={  
+              }
+            />
+            <NfCollapseItem
+              toggle="5"
+              header={<span> By Followers </span>}
+              content={
                 <div>
                   <div className="row">
-                    <div className="col"><p> {this.state.followersLow} </p> </div>
-                    <div className="col text-right"><p> {this.state.followersHigh} </p> </div>
+                    <div className="col">
+                       <p> {filters.followers.value_min || 0} </p>
+                    </div>
+                    <div className="col text-right">
+                       <p> {filters.followers.value_max || 100000} </p>
+                    </div>
                   </div>
-                  <Range 
-                    min={0} 
-                    max={100000} 
-                    value={[this.state.followersLow, this.state.followersHigh]} 
-                    onChange={this.handleFollowerChange} 
-                  /> 
-                </div>
-                }
-              />
-              <NfCollapseItem 
-                toggle="6" 
-                header={ <span> By Engagement Rate </span> } 
-                content={  
-                <div>
-                  <div className="row">
-                    <div className="col"><p> {this.state.engagementLow} </p> </div>
-                    <div className="col text-right"><p> {this.state.engagementHigh} </p> </div>
-                  </div>
-                  <Range 
-                    min={0} 
-                    max={100} 
-                    value={[this.state.engagementLow, this.state.engagementHigh]} 
-                    onChange={this.handleEngagementChange} 
+                  <Range
+                    max={100000}
+                    defaultValue={[0, 100000]}
+                    onChange={this.handleFollowerChange}
                   />
                 </div>
-                }
-              />
-              <NfCollapseItem toggle="8" header={<span> By Age </span>} content={
-                <select className="form-control" value={filters.age.value}
-                        onChange={(e) => this.setState({age: {...filters.age, value: e.target.value}})}>
-                  <option/>
+              }
+            />
+            <NfCollapseItem
+              toggle="6"
+              header={<span> By Engagement Rate </span>}
+              content={
+                <div>
+                  <div className="row">
+                    <div className="col">
+                       <p> {filters.rate.value_min || 0} </p>
+                    </div>
+                    <div className="col text-right">
+                       <p> {filters.rate.value_max || 100} </p>
+                    </div>
+                  </div>
+                  <Range
+                    defaultValue={[0, 100]}
+                    onChange={this.handleEngagementChange}
+                  />
+                </div>
+              }
+            />
+            <NfCollapseItem
+              toggle="8"
+              header={<span> By Age </span>}
+              content={
+                <select
+                  className="form-control"
+                  value={filters.age.value}
+                  onChange={this.handleAgeChange}
+                >
+                  <option />
                   <option value="10+"> 10+</option>
                   <option value="15+"> 15+</option>
                   <option value="18+"> 18+</option>
@@ -129,17 +143,18 @@ class NfSearchFilter extends Component {
                   <option value="50+"> 50+</option>
                   <option value="60+"> 60+</option>
                 </select>
-              }/>
-
-            </div>
-            <div className="search-box-apply">
-              <button type="submit" className="btn btn-success btn-apply">Apply filters</button>
-            </div>
+              }
+            />
           </div>
-        </form>
+          <div className="search-box-apply">
+            <button type="submit" className="btn btn-success btn-apply">
+              Apply filters
+            </button>
+          </div>
+        </div>
+      </form>
     );
   }
 }
 
 export default NfSearchFilter;
-

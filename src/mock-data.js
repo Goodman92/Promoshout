@@ -60,7 +60,7 @@ const mockFeatured = [
     name: '@test',
     price: 1337,
     followers: '50k',
-    following: '122',
+    following: '1',
     desc: `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec risus dolor, rutrum eget eros eu, bibendum vulputate leo. Suspendisse consequat massa id diam mattis porttitor. Duis ligula magn`,
     image: '../../../resources/images/random/1.jpg'
@@ -70,7 +70,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec risus dolor, rutr
     name: '@chitywok',
     price: 130,
     followers: '5M',
-    following: '15k',
+    following: '2',
     desc: `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec risus dolor, rutrum eget eros eu, bibendum vulputate leo. Suspendisse consequat massa id diam mattis porttitor. Duis ligula magn`,
     image: '../../../resources/images/random/2.jpg'
@@ -80,7 +80,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec risus dolor, rutr
     name: '@keewwl',
     price: 100,
     followers: '32k',
-    following: '12k',
+    following: '3',
     desc: `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec risus dolor, rutrum eget eros eu, bibendum vulputate leo. Suspendisse consequat massa id diam mattis porttitor. Duis ligula magn`,
     image: '../../../resources/images/random/3.jpg'
@@ -90,7 +90,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec risus dolor, rutr
     name: '@John',
     price: 1311,
     followers: '1.3M',
-    following: '142',
+    following: '4',
     desc: `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec risus dolor, rutrum eget eros eu, bibendum vulputate leo. Suspendisse consequat massa id diam mattis porttitor. Duis ligula magn`,
     image: '../../../resources/images/random/4.jpg'
@@ -100,7 +100,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec risus dolor, rutr
     name: '@Lad',
     price: 1337,
     followers: '50k',
-    following: '1k',
+    following: '5',
     desc: `
       rutrum eget eros eu, bibendum vulputate leo. Suspendisse consequat massa id diam mattis porttitor. Duis ligula magn`,
     image: '../../../resources/images/random/4.jpg'
@@ -110,7 +110,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec risus dolor, rutr
     name: '@sickmeit',
     price: 14,
     followers: '10k',
-    following: '1k',
+    following: '6',
     desc: `
       Lorem ipsum dolor sit amet, consectetur aequat massa id diam mattis porttitor. Duis ligula magn`,
     image: '../../../resources/images/random/4.jpg'
@@ -120,7 +120,57 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec risus dolor, rutr
     name: '@test',
     price: 5,
     followers: '5000',
-    following: '1k',
+    following: '7',
+    desc: `
+    uspendisse consequat massa id diam mattis porttitor. Duis ligula magn`,
+    image: '../../../resources/images/random/4.jpg'
+  },
+    {
+    key: 8,
+    name: '@dedeeee',
+    price: 5,
+    followers: '5000',
+    following: '8',
+    desc: `
+    uspendisse consequat massa id diam mattis porttitor. Duis ligula magn`,
+    image: '../../../resources/images/random/4.jpg'
+  },
+    {
+    key: 9,
+    name: '@asd',
+    price: 5,
+    followers: '5000',
+    following: '9',
+    desc: `
+    uspendisse consequat massa id diam mattis porttitor. Duis ligula magn`,
+    image: '../../../resources/images/random/4.jpg'
+  },
+    {
+    key: 10,
+    name: '@qwe',
+    price: 5,
+    followers: '5000',
+    following: '10',
+    desc: `
+    uspendisse consequat massa id diam mattis porttitor. Duis ligula magn`,
+    image: '../../../resources/images/random/4.jpg'
+  },
+    {
+    key: 11,
+    name: '@dsa',
+    price: 5,
+    followers: '5000',
+    following: '11',
+    desc: `
+    uspendisse consequat massa id diam mattis porttitor. Duis ligula magn`,
+    image: '../../../resources/images/random/4.jpg'
+  },
+    {
+    key: 12,
+    name: '@test',
+    price: 5,
+    followers: '5000',
+    following: '12',
     desc: `
     uspendisse consequat massa id diam mattis porttitor. Duis ligula magn`,
     image: '../../../resources/images/random/4.jpg'

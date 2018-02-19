@@ -17,21 +17,28 @@
 		- Date when campaign should be shown? OR Deadline?
 
 
-git commit -m "Sign in link to register modal"
+
+git commit -m "Redux state to login popup + Login popup disappears when clicking outside + Redesign feature cards"
+
 
 
 * WHAT WE DO topics *
 
 	- what is promoshout
-	- How promoshout works
+	- How it works
+	- Talk about our cool dashboard and the features in it ( add picture? ) 
 	- Mention about instant instagram account activation  					(in shoutcart this takes 2-3 days)
 	- Mention about that we only charge fees on completed shoutouts (shoutcart robs fees even buyer does not get a shoutout)
 
 
+* Progressbar Idea *
 
 - Swap calendar to https://docs.dhtmlx.com/scheduler/samples/05_calendar/01_select.html
 
 
-
+	https://codepen.io/abhisharma2/pen/vEKWVo
+	http://freefrontend.com/css-timelines/
+	https://colorlib.com/wp/minimal-website-templates/
+	https://www.tapinfluence.com/influencers/
 
 
