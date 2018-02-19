@@ -16,10 +16,6 @@ class NfSearchFilter extends Component {
     this.props.filtersOnUpdate(this.state);
   };
 
-  onFollowerChange = values => {
-    this.setState({ followers: { ...this.state.followers, ...values } });
-  };
-  
   handlePriceMinChange = (values) =>  {
     this.props.filtersOnUpdate({price: {...this.props.filters.price, value_min: values.target.value}});
   };
@@ -54,7 +50,6 @@ class NfSearchFilter extends Component {
               content={
                 <div className="input-group">
                   <input
-                    maxLength="5"
                     className="form-control"
                     type="number"
                     placeholder="min"
@@ -63,7 +58,6 @@ class NfSearchFilter extends Component {
                   />
                   <span className="input-group-addon">-</span>
                   <input
-                    maxLength="5"
                     className="form-control"
                     type="number"
                     placeholder="max"

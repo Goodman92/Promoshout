@@ -33,13 +33,15 @@
 }
 
 
-.sign-in-desc, .sign-in-link {
-  font-family: Quicksand;
+.sign-in-desc {
+  font-family: LatoLight;
   letter-spacing: 0;
   color:#b2b2b2;
 }
 
 .sign-in-link {
-  color: #323232;
+  font-family: LatoBold;
+  letter-spacing: 0;
+  color: #5a5a5a;
   cursor: pointer;
 }

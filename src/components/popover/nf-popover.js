@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import './nf-popover.css';
 
+import {connect} from 'react-redux';
+import {loginHide} from '../../reducers/login';
 
 class NfPopover extends Component {
 
@@ -19,12 +21,18 @@ class NfPopover extends Component {
       this.setState({right: 0});
   };
 
+  closePopover = () => {
+      this.props.dispatch(loginHide());
+  };
 
   render = () => {
     const props = this.props;
 
     const html = () => (
-        props.children
+        <div>
+          <div className="nf-popover-overlay" onClick={this.closePopover}></div>
+          <div className="nf-popover-component">{props.children}</div>
+        </div>
     );
 
     const renderPopover = () => {
@@ -33,7 +41,7 @@ class NfPopover extends Component {
       return null;
     };
 
-    return (
+    return (  
         <div className="nf-popover" style={{right: this.state.right}}>
           {renderPopover()}
         </div>
@@ -41,5 +49,8 @@ class NfPopover extends Component {
   }
 }
 
-export default NfPopover;
+const mapStateToProps = (state) => {
+  return state.login
+};
+export default connect(mapStateToProps)(NfPopover);
 

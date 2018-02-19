@@ -11,7 +11,6 @@ const NfCarousel = (transcluded) => {
 			<div>
 				<div className="row nf-carousel-slider">
 			    <i className="fa fa-2x fa-angle-right fa-rotate-180 nf-carousel-toggle nf-carousel-button-wrapper" aria-hidden="true" onClick={transcluded.getPrevious} />
-			                                        
 			    {transcluded.data.items.map((item, index) => (
 			        index >= transcluded.data.index && index < transcluded.data.size + transcluded.data.index ?
 
@@ -30,7 +29,6 @@ const NfCarousel = (transcluded) => {
 			        :
 			        null
 			    ))}
-
 			    <i className="fa fa-2x fa-angle-right nf-carousel-toggle nf-carousel-button-wrapper" aria-hidden="true" onClick={transcluded.getNext} />
   			</div>
   		</div>

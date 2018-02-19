@@ -6,19 +6,19 @@ import {NfLoginForm, NfLiftBox} from '../utility/nf-utility';
 
 import { CSSTransitionGroup } from 'react-transition-group';
 
+import {connect} from 'react-redux';
+import {showLogin} from '../../reducers/login';
+
 import './nf-header.css';
 
 class NfHeader extends Component {
+  
 
-  constructor(props) {
-    super(props);
-    this.state = {showLogin: false};
-  }
 
   render() {
     const onLoginClick = (e) => {
       e.preventDefault();
-      this.setState({showLogin: !this.state.showLogin});
+      this.props.dispatch(showLogin());
     };
 
     return (
@@ -61,29 +61,33 @@ class NfHeader extends Component {
 
                 </div>
                 <li key="loginParent" id="loginParent">
-                  <span className="nav-link" onClick={(e) => onLoginClick(e)}>Login</span>
-                      
-                      <NfPopover show={this.state.showLogin}>
-                        <CSSTransitionGroup
-                          transitionName="example"
-                          transitionAppear={true}
-                          transitionAppearTimeout={400}
-                          transitionEnter={false}
-                          transitionLeave={false}>
-
-                          <NfLiftBox header={<span> Sign in</span>} content={
-                            <NfLoginForm/>
-                          }/>
-
-                        </CSSTransitionGroup>
-                      </NfPopover>
+                  <span className="nav-link" onClick={(e) => onLoginClick(e)}>Login</span>                      
                 </li>
               </ul>
             </div>
           </nav>
+            
+            <NfPopover show={this.props.show}>
+              <CSSTransitionGroup
+                transitionName="example"
+                transitionAppear={true}
+                transitionAppearTimeout={400}
+                transitionEnter={false}
+                transitionLeave={false}>
+
+                <NfLiftBox header={<span> Sign in</span>} content={
+                  <NfLoginForm/>
+                }/>
+
+              </CSSTransitionGroup>
+            </NfPopover>
         </div>
     );
   }
 }
 
-export default NfHeader;
+const mapStateToProps = (state) => {
+  return state.login
+};
+export default connect(mapStateToProps)(NfHeader);
+

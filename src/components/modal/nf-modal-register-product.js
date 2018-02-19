@@ -3,6 +3,9 @@ import Modal from 'react-modal';
 import customStyles from './nf-modal-styles.js';
 import {NfInput} from '../../components/utility/nf-utility';
 
+import {connect} from 'react-redux';
+import {loginOnYet} from '../../reducers/login';
+
 import NfPopover from '../popover/nf-popover';
 
 import './nf-modal-register-product.css';
@@ -12,9 +15,6 @@ class NfModalProductRegistration extends Component {
 
   constructor(props) {
     super(props);
-
-    console.log("thiethie");
-    console.log(props);
 
     this.state = {
       showError: false,
@@ -70,6 +70,7 @@ class NfModalProductRegistration extends Component {
     
     const onLoginClick = (e) => {
       this.props.closeModal();
+      this.props.dispatch(loginOnYet());
     };
 
     return (
@@ -106,7 +107,9 @@ class NfModalProductRegistration extends Component {
               <div className="modal-button-wrapper">
                 <input className="gl-button-wrapper" type="submit" value="Register"/>
               </div>
-              <span className="sign-in-desc">Already have an account?<span className="sign-in-link" onClick={(e) => onLoginClick(e)}> Sign In</span></span>
+              <div className="gl-align-center">
+                <span className="sign-in-desc">Already have an account?<span className="sign-in-link" onClick={(e) => onLoginClick(e)}> Sign In</span></span>
+              </div>
             </div>
           </form>
         </Modal>
@@ -114,4 +117,5 @@ class NfModalProductRegistration extends Component {
   }
 }
 
-export default NfModalProductRegistration;
+export default connect()(NfModalProductRegistration);
+

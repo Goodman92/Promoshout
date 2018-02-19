@@ -18,6 +18,8 @@
 
 
 
+git commit -m "Redux state to login popup + Login popup disappears when clicking outside + Redesign feature cards"
+
 
 
 * WHAT WE DO topics *
@@ -35,7 +37,4 @@
 	http://freefrontend.com/css-timelines/
 	https://colorlib.com/wp/minimal-website-templates/
 	https://www.tapinfluence.com/influencers/
-
-
-
 

@@ -15,6 +15,7 @@ import featured from './reducers/index';
 import filters from './reducers/filters';
 import nav from './reducers/nav';
 import influencers from './reducers/influencers';
+import login from './reducers/login';
 
 import registerServiceWorker from './registerServiceWorker';
 
@@ -27,7 +28,7 @@ import './index.css';
 
 const nfReducers = combineReducers({
   featured, filters,
-  nav, influencers
+  nav, influencers, login
 });
 
 
