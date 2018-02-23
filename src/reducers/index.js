@@ -23,7 +23,7 @@ const featured = (state = initialState, action) => {
       return {
         ...state,
         fetching: false,
-        items: action.items
+        items: state.items.concat(action.items)  
       };
     default:
       return state;

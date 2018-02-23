@@ -2,9 +2,6 @@ import {featuredMocks} from '../mock-data';
 
 const mockFeatured = featuredMocks;
 
-function canMove(state, amount, size) {
-  return state.featured.index + amount + size <= state.featured.items.length && state.featured.index + amount >= 0;
-}
 
 export const requestFeatured = () => {
   return {
@@ -26,14 +23,37 @@ export const requestNext = amount =>  {
     }
 };
 
-export const requestMore = (amount, size = 4) => (dispatch, getState) => {
-  if (canMove(getState(), amount, size))
-    return dispatch(requestNext(amount));
+export const requestPrevious = () => (dispatch, getState) => {
+
+  const {featured} = getState();
+
+  if(featured.index > 0)
+    dispatch(requestNext(-1));
+
 };
 
-export const fetchFeatured = () => (dispatch) => {
-  dispatch(requestFeatured());
-  return dispatch(receiveFeatured(mockFeatured));
+export const requestMore = () => (dispatch, getState) => {
+  
+  const {featured} = getState();
+
+  if( (featured.items.length / featured.size) - 1 > featured.index) {
+    dispatch(requestNext(1));
+  } else {
+    // AJAX (random featured)
+    console.log("adding more data...");
+    dispatch(receiveFeatured(mockFeatured));   
+    dispatch(requestNext(1)); 
+  }
+};
+
+export const fetchFeatured = () => (dispatch, getState) => {
+  
+  if(getState().featured.items.length == 0) {
+    // AJAX (paid featured)
+    dispatch(requestFeatured());
+    dispatch(receiveFeatured(mockFeatured));
+  }
+
 };
 
 export const REQUEST_POSTS = 'REQUEST_POSTS';

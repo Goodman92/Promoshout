@@ -10,7 +10,8 @@ class WhatWeDo extends Component {
         <div className="whatwedo-wrapper">
           <h2>- About Us -</h2>
           <div className="whatwedo-content-wrapper">
-            <p className="whatwedo-content">Lorem ipsum dolor sit amet, 
+            <p className="whatwedo-content">
+            Lorem ipsum dolor sit amet, 
             consectetuer adipiscing elit. 
             Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. 
             Mauris varius diam vitae arcu. Sed arcu lectus auctor vitae, consectetuer et venenatis eget velit. 
