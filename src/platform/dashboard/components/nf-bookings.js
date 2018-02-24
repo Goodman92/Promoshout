@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import Modal from 'react-modal';
-import {getBookings, setToBeingEdited, addToBookings} from '../../../actions/bookings';
+import {getBookings, editBooking, addToBookings, removeBooking} from '../../../actions/bookings';
 
 import BigCalendar from 'react-big-calendar';
 import NfOrderPopup from './nf-order-popup';
@@ -10,40 +10,57 @@ import moment from 'moment';
 import {orderPopUpStyles} from '../../../components/modal/nf-modal-styles.js';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 
+
 BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment));
 
 
 class NfBookings extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {};
+  };
 
   componentDidMount = () => {
     this.props.dispatch(getBookings());
   };
 
   closeModal = () => {
-    this.props.dispatch(setToBeingEdited())
+    this.setState({beingModified: null, isBeingAdded: false});
+  };
+
+  onRemove = (item) => {
+    if (!this.state.isBeingAdded)
+      this.props.dispatch(removeBooking(item));
+    this.closeModal();
   };
 
   saveBooking = (item) => {
-    this.props.dispatch(addToBookings({...this.props.beingEdited, ...item}));
+    if (this.state.isBeingAdded)
+      this.props.dispatch(addToBookings(item));
+    else
+      this.props.dispatch(editBooking(item));
+    this.closeModal();
   };
 
-  addBeingEditedToEvents= () => {
-      const {items, beingEdited} = this.props;
-      return items.slice().concat([beingEdited]);
+  addBeingAddedToEvents = () => {
+    if (this.state.isBeingAdded)
+      return this.props.items.concat([this.state.beingModified]);
+    return this.props.items;
   };
 
   onSelectSlot = (data) => {
-    const item = {start: data.start, end: data.end};
-    this.props.dispatch(setToBeingEdited(item));
+    this.setState({beingModified: {...data}, isBeingAdded: true});
   };
 
   onSelectEvent = (data) => {
-    console.log("onSelectEvent!!!");
+    if(!data.permanent)
+      this.setState({beingModified: {...data}});
   };
 
 
   render() {
-    const events = this.addBeingEditedToEvents();
+    const events = this.addBeingAddedToEvents();
 
     return (
         <div style={{height: '600px'}}>
@@ -57,12 +74,13 @@ class NfBookings extends Component {
               onSelectEvent={this.onSelectEvent}
               onSelectSlot={this.onSelectSlot}/>
           <Modal
-              isOpen={this.props.beingEdited ? true : false}
+              isOpen={!!this.state.beingModified}
               style={orderPopUpStyles}
               onRequestClose={this.closeModal}
-              contentLabel="Modal"
               ariaHideApp={false}>
-            <NfOrderPopup {...this.props.beingEdited} onCancel={this.closeModal} onSubmit={this.saveBooking}/>
+            <NfOrderPopup {...this.state.beingModified}
+                          onRemove={this.onRemove}
+                          onSubmit={this.saveBooking}/>
           </Modal>
         </div>
     );
@@ -71,8 +89,8 @@ class NfBookings extends Component {
 
 
 const mapStateToProps = (state) => {
-  const {date, items, beingEdited} = state.bookings;
-  return {date, items, beingEdited};
+  const {date, items} = state.bookings;
+  return {date, items};
 };
 
 export default connect(mapStateToProps)(NfBookings);

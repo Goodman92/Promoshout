@@ -226,7 +226,10 @@ const mockFeed = [
 const mockBookings = Array.from(Array(15).keys(), (_, i) => {
   return {
     start: moment().add(i + 2, 'hours').toDate(),
-    end: moment().add(i + 4, 'hours').toDate()
+    end: moment().add(i + 4, 'hours').toDate(),
+    id: i+1,
+    title: 'nationalisti',
+    permanent: true
   }
 });
 

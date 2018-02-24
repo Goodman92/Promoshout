@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
+
 import './nf-side-nav.css';
 
 
@@ -23,14 +25,16 @@ class NfSideNav extends Component {
 
           <ul className="list-unstyled nav-list-items">
             <li className="active">
-              <a href="#">
+              <Link to="/dashboard">
                 <i className="fa fa-th-large"/>
                 <span className="nav-item-label"> Dashboard </span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#"> <i className="fa fa-suitcase"/>
-                <span className="nav-item-label"> Open Offers </span></a>
+              <Link to="/open-offers">
+                <i className="fa fa-suitcase"/>
+                <span className="nav-item-label"> Open Offers </span>
+              </Link>
             </li>
             <li>
               <a href="#">

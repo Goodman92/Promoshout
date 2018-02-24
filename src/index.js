@@ -1,16 +1,22 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
+import registerServiceWorker from './registerServiceWorker';
+
+// Main containers
 import App from './scenes/home/App';
 import Influencers from './scenes/influencers/influencers';
 import Profile from './scenes/profile/profile';
 import WhatWeDo from './scenes/whatwedo/whatwedo';
 import Dashboard from './platform/dashboard/dashboard';
+import OpenOffers from './platform/open-offers/open-offers';
+
 import thunk from 'redux-thunk';
 import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import {combineReducers} from 'redux'
 
+// Reducers
 import featured from './reducers/index';
 import filters from './reducers/filters';
 import nav from './reducers/nav';
@@ -20,8 +26,8 @@ import bookings from './reducers/bookings';
 import influencers from './reducers/influencers';
 import login from './reducers/login';
 
-import registerServiceWorker from './registerServiceWorker';
 
+// Components
 import NfHeader from './components/header/nf-header';
 import NfFooter from './components/footer/nf-footer';
 import NfSideNav from './components/side-nav/nf-side-nav';
@@ -85,6 +91,9 @@ ReactDOM.render(
           )}/>
           <Route path="/dashboard" component={() => (
               <RouteWrapperPlatform component={<Dashboard/>}/>
+          )}/>
+          <Route path="/open-offers" component={() => (
+              <RouteWrapperPlatform component={<OpenOffers/>}/>
           )}/>
         </div>
       </Router>

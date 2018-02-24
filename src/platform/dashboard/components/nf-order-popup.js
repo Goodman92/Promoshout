@@ -4,12 +4,8 @@ class NfOrderPopup extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {title: ''};
+    this.state = {...props};
   }
-
-  save = () => {
-      this.props.onSubmit({...this.state})
-  };
 
   render() {
 
@@ -17,12 +13,12 @@ class NfOrderPopup extends Component {
         <form>
           <div className="form-group">
             <label>Description</label>
-            <textarea className="form-control" id="exampleTextarea" rows="3"
-                      value={this.state.title} onChange={(e) => this.setState({title: e.target.value})}/>
+            <textarea className="form-control" rows="3" value={this.state.title}
+                      onChange={(e) => this.setState({title: e.target.value})}/>
           </div>
           <div className="btn-block order-confirmation-block">
-            <button type="button" className="btn btn-success" onClick={this.save}>Save</button>
-            <button type="button" className="btn btn-danger" onClick={() => this.props.onCancel()}>Cancel</button>
+            <button type="button" className="btn btn-success" onClick={() => this.props.onSubmit({...this.state})}>Save</button>
+            <button type="button" className="btn btn-danger" onClick={() => this.props.onRemove({...this.state})}>Remove</button>
           </div>
         </form>
     );

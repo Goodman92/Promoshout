@@ -16,4 +16,3 @@ const NfOrderController = connect((state) => {
 })(NfGraphController);
 
 export default NfOrderController;
-  

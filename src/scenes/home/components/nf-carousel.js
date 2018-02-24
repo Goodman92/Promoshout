@@ -7,6 +7,7 @@ import { CSSTransitionGroup } from 'react-transition-group';
 
 const NfCarousel = (transcluded) => {
 
+
 		return(
 			<div>
 				<div className="row nf-carousel-slider">
