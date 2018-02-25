@@ -13,8 +13,8 @@ const NfCarousel = (props) => {
 			<div>
 				<div className="row nf-carousel-slider">
 
-					{(props.data.index == 0) ? 
-							null : <i className="fa fa-2x fa-angle-right fa-rotate-180 nf-carousel-toggle nf-carousel-button-wrapper" aria-hidden="true" onClick={props.getPrevious} />
+					{props.data.page === 0 && props.data.index === 0 ? 
+						null : <i className="fa fa-2x fa-angle-right fa-rotate-180 nf-carousel-toggle nf-carousel-button-wrapper" aria-hidden="true" onClick={props.getPrevious} />
 					}
 			    
 			    {items.map((item, index) => (
