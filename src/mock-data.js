@@ -53,6 +53,7 @@ Array.from(Array(10).keys(), (_, i) => {
   };
   return null;
 });
+
 /* mock data for featured */
 const mockFeatured = [
   {

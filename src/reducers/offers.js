@@ -45,8 +45,6 @@ const offers = (state = initialState, action) => {
       });
 
     case REFRESH_OFFERS:
-      // [{}, {}]
-      // { 1: {}, 2: {}}
       const serialized = _.reduce(state.items, function (obj, param) {
         obj[param.id] = param;
         return obj;
