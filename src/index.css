@@ -114,6 +114,10 @@ input, button, select, textarea, optgroup, option {
 
 }
 
+.bg-white {
+    background-color: #fff;
+}
+
 .mw-326 {
     min-width: 326px;
 }
@@ -160,7 +164,7 @@ h6.h7 {
     text-align: center;
 }
 
-button.platform-btn {
+.platform-btn {
     background-color: #1ab394;
     border-color: #1ab394;
     color: #FFFFFF;

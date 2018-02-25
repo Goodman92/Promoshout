@@ -25,6 +25,7 @@ import feed from './reducers/feed';
 import bookings from './reducers/bookings';
 import influencers from './reducers/influencers';
 import login from './reducers/login';
+import offers from './reducers/offers';
 
 
 // Components
@@ -36,7 +37,7 @@ import NfPlatformHeader from './components/platform-header/nf-platform-header';
 import './index.css';
 
 const nfReducers = combineReducers({
-  featured, filters, feed,
+  featured, filters, feed, offers,
   nav, influencers, orders, bookings, login
 });
 

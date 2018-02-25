@@ -223,6 +223,7 @@ const mockFeed = [
   },
 ];
 
+/* mock data for bookings */
 const mockBookings = Array.from(Array(15).keys(), (_, i) => {
   return {
     start: moment().add(i + 2, 'hours').toDate(),
@@ -233,7 +234,22 @@ const mockBookings = Array.from(Array(15).keys(), (_, i) => {
   }
 });
 
+
+/* mock data for open offers */
+
+const mockOffers = Array.from(Array(15).keys(), (_, i) => {
+  return {
+    id: i+1,
+    author: 'Mush mouth',
+    date : moment(),
+    msg: 'This is short message from client',
+    read: i < 4
+  }
+});
+
+
 export const bookingsMocks = mockBookings;
 export const featuredMocks = mockFeatured;
 export const influencerMocks = influencerMock;
 export const feedMocks = mockFeed;
+export const offersMocks = mockOffers;
