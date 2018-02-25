@@ -238,3 +238,8 @@ button {
         margin-left: 0;
     }
 }
+
+a.hidden-link, a.hidden-link:hover {
+    text-decoration: none;
+    text-underline: none;
+}

@@ -1,8 +1,12 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {requestOffers, selectOffer, refreshOffers, deleteOffers, markSeen} from '../../actions/offers';
+import {
+  requestOffers, selectOffer, refreshOffers,
+  deleteOffers, markSeen, nextPage, previousPage
+} from '../../actions/offers';
 
 import NfOffer from './components/nf-offer';
+import NfPaginationContainer from './components/nf-pagination-container';
 
 import './open-offers.css';
 
@@ -29,10 +33,15 @@ class OpenOffers extends Component {
   };
 
   onNext = () => {
+    this.props.dispatch(nextPage());
   };
 
+  onPrevious = () => {
+    this.props.dispatch(previousPage());
+  };
 
   render() {
+    const {items, page, pageSize} = this.props;
 
     return (
       <div className="container-fluid mt-2">
@@ -59,19 +68,21 @@ class OpenOffers extends Component {
             </div>
             <div className="col-lg-6">
               <div className="btn-group pull-right">
-                <button className="btn btn-white btn-sm"><i className="fa fa-arrow-left"/></button>
-                <button className="btn btn-white btn-sm"><i className="fa fa-arrow-right"/></button>
+                <button className="btn btn-white btn-sm" onClick={this.onPrevious}><i className="fa fa-arrow-left"/>
+                </button>
+                <button className="btn btn-white btn-sm" onClick={this.onNext}><i className="fa fa-arrow-right"/>
+                </button>
               </div>
             </div>
           </div>
-          {
-            this.props.items.map((item, index) => (
-              <div className="row" key={index}>
-                <div className="col-lg-12">
-                  <NfOffer offer={item} onChecked={this.onChecked}/>
-                </div>
-              </div>)
-            )}
+          <NfPaginationContainer items={items} page={page} pageSize={pageSize} getContent={(item) => (
+            <div className="row" key={item.id}>
+              <div className="col-lg-12">
+                <NfOffer offer={item} onChecked={this.onChecked}/>
+              </div>
+            </div>
+          )}>
+          </NfPaginationContainer>
         </div>
       </div>
     );

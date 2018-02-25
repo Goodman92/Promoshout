@@ -4,7 +4,13 @@ import {offersMocks} from '../mock-data';
 
 const nextPageDispatcher = () => {
   return {
-    type:NEXT_PAGE
+    type: NEXT_PAGE
+  }
+};
+
+const previousPageDispatcher = () => {
+  return {
+    type: PREVIOUS_PAGE
   }
 };
 
@@ -51,9 +57,27 @@ function hasOffers(offers) {
   return offers.items.length;
 }
 
+export const previousPage = () => {
+  return (dispatch, getState) => {
+    const {offers} = getState();
+    if (offers.page > 1)
+      dispatch(previousPageDispatcher());
+  };
+};
+
+const shouldFetchMoreOffers = (offers) => {
+    return offers.items.length < (offers.page + 1) * offers.pageSize;
+};
+
 export const nextPage = () => {
   return (dispatch, getState) => {
-    dispatch(nextPageDispatcher);
+    const {offers} = getState();
+    if (offers.lastPage !== offers.page) {
+      dispatch(requestOffersDispatcher());
+      dispatch(nextPageDispatcher());
+      if(shouldFetchMoreOffers(offers))
+        dispatch(receiveOffersDispatcher(offersMocks()));
+    }
   };
 };
 
@@ -80,7 +104,7 @@ export const requestOffers = (page = null) => {
     const {offers} = getState();
     if (!hasOffers(offers)) {
       dispatch(requestOffersDispatcher());
-      dispatch(receiveOffersDispatcher(offersMocks));
+      dispatch(receiveOffersDispatcher(offersMocks()));
     }
   };
 };
@@ -89,7 +113,7 @@ export const refreshOffers = () => {
   return (dispatch) => {
     dispatch(requestOffersDispatcher());
     // AJAX
-    const mock = offersMocks;
+    const mock = offersMocks();
     mock.unshift({
       id: Math.random(),
       author: 'Random guy' + Math.random(),

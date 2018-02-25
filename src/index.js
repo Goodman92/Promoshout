@@ -9,11 +9,12 @@ import Profile from './scenes/profile/profile';
 import WhatWeDo from './scenes/whatwedo/whatwedo';
 import Dashboard from './platform/dashboard/dashboard';
 import OpenOffers from './platform/open-offers/open-offers';
+import OfferDetails from './platform/offer-details/offer-details';
 
 import thunk from 'redux-thunk';
 import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import {combineReducers} from 'redux'
 
 // Reducers
@@ -47,13 +48,13 @@ const store = createStore(nfReducers, applyMiddleware(...[thunk]));
 class RouteWrapperPlatform extends Component {
   render() {
     return (
-        <div className="platform-wrapper">
-          <NfSideNav/>
-          <div className="platform-content">
-            <NfPlatformHeader/>
-            {this.props.component}
-          </div>
+      <div className="platform-wrapper">
+        <NfSideNav/>
+        <div className="platform-content">
+          <NfPlatformHeader/>
+          {this.props.component}
         </div>
+      </div>
     );
   }
 }
@@ -61,46 +62,53 @@ class RouteWrapperPlatform extends Component {
 class RouteWrapper extends Component {
   render() {
     return (
-        <div>
-          <section role="navigation">
-            <NfHeader/>
-          </section>
-          {this.props.component}
-          <section role="footer">
-            <NfFooter/>
-          </section>
-        </div>
+      <div>
+        <section role="navigation">
+          <NfHeader/>
+        </section>
+        {this.props.component}
+        <section role="footer">
+          <NfFooter/>
+        </section>
+      </div>
     );
   }
 }
 
 ReactDOM.render(
-    <Provider store={store}>
-      <Router>
-        <div>
-          <Route exact path="/" component={() => (
-              <RouteWrapper component={<App/>}/>
-          )}/>
-          <Route path="/influencers" component={() => (
-              <RouteWrapper component={<Influencers/>}/>
-          )}/>
-          <Route path="/profile" component={() => (
-              <RouteWrapper component={<Profile/>}/>
-          )}/>
-          <Route path="/whatwedo" component={() => (
-              <RouteWrapper component={<WhatWeDo/>}/>
-          )}/>
-          <Route path="/dashboard" component={() => (
-              <RouteWrapperPlatform component={<Dashboard/>}/>
-          )}/>
-          <Route path="/open-offers" component={() => (
-              <RouteWrapperPlatform component={<OpenOffers/>}/>
-          )}/>
-        </div>
-      </Router>
-    </Provider>
-    ,
-    document.getElementById('root')
+  <Provider store={store}>
+    <Router>
+      <div>
+        <Route exact path="/" component={() => (
+          <RouteWrapper component={<App/>}/>
+        )}/>
+        <Route path="/influencers" component={() => (
+          <RouteWrapper component={<Influencers/>}/>
+        )}/>
+        <Route path="/profile" component={() => (
+          <RouteWrapper component={<Profile/>}/>
+        )}/>
+        <Route path="/whatwedo" component={() => (
+          <RouteWrapper component={<WhatWeDo/>}/>
+        )}/>
+        <Route path="/dashboard" component={() => (
+          <RouteWrapperPlatform component={<Dashboard/>}/>
+        )}/>
+        <Route path="/open-offers" component={() => (
+          <Switch>
+            <Route exact path="/open-offers" component={() => (
+              <RouteWrapperPlatform component={<OpenOffers/>}/>)
+            }/>
+            <Route exact path="/open-offers/:id" component={() => (
+              <RouteWrapperPlatform component={<OfferDetails/>}/>)
+            }/>
+          </Switch>
+        )}/>
+      </div>
+    </Router>
+  </Provider>
+  ,
+  document.getElementById('root')
 );
 
 registerServiceWorker();

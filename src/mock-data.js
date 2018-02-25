@@ -238,10 +238,10 @@ const mockBookings = Array.from(Array(15).keys(), (_, i) => {
 
 /* mock data for open offers */
 
-const mockOffers = Array.from(Array(15).keys(), (_, i) => {
+const mockOffers = () => Array.from(Array(15).keys(), (_, i) => {
   return {
     id: i+1,
-    author: 'Mush mouth',
+    author: 'Mush mouth ' + Math.random(),
     date : moment(),
     msg: 'This is short message from client',
     read: i < 4
