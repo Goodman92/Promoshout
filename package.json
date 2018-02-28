@@ -34,6 +34,7 @@
     "lodash": "^4.17.4",
     "moment": "^2.20.1",
     "node-sass": "^4.7.2",
+    "node-uuid": "^1.4.8",
     "object-assign": "4.1.1",
     "popper": "^1.0.1",
     "popper.js": "^1.12.9",

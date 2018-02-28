@@ -25,6 +25,7 @@ input, button, select, textarea, optgroup, option {
 
 .platform-content {
     background-color: #f3f3f4;
+    min-height: 100vh;
 }
 
 @font-face {
@@ -242,4 +243,15 @@ button {
 a.hidden-link, a.hidden-link:hover {
     text-decoration: none;
     text-underline: none;
+}
+
+.b-quote {
+    padding-left: 0.5em;
+    border-left: 2px solid #dddde2;
+}
+
+.always-center {
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }

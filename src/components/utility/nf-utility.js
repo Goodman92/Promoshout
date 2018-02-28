@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {default as UUID} from "node-uuid";
 
 
 import './nf-utility.css';
@@ -116,7 +117,7 @@ class loginForm extends Component {
 
 const simplePagination = (props) => {
   const renderShowMore = () => {
-    if(props.page < props.lastPage)
+    if (props.page < props.lastPage)
       return (
           <button className="btn platform-btn btn-lg-sides" onClick={props.onShowMore}>
             <i className="fa fa-arrow-down"/> Show More
@@ -125,7 +126,7 @@ const simplePagination = (props) => {
   };
 
   const renderShowLess = () => {
-    if(props.page > 1)
+    if (props.page > 1)
       return (
           <button className="btn platform-btn btn-lg-sides" onClick={props.onShowLess}>
             <i className="fa fa-arrow-up"/> Show Less
@@ -141,9 +142,34 @@ const simplePagination = (props) => {
   )
 };
 
+class CustomCheckbox extends Component {
+
+  componentWillMount() {
+    this.id = UUID.v4();
+  }
+
+  onChange = (e) => {
+    this.props.handleChange(e.target.checked);
+  };
+
+  render() {
+    const {item} = this.props;
+
+    return (
+        <div className="checkboxFive">
+          <input type="checkbox" name="" id={this.id}
+                 onChange={this.onChange} checked={item.selected} value={item.selected}/>
+          <label htmlFor={this.id}/>
+        </div>
+    )
+  };
+
+}
+
 
 export const NfLoginForm = loginForm;
 export const NfLiftBox = liftBox;
 export const NfTextarea = customTextarea;
 export const NfInput = customInput;
 export const NfSimplePagination = simplePagination;
+export const NfCheckbox = CustomCheckbox;

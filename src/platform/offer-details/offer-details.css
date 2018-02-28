@@ -1,0 +1,16 @@
+div.offer-detail-container {
+    background: #fff;
+    padding: 0 1em;
+}
+
+div.offer-detail-heading {
+    border-bottom: 1px solid #e7eaec;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+div.offer-detail-footer {
+    margin-top: 2em;
+    padding-top: 1em;
+    border-top: 2px solid #eaedef;
+}
