@@ -1,5 +1,5 @@
 nav.platform-top-nav {
-    flex-direction:row;
+    flex-direction: row;
     justify-content: space-between;
 }
 
@@ -13,9 +13,14 @@ button.platform-nav-toggler {
 }
 
 ul.platform-top-right li.nav-item:not(:last-child) {
-    margin-right:1em;
+    margin-right: 1em;
 }
 
 ul.platform-top-right a.nav-link:hover {
-    border-bottom:0;
+    border-bottom: 0;
+}
+
+ul.platform-top-right a{
+    text-decoration: none;
+    color: black !important;
 }

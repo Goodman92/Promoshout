@@ -1,5 +1,6 @@
 nav.nf-sidebar {
-    position:fixed;
+    position: absolute;
+    height: 100%;
 }
 
 nav.nf-sidebar a {
@@ -17,20 +18,23 @@ nav.nf-sidebar a:hover {
 
 nav.nf-sidebar li {
     background: #2f4050;
+    position: relative;
 }
 
-nav.nf-sidebar li.active {
+nav.nf-sidebar a.active {
     border-left: 4px solid #19aa8d;
     background: #293846;
 }
 
-nav.nf-sidebar a > i {
+nav.nf-sidebar a > i:first-child {
     padding-right: 1em;
 }
 
 ul.nav-list-items {
     height: 100%;
     background: #2f4050;
+    margin: 0;
+    flex: 1;
 }
 
 div.sidebar-header {
@@ -41,4 +45,31 @@ div.sidebar-header {
 div.sidebar-header {
     color: #fff;
     padding: 1em;
+}
+
+ul.sub-nav > li {
+    background: #293846;
+}
+
+ul.sub-nav {
+    z-index: 13;
+}
+
+nav.nf-sidebar li a:focus {
+    background: #293846;
+    text-decoration: none;
+}
+
+@media (max-width: 767px) {
+    ul.sub-nav {
+        position: absolute;
+        left: 60px;
+    }
+
+}
+
+@media (min-width: 767px) {
+    ul.sub-nav > li {
+        padding-left: 1em;
+    }
 }

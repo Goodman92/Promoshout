@@ -1,3 +1,8 @@
 div.offer-item:hover {
     background-color: #f5f5f5;
 }
+
+.disabled-offer.checkboxFive > label {
+    cursor: not-allowed;
+    opacity: 0.5;
+}

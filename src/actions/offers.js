@@ -8,6 +8,12 @@ const nextPageDispatcher = () => {
   }
 };
 
+const clearState = () => {
+  return {
+    type: CLEAR_STATE
+  }
+};
+
 const previousPageDispatcher = () => {
   return {
     type: PREVIOUS_PAGE
@@ -66,7 +72,7 @@ export const previousPage = () => {
 };
 
 const shouldFetchMoreOffers = (offers) => {
-    return offers.items.length < (offers.page + 1) * offers.pageSize;
+  return offers.items.length < (offers.page + 1) * offers.pageSize;
 };
 
 export const nextPage = () => {
@@ -75,7 +81,7 @@ export const nextPage = () => {
     if (offers.lastPage !== offers.page) {
       dispatch(requestOffersDispatcher());
       dispatch(nextPageDispatcher());
-      if(shouldFetchMoreOffers(offers))
+      if (shouldFetchMoreOffers(offers))
         dispatch(receiveOffersDispatcher(offersMocks()));
     }
   };
@@ -99,13 +105,12 @@ export const markSeen = () => {
 
 };
 
-export const requestOffers = (page = null) => {
+export const requestOffers = (type, text) => {
   return (dispatch, getState) => {
     const {offers} = getState();
-    if (!hasOffers(offers)) {
-      dispatch(requestOffersDispatcher());
-      dispatch(receiveOffersDispatcher(offersMocks()));
-    }
+    dispatch(clearState());
+    dispatch(requestOffersDispatcher());
+    dispatch(receiveOffersDispatcher(offersMocks()));
   };
 };
 
@@ -135,3 +140,4 @@ export const REFRESH_OFFERS = 'REFRESH_OFFERS';
 export const MARK_SEEN = 'MARK_SEEN';
 export const NEXT_PAGE = 'NEXT_PAGE';
 export const PREVIOUS_PAGE = 'PREVIOUS_PAGE';
+export const CLEAR_STATE = 'CLEAR_STATE';

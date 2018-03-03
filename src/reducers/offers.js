@@ -8,16 +8,19 @@ import {
   DELETE_OFFERS,
   MARK_SEEN,
   NEXT_PAGE,
-  PREVIOUS_PAGE
+  PREVIOUS_PAGE,
+  CLEAR_STATE
 } from '../actions/offers';
+
 
 const initialState = {
   date: moment(),
+  type: null,
   page: 1,
   pageSize: 15,
   lastPage: 10,
   fetching: false,
-  items: []
+  items: [],
 };
 
 // Split this
@@ -89,6 +92,9 @@ const offers = (state = initialState, action) => {
       return Object.assign({}, state, {
         page: state.page - 1
       });
+
+    case CLEAR_STATE:
+      return initialState;
 
     default:
       return state;

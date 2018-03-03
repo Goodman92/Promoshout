@@ -14,6 +14,7 @@ div.open-offers-wrapper .lift-box-header {
     color: #676a6c;
 }
 
+
 button.btn-white {
     color: inherit;
     background: white;
@@ -27,6 +28,10 @@ div.action-btn-group button {
 div.offer-item {
     padding: 0.3em 0;
     border-top: 1px solid #ddd;
+}
+
+div.open-offers-container div.offer-row:first-child div.offer-item {
+    border-top: 0;
 }
 
 .unread {

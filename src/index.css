@@ -28,6 +28,10 @@ input, button, select, textarea, optgroup, option {
     min-height: 100vh;
 }
 
+.platform-wrapper {
+    height: 100%;
+}
+
 @font-face {
     font-family: LatoItalic;
     src: url("./Lato-Italic.ttf") format("truetype");
@@ -189,11 +193,16 @@ button {
     padding-right: 4rem;
 }
 
+#sidebar {
+    display: flex;
+    flex-direction: column;
+}
+
 @media (min-width: 767px) {
     #sidebar {
         min-width: 250px;
         max-width: 250px;
-        height: 100vh;
+        height: 100%;
     }
 
     #sidebar + .platform-content {
@@ -207,7 +216,7 @@ button {
     .collapse-nav#sidebar {
         min-width: 60px;
         max-width: 60px;
-        height: 100vh;
+        height: 100%;
     }
 
     .collapse-nav#sidebar + .platform-content {
@@ -224,7 +233,7 @@ button {
     #sidebar {
         min-width: 60px;
         max-width: 60px;
-        height: 100vh;
+        height: 100%;
     }
 
     #sidebar + .platform-content {
@@ -250,8 +259,20 @@ a.hidden-link, a.hidden-link:hover {
     border-left: 2px solid #dddde2;
 }
 
-.always-center {
+.always-center, .items-center {
     justify-content: center;
     align-items: center;
     display: flex;
+}
+
+.items-center {
+    justify-content: unset;
+}
+
+.c-not-allowed {
+    cursor: not-allowed;
+}
+
+.text-visa {
+    color: #fdbb0a;
 }

@@ -10,6 +10,7 @@ import WhatWeDo from './scenes/whatwedo/whatwedo';
 import Dashboard from './platform/dashboard/dashboard';
 import OpenOffers from './platform/open-offers/open-offers';
 import OfferDetails from './platform/offer-details/offer-details';
+import Bank from './platform/bank/bank';
 
 import thunk from 'redux-thunk';
 import {createStore, applyMiddleware} from 'redux';
@@ -62,7 +63,7 @@ class RouteWrapperPlatform extends Component {
 class RouteWrapper extends Component {
   render() {
     return (
-      <div>
+      <div className="h-100">
         <section role="navigation">
           <NfHeader/>
         </section>
@@ -94,13 +95,32 @@ ReactDOM.render(
         <Route path="/dashboard" component={() => (
           <RouteWrapperPlatform component={<Dashboard/>}/>
         )}/>
-        <Route path="/open-offers" component={() => (
+        <Route path="/offers" component={() => (
           <Switch>
-            <Route exact path="/open-offers" component={() => (
+            <Route exact path="/offers" component={() => (
               <RouteWrapperPlatform component={<OpenOffers/>}/>)
             }/>
-            <Route exact path="/open-offers/:id" component={() => (
+            <Route exact path="/offers/:type?" component={() => (
+              <RouteWrapperPlatform component={<OpenOffers/>}/>)
+            }/>
+            <Route exact path="/offers/details/:id" component={() => (
               <RouteWrapperPlatform component={<OfferDetails/>}/>)
+            }/>
+          </Switch>
+        )}/>
+        <Route path="/bank" component={() => (
+          <Switch>
+            <Route exact path="/bank" component={() => (
+              <RouteWrapperPlatform component={<Bank/>}/>)
+            }/>
+            <Route exact path="/bank/deposit" component={() => (
+              <RouteWrapperPlatform component={<Bank/>}/>)
+            }/>
+            <Route exact path="/bank/withdraw" component={() => (
+              <RouteWrapperPlatform component={<Bank/>}/>)
+            }/>
+            <Route exact path="/bank/transactions" component={() => (
+              <RouteWrapperPlatform component={<Bank/>}/>)
             }/>
           </Switch>
         )}/>

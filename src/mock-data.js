@@ -238,15 +238,43 @@ const mockBookings = Array.from(Array(15).keys(), (_, i) => {
 
 /* mock data for open offers */
 
+
 const mockOffers = () => Array.from(Array(15).keys(), (_, i) => {
   return {
     id: i+1,
     author: 'Mush mouth ' + Math.random(),
     date : moment(),
     msg: 'This is short message from client',
-    read: i < 4
+    read: i < 4,
+    status: ((i) => {
+        if (i % 5 === 0)
+          return 'declined';
+        if(i % 4 === 0)
+          return 'pending';
+        if(i % 3 === 0)
+          return 'open';
+        return 'completed';
+    })(i)
   }
 });
+
+/* mock for offer detail */
+
+const mockOfferDetail = {
+  id: Math.floor(Math.random() * 100),
+  user: 'SHRG',
+  created: '2017-01-01',
+  msg: "It is a long established fact that a reader will be distracted by the\ " +
+  "readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it \h" +
+  "as a more-or-less normal distribution",
+  caption: "Life with three dogs and a little puppy moves pretty fast! Lucky for us, Google Clips\i" +
+  "s helping capture moments with our dogs that we might",
+  price: '3.5',
+  length: '5',
+  requestedTime: '2017-01-01',
+  status: Math.floor(Math.random() * 2 + 1) == 1 ? 'pending' : 'open',
+  answer: 'Wazzo wazzo wazzo!'
+};
 
 
 export const bookingsMocks = mockBookings;
@@ -254,3 +282,4 @@ export const featuredMocks = mockFeatured;
 export const influencerMocks = influencerMock;
 export const feedMocks = mockFeed;
 export const offersMocks = mockOffers;
+export const offerDetailMock = mockOfferDetail;
