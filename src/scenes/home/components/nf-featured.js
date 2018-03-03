@@ -30,7 +30,6 @@ class NfFeatured extends Component {
               <h1 className="featured-main-title"> Featured Offers </h1>
             </div>
             <div className="col-lg-12"> 
-              {console.log(this.props.featured)}
 
               <NfCarousel data={this.props.featured} getNext={this.getNext} getPrevious={this.getPrevious} />
               

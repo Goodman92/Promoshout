@@ -13,7 +13,7 @@ class NfSideNav extends Component {
   }
 
   render = () => {
-
+    
     const getCollapseClass = () => {
       return this.props.collapsed ? "collapse-nav" : "";
     };
@@ -49,9 +49,11 @@ class NfSideNav extends Component {
             <a href="#"> <i className="fa fa-cog"/>
               <span className="nav-item-label"> Settings </span></a>
           </li>
-          <li>
-            <a href="#"> <i className="fa fa-ticket"/>
-              <span className="nav-item-label"> Tickets </span></a>
+          <li>  
+            <NavLink to="/tickets">
+              <i className="fa fa-ticket"/>
+              <span className="nav-item-label"> Tickets </span>
+            </NavLink>
           </li>
           <li onClick={() => this.setState({bankCollapsed: !this.state.bankCollapsed})}>
             <a data-toggle="collapse" href="#collapseBank" aria-expanded="false">
@@ -76,6 +78,7 @@ class NfSideNav extends Component {
           </li>
         </ul>
       </nav>
+      
     )
   }
 }

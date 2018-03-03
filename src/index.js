@@ -11,6 +11,7 @@ import Dashboard from './platform/dashboard/dashboard';
 import OpenOffers from './platform/open-offers/open-offers';
 import OfferDetails from './platform/offer-details/offer-details';
 import Bank from './platform/bank/bank';
+import Tickets from './platform/tickets/tickets';
 
 import thunk from 'redux-thunk';
 import {createStore, applyMiddleware} from 'redux';
@@ -28,6 +29,7 @@ import bookings from './reducers/bookings';
 import influencers from './reducers/influencers';
 import login from './reducers/login';
 import offers from './reducers/offers';
+import tickets from './reducers/tickets';
 
 
 // Components
@@ -40,7 +42,7 @@ import './index.css';
 
 const nfReducers = combineReducers({
   featured, filters, feed, offers,
-  nav, influencers, orders, bookings, login
+  nav, influencers, orders, bookings, login, tickets
 });
 
 
@@ -95,6 +97,9 @@ ReactDOM.render(
         <Route path="/dashboard" component={() => (
           <RouteWrapperPlatform component={<Dashboard/>}/>
         )}/>
+        <Route path="/tickets" component={() => (
+          <RouteWrapperPlatform component={<Tickets/>}/>
+        )}/>
         <Route path="/offers" component={() => (
           <Switch>
             <Route exact path="/offers" component={() => (
@@ -127,8 +132,9 @@ ReactDOM.render(
       </div>
     </Router>
   </Provider>
-  ,
+ ,
   document.getElementById('root')
+
 );
 
 registerServiceWorker();

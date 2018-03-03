@@ -1,0 +1,33 @@
+.ticket-chat-wrapper {
+  width: 100%;
+  display: inline-block;
+}
+
+div.ticket-table-row-review-info {
+    margin-left: 1em;
+}
+
+div.ticket-table-row-review-item {
+    display: flex;
+    align-items: center;
+}
+
+div.ticket-table-row-review-item figure {
+    margin: 0;
+}
+
+.ticket-table-row-review-left p {
+	font-family: 'SourceSansPro';
+  color: #999999;
+}
+
+.ticket-table-row-review-text {
+	font-family: 'SourceSansPro';
+  padding: 0.8em;
+  background: #bee5df;
+  border-radius: 10px 10px 10px 0px;
+}
+
+.ticket-table-row-review-text > p {
+	font-family: 'SourceSansPro';
+}

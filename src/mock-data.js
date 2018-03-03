@@ -275,6 +275,43 @@ const mockOfferDetail = {
   status: Math.floor(Math.random() * 2 + 1) == 1 ? 'pending' : 'open',
   answer: 'Wazzo wazzo wazzo!'
 };
+/* mock data for tickets */
+
+const mockTickets = [
+  {
+    id: 1,
+    date: '2018-01-01',
+    firstMessage: 'I want to make an rabbort',
+    subject: 'Report user',
+    messages: [{message: "some text", id: 11, senderId: 2, date: '1018.3.2', fromSupport: false}]
+  },
+  {
+    id: 2,
+    date: '2018-02-12',
+    firstMessage: 'sure thing',
+    subject: 'Other',
+    messages: [{message: "my second message", id: 21, senderId: 2, date: '1018.3.2', fromSupport: false},
+               {message: "my third message", id: 22, senderId: 2, date: '1018.4.2', fromSupport: false},
+               {message: "message from support", id: 23, senderId: 2, date: '1018.5.2', fromSupport: true}
+              ]
+  },
+  {
+    id: 3,
+    date: '2018-05-10',
+    firstMessage: 'hjo hjo',
+    subject: 'Bug Report',
+    messages: [{message: "putsikatsi", id: 31, senderId: 2, date: '1018.3.2', fromSupport: false},
+               {message: "wasso wasso wasso", id: 32, senderId: 2, date: '1018.3.2', fromSupport: true}
+              ]
+  },
+  {
+    id: 4,
+    date: '2018-11-10',
+    firstMessage: 'my name is carlos maatooss',
+    subject: 'Other',
+    messages: []
+  },
+];
 
 
 export const bookingsMocks = mockBookings;
@@ -283,3 +320,4 @@ export const influencerMocks = influencerMock;
 export const feedMocks = mockFeed;
 export const offersMocks = mockOffers;
 export const offerDetailMock = mockOfferDetail;
+export const ticketsMocks = mockTickets;
