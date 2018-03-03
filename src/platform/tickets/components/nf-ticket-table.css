@@ -1,0 +1,14 @@
+.ticket-table-wrapper {
+	background-color: white;
+}
+.ticket-table-wrapper > table > thead {
+	background-color: #47c2a9;
+	color: white;
+}
+tr:nth-child(even) {
+	background-color: #f5fbfa;
+}
+
+.th-header-width {
+  width: 91px;
+}

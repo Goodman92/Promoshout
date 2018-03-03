@@ -9,6 +9,7 @@ import Profile from './scenes/profile/profile';
 import WhatWeDo from './scenes/whatwedo/whatwedo';
 import Dashboard from './platform/dashboard/dashboard';
 import OpenOffers from './platform/open-offers/open-offers';
+import Tickets from './platform/tickets/tickets';
 
 import thunk from 'redux-thunk';
 import {createStore, applyMiddleware} from 'redux';
@@ -26,6 +27,7 @@ import bookings from './reducers/bookings';
 import influencers from './reducers/influencers';
 import login from './reducers/login';
 import offers from './reducers/offers';
+import tickets from './reducers/tickets';
 
 
 // Components
@@ -38,7 +40,7 @@ import './index.css';
 
 const nfReducers = combineReducers({
   featured, filters, feed, offers,
-  nav, influencers, orders, bookings, login
+  nav, influencers, orders, bookings, login, tickets
 });
 
 
@@ -95,6 +97,9 @@ ReactDOM.render(
           )}/>
           <Route path="/open-offers" component={() => (
               <RouteWrapperPlatform component={<OpenOffers/>}/>
+          )}/>
+          <Route path="/tickets" component={() => (
+              <RouteWrapperPlatform component={<Tickets/>}/>
           )}/>
         </div>
       </Router>

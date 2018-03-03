@@ -4,7 +4,6 @@ import './nf-carousel.css';
 
 import {CSSTransitionGroup} from 'react-transition-group';
 
-
 const NfCarousel = (props) => {
 
   const items = props.data.items.slice().splice(props.data.index * props.data.size, props.data.size);

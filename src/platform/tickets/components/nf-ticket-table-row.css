@@ -1,0 +1,15 @@
+td:last-child {
+  float: right;
+}
+
+td > i {
+	color: #7f7f7f;
+}
+
+.ticket-delete-button {
+		float: right;
+    background-color: #ef627d;
+    border-color: #ef627d;
+    color: #FFFFFF;
+    cursor: pointer;
+}

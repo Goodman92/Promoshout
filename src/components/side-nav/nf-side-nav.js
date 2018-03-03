@@ -46,8 +46,10 @@ class NfSideNav extends Component {
                 <span className="nav-item-label"> Settings </span></a>
             </li>
             <li>
-              <a href="#"> <i className="fa fa-ticket"/>
-                <span className="nav-item-label"> Tickets </span></a>
+              <Link to="/tickets">
+                <i className="fa fa-ticket"/>
+                <span className="nav-item-label"> Tickets </span>
+              </Link>
             </li>
             <li>
               <a href="#"> <i className="fa fa-university"/>
