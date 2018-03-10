@@ -10,7 +10,9 @@ import WhatWeDo from './scenes/whatwedo/whatwedo';
 import Dashboard from './platform/dashboard/dashboard';
 import OpenOffers from './platform/open-offers/open-offers';
 import OfferDetails from './platform/offer-details/offer-details';
-import Bank from './platform/bank/bank';
+import Deposit from './platform/bank/deposit';
+import Withdraw from './platform/bank/withdraw';
+import History from './platform/bank/history';
 import Tickets from './platform/tickets/tickets';
 
 import thunk from 'redux-thunk';
@@ -30,6 +32,7 @@ import influencers from './reducers/influencers';
 import login from './reducers/login';
 import offers from './reducers/offers';
 import tickets from './reducers/tickets';
+import {default as transactions} from './reducers/transactions';
 
 
 // Components
@@ -41,7 +44,7 @@ import NfPlatformHeader from './components/platform-header/nf-platform-header';
 import './index.css';
 
 const nfReducers = combineReducers({
-  featured, filters, feed, offers,
+  featured, filters, feed, offers, transactions,
   nav, influencers, orders, bookings, login, tickets
 });
 
@@ -116,16 +119,16 @@ ReactDOM.render(
         <Route path="/bank" component={() => (
           <Switch>
             <Route exact path="/bank" component={() => (
-              <RouteWrapperPlatform component={<Bank/>}/>)
+              <RouteWrapperPlatform component={<Deposit/>}/>)
             }/>
             <Route exact path="/bank/deposit" component={() => (
-              <RouteWrapperPlatform component={<Bank/>}/>)
+              <RouteWrapperPlatform component={<Deposit/>}/>)
             }/>
             <Route exact path="/bank/withdraw" component={() => (
-              <RouteWrapperPlatform component={<Bank/>}/>)
+              <RouteWrapperPlatform component={<Withdraw/>}/>)
             }/>
             <Route exact path="/bank/transactions" component={() => (
-              <RouteWrapperPlatform component={<Bank/>}/>)
+              <RouteWrapperPlatform component={<History/>}/>)
             }/>
           </Switch>
         )}/>

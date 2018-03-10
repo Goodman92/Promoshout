@@ -313,6 +313,19 @@ const mockTickets = [
   },
 ];
 
+const mockHistory = [];
+
+for(let i = 0; i<100; i++) {
+  mockHistory.push({
+    id: i,
+    date: moment().add(i + 2, 'weeks'),
+    method: i % 2 === 0 ? 'Paypal' : 'Credit card',
+    type: i % 2 === 0 ? 'Deposit' : 'Withdrawal',
+    status: i % 2 === 0 ? 'Processed' : 'Pending',
+    amount: i * 10
+  })
+}
+
 
 export const bookingsMocks = mockBookings;
 export const featuredMocks = mockFeatured;
@@ -321,3 +334,4 @@ export const feedMocks = mockFeed;
 export const offersMocks = mockOffers;
 export const offerDetailMock = mockOfferDetail;
 export const ticketsMocks = mockTickets;
+export const historyMocks = mockHistory;

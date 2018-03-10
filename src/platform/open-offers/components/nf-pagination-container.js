@@ -11,13 +11,9 @@ class NfPaginationContainer extends Component {
     const data = this.spliceData(items, page, pageSize);
 
     return (
-      <div>
-        {
           data.map((item) => (
             this.props.getContent(item)
           ))
-        }
-      </div>
     );
   }
 }

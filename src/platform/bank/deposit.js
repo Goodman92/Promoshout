@@ -9,7 +9,7 @@ import './bank.css';
 
 const PPButton = paypal.Button.driver('react', {React, ReactDOM});
 
-class Bank extends Component {
+class Deposit extends Component {
 
   constructor(props) {
     super(props);
@@ -133,4 +133,4 @@ class Bank extends Component {
 
 
 const mapStateToProps = (state) => state.offers;
-export default connect(mapStateToProps)(Bank);
+export default connect(mapStateToProps)(Deposit);

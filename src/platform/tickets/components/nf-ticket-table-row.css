@@ -1,4 +1,4 @@
-td:last-child {
+.ticket-table-wrapper td:last-child  {
   float: right;
 }
 
