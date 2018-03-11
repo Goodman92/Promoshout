@@ -80,19 +80,22 @@ class OpenOffers extends Component {
               <div className="col-lg-12">
                 <ul className="nav nav-tabs">
                   <li className="nav-item">
-                    <NavLink className="nav-link" exact to="/offers" activeClassName="active">All</NavLink>
+                    <NavLink className="nav-link" exact to="/platform/offers" activeClassName="active">All</NavLink>
                   </li>
                   <li className="nav-item">
-                    <NavLink className="nav-link" to="/offers/open" activeClassName="active">Open</NavLink>
+                    <NavLink className="nav-link" to="/platform/offers/open" activeClassName="active">Open</NavLink>
                   </li>
                   <li className="nav-item">
-                    <NavLink className="nav-link" to="/offers/pending" activeClassName="active">Pending</NavLink>
+                    <NavLink className="nav-link" to="/platform/offers/pending"
+                             activeClassName="active">Pending</NavLink>
                   </li>
                   <li className="nav-item">
-                    <NavLink className="nav-link" to="/offers/declined" activeClassName="active">Declined</NavLink>
+                    <NavLink className="nav-link" to="/platform/offers/declined"
+                             activeClassName="active">Declined</NavLink>
                   </li>
                   <li className="nav-item">
-                    <NavLink className="nav-link" to="/offers/completed" activeClassName="active">Completed</NavLink>
+                    <NavLink className="nav-link" to="/platform/offers/completed"
+                             activeClassName="active">Completed</NavLink>
                   </li>
                   <li className="nav-item items-center ml-auto">
                     <div className="text-right">

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {NavLink} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 import './nf-side-nav.css';
 
@@ -13,7 +13,7 @@ class NfSideNav extends Component {
   }
 
   render = () => {
-    
+
     const getCollapseClass = () => {
       return this.props.collapsed ? "collapse-nav" : "";
     };
@@ -34,26 +34,36 @@ class NfSideNav extends Component {
 
         <ul className="list-unstyled nav-list-items">
           <li>
-            <NavLink to="/dashboard" activeClassName="active">
+            <Link to="/platform/dashboard">
               <i className="fa fa-th-large"/>
               <span className="nav-item-label"> Dashboard </span>
-            </NavLink>
+            </Link>
           </li>
           <li>
-            <NavLink to="/offers">
+            <Link to="/platform/account-manager">
+              <i className="fa fa-id-card-o"/>
+              <span className="nav-item-label"> Account manager </span>
+            </Link>
+          </li>
+          <li>
+            <Link to="/platform/offers">
               <i className="fa fa-suitcase"/>
               <span className="nav-item-label"> Offers </span>
-            </NavLink>
+            </Link>
           </li>
           <li>
-            <a href="#"> <i className="fa fa-cog"/>
-              <span className="nav-item-label"> Settings </span></a>
+            <Link to="/platform/settings"><i className="fa fa-cog"/>
+              <span className="nav-item-label"> Settings </span></Link>
           </li>
-          <li>  
-            <NavLink to="/tickets">
+          <li>
+            <Link to="/platform/connections"><i className="fa fa-handshake-o"/>
+              <span className="nav-item-label"> Connections </span></Link>
+          </li>
+          <li>
+            <Link to="/platform/tickets">
               <i className="fa fa-ticket"/>
               <span className="nav-item-label"> Tickets </span>
-            </NavLink>
+            </Link>
           </li>
           <li onClick={() => this.setState({bankCollapsed: !this.state.bankCollapsed})}>
             <a data-toggle="collapse" href="#collapseBank" aria-expanded="false">
@@ -63,22 +73,22 @@ class NfSideNav extends Component {
             </a>
             <ul className="list-unstyled sub-nav collapse" id="collapseBank">
               <li>
-                <NavLink to="/bank/deposit">
-                  <span> Deposit </span></NavLink>
+                <Link to="/platform/bank/deposit">
+                  <span> Deposit </span></Link>
               </li>
               <li>
-                <NavLink to="/bank/withdraw">
-                  <span> Withdraw </span></NavLink>
+                <Link to="/platform/bank/withdraw">
+                  <span> Withdraw </span></Link>
               </li>
               <li>
-                <NavLink to="/bank/transactions">
-                  <span> Transaction History </span></NavLink>
+                <Link to="/platform/bank/transactions">
+                  <span> Transaction History </span></Link>
               </li>
             </ul>
           </li>
         </ul>
       </nav>
-      
+
     )
   }
 }
