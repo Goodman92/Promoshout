@@ -1,0 +1,22 @@
+table.transaction-table > thead th {
+    border-top: 0;
+}
+
+.fa-stacked {
+    width: 0.8em;
+    padding-left: 0.2em;
+}
+
+.fa-stack > .top-caret {
+    position: absolute;
+    top: 3px;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.25);
+}
+
+.fa-stack > .bottom-caret {
+    position: absolute;
+    bottom: 3px;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.25);
+}

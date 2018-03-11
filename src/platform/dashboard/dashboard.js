@@ -23,7 +23,7 @@ class Dashboard extends Component {
         <div className="container-fluid mt-2">
           <div className="row">
             <div className="col-lg-3">
-              <NfLiftBox header={<span> Deals made through Promoshout</span>} content={
+              <NfLiftBox header={<span> Deals made </span>} content={
                 <h3 className="text-center">
                   22
                 </h3>

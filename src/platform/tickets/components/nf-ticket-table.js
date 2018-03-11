@@ -14,7 +14,6 @@ class NfTicketTable extends Component {
 
   getMoreTickets = () => {
     console.log(this.props);
-
     this.props.dispatch(requestMore());
   };
 

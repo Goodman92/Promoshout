@@ -276,3 +276,34 @@ a.hidden-link, a.hidden-link:hover {
 .text-visa {
     color: #fdbb0a;
 }
+
+.facebook-blue {
+    color: #3b5998;
+}
+
+.twitter-blue {
+    color: #8b9dc3;
+}
+
+.instagram-color {
+    color: #e4405f;
+}
+
+.btn-facebook {
+    background-color: #3b5998;
+    color: #fff;
+    border: 0;
+}
+
+.btn-twitter {
+    background-color: #8b9dc3;
+    color: #fff;
+    border: 0;
+}
+
+.btn-instagram {
+    background-color: #e4405f;
+    color: #fff;
+    border: 0;
+}
+
