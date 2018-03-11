@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-.ticket-table-wrapper td:last-child {
-=======
+
 .ticket-table-wrapper td:last-child  {
->>>>>>> fe96da04472b41d656e330c5c8f3a70fe5b57715
   float: right;
 }
 
