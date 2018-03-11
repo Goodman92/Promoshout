@@ -5,10 +5,45 @@
 	background-color: #47c2a9;
 	color: white;
 }
+.ticket-table-wrapper > table {
+	margin-bottom: unset;
+}
+
 tr:nth-child(even) {
 	background-color: #f5fbfa;
 }
 
-.th-header-width {
+.ticket-th-header-width {
   width: 91px;
+}
+
+.ticket-th-buttons {
+	border: none!important;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.ticket-table-button {
+  color: #fff;
+  background-color: #35A28C;
+  border: none;
+  border-radius: 5px;
+  margin-right: 3px;
+}
+.ticket-table-button:hover {
+	background-color: #30937F;
+}
+.ticket-table-button:focus {
+	outline: 0;
+}
+
+.ticket-table-empty {
+	float: unset!important;
+	text-align: center;
+	color: #a8a8a8;
+}
+
+.ticket-table-empty > p {
+	padding-top: 1.5rem;
+	padding-bottom: 1rem;
 }

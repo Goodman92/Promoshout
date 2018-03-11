@@ -168,9 +168,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec risus dolor, rutr
   },
     {
     key: 12,
+    followers: '5000',
     name: '@test',
     price: 5,
-    followers: '5000',
     following: '12',
     desc: `
     uspendisse consequat massa id diam mattis porttitor. Duis ligula magn`,
@@ -275,6 +275,7 @@ const mockOfferDetail = {
   status: Math.floor(Math.random() * 2 + 1) == 1 ? 'pending' : 'open',
   answer: 'Wazzo wazzo wazzo!'
 };
+
 /* mock data for tickets */
 
 const mockTickets = [
@@ -290,10 +291,11 @@ const mockTickets = [
     date: '2018-02-12',
     firstMessage: 'sure thing',
     subject: 'Other',
-    messages: [{message: "my second message", id: 21, senderId: 2, date: '1018.3.2', fromSupport: false},
-               {message: "my third message", id: 22, senderId: 2, date: '1018.4.2', fromSupport: false},
-               {message: "message from support", id: 23, senderId: 2, date: '1018.5.2', fromSupport: true}
-              ]
+    messages: [
+     {message: "my second message", id: 21, senderId: 2, date: '1018.3.2', fromSupport: false},
+     {message: "my third message", id: 22, senderId: 2, date: '1018.4.2', fromSupport: false},
+     {message: "message from support", id: 23, senderId: 2, date: '1018.5.2', fromSupport: true}
+    ]
   },
   {
     id: 3,
@@ -313,6 +315,43 @@ const mockTickets = [
   },
 ];
 
+const newMockTickets = [
+  {
+    id: 5,
+    date: '2018-01-01',
+    firstMessage: 'I want to asdasdasdmake an rabbort',
+    subject: 'Report user',
+    messages: [{message: "some text", id: 51, senderId: 34, date: '1018.3.2', fromSupport: false}]
+  },
+  {
+    id: 6,
+    date: '2018-02-12',
+    firstMessage: 'sureasdasdasdasdas thing',
+    subject: 'Other',
+    messages: [
+     {message: "my second message", id: 61, senderId: 345, date: '1018.3.2', fromSupport: false},
+     {message: "my third message", id: 62, senderId: 345, date: '1018.4.2', fromSupport: false},
+     {message: "message from support", id: 63, senderId: 345, date: '1018.5.2', fromSupport: true}
+    ]
+  },
+  {
+    id: 7,
+    date: '2018-05-10',
+    firstMessage: 'hjoadsdasdasdasdas hjo',
+    subject: 'Bug Report',
+    messages: [{message: "putsikatsi", id: 71, senderId: 353, date: '1018.3.2', fromSupport: false},
+               {message: "wasso wasso wasso", id: 72, senderId: 345, date: '1018.3.2', fromSupport: true}
+              ]
+  },
+  {
+    id: 8,
+    date: '2018-11-10',
+    firstMessage: 'my nadasdasdasdasdasde is carlos maatooss',
+    subject: 'Other',
+    messages: []
+  },
+];
+
 
 export const bookingsMocks = mockBookings;
 export const featuredMocks = mockFeatured;
@@ -321,3 +360,4 @@ export const feedMocks = mockFeed;
 export const offersMocks = mockOffers;
 export const offerDetailMock = mockOfferDetail;
 export const ticketsMocks = mockTickets;
+export const newTicketsMocks = newMockTickets;

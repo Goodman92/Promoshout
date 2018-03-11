@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import {connect} from 'react-redux';
+import {fetchTickets, deleteTicket, requestMore} from '../../../actions/tickets';
 import NfTicketTableRow from './nf-ticket-table-row';
-import {fetchTickets, deleteTicket} from '../../../actions/tickets';
-
 
 import "./nf-ticket-table.css";
+
 
 class NfTicketTable extends Component {
 
@@ -12,10 +12,12 @@ class NfTicketTable extends Component {
     this.props.dispatch(fetchTickets());
   }
 
-  deleteTicketRow= (id) => {
-    console.log("poista tiketti id numerolla: " + id);
+  getMoreTickets = () => {
+    console.log(this.props);
+
+    this.props.dispatch(requestMore());
   };
-  
+
   render() {
     return (
       <div className="container-fluid mt-2">
@@ -23,17 +25,22 @@ class NfTicketTable extends Component {
           <table className="table">
             <thead>
               <tr>
-                <th className="th-header-width">Date</th>
+                <th className="ticket-th-header-width">Date</th>
                 <th>Message</th>
-                <th />
+                <th className="ticket-th-buttons">
+                  <button className="ticket-table-button"><i className="fa fa-arrow-left"></i></button>
+                  <button onClick={this.getMoreTickets} className="ticket-table-button"><i className="fa fa-arrow-right"></i></button> 
+                </th>
               </tr>
             </thead>
             <tbody>
 
-                {console.log("tickets state: " + JSON.stringify(this.props.tickets))}
+                {this.props.items.length == 0 ? 
+                  <tr><td className="ticket-table-empty" colSpan="3"><p>You dont have any open tickets</p></td></tr> 
+                  : null}
 
-                {this.props.tickets.items.map((item, index) => (
-                    <NfTicketTableRow key={item.id} ticket={item} deleteTicket={this.deleteTicketRow} />
+                {this.props.items.map((item, index) => (
+                    <NfTicketTableRow key={item.id} ticket={item} />
                 ))}
 
             </tbody>
@@ -44,6 +51,6 @@ class NfTicketTable extends Component {
   }
 }
 
-const mapStateToProps = (state) => state;
+const mapStateToProps = (state) => state.tickets;
 
 export default connect(mapStateToProps)(NfTicketTable);
