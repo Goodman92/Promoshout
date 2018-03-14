@@ -126,7 +126,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec risus dolor, rutr
     uspendisse consequat massa id diam mattis porttitor. Duis ligula magn`,
     image: '../../../resources/images/random/4.jpg'
   },
-    {
+  {
     key: 8,
     name: '@dedeeee',
     price: 5,
@@ -136,7 +136,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec risus dolor, rutr
     uspendisse consequat massa id diam mattis porttitor. Duis ligula magn`,
     image: '../../../resources/images/random/4.jpg'
   },
-    {
+  {
     key: 9,
     name: '@asd',
     price: 5,
@@ -146,7 +146,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec risus dolor, rutr
     uspendisse consequat massa id diam mattis porttitor. Duis ligula magn`,
     image: '../../../resources/images/random/4.jpg'
   },
-    {
+  {
     key: 10,
     name: '@qwe',
     price: 5,
@@ -156,7 +156,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec risus dolor, rutr
     uspendisse consequat massa id diam mattis porttitor. Duis ligula magn`,
     image: '../../../resources/images/random/4.jpg'
   },
-    {
+  {
     key: 11,
     name: '@dsa',
     price: 5,
@@ -166,7 +166,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec risus dolor, rutr
     uspendisse consequat massa id diam mattis porttitor. Duis ligula magn`,
     image: '../../../resources/images/random/4.jpg'
   },
-    {
+  {
     key: 12,
     followers: '5000',
     name: '@test',
@@ -229,7 +229,7 @@ const mockBookings = Array.from(Array(15).keys(), (_, i) => {
   return {
     start: moment().add(i + 2, 'hours').toDate(),
     end: moment().add(i + 4, 'hours').toDate(),
-    id: i+1,
+    id: i + 1,
     title: 'nationalisti',
     permanent: true
   }
@@ -241,19 +241,19 @@ const mockBookings = Array.from(Array(15).keys(), (_, i) => {
 
 const mockOffers = () => Array.from(Array(15).keys(), (_, i) => {
   return {
-    id: i+1,
+    id: i + 1,
     author: 'Mush mouth ' + Math.random(),
-    date : moment(),
+    date: moment(),
     msg: 'This is short message from client',
     read: i < 4,
     status: ((i) => {
-        if (i % 5 === 0)
-          return 'declined';
-        if(i % 4 === 0)
-          return 'pending';
-        if(i % 3 === 0)
-          return 'open';
-        return 'completed';
+      if (i % 5 === 0)
+        return 'declined';
+      if (i % 4 === 0)
+        return 'pending';
+      if (i % 3 === 0)
+        return 'open';
+      return 'completed';
     })(i)
   }
 });
@@ -292,9 +292,9 @@ const mockTickets = [
     firstMessage: 'sure thing',
     subject: 'Other',
     messages: [
-     {message: "my second message", id: 21, senderId: 2, date: '1018.3.2', fromSupport: false},
-     {message: "my third message", id: 22, senderId: 2, date: '1018.4.2', fromSupport: false},
-     {message: "message from support", id: 23, senderId: 2, date: '1018.5.2', fromSupport: true}
+      {message: "my second message", id: 21, senderId: 2, date: '1018.3.2', fromSupport: false},
+      {message: "my third message", id: 22, senderId: 2, date: '1018.4.2', fromSupport: false},
+      {message: "message from support", id: 23, senderId: 2, date: '1018.5.2', fromSupport: true}
     ]
   },
   {
@@ -303,8 +303,8 @@ const mockTickets = [
     firstMessage: 'hjo hjo',
     subject: 'Bug Report',
     messages: [{message: "putsikatsi", id: 31, senderId: 2, date: '1018.3.2', fromSupport: false},
-               {message: "wasso wasso wasso", id: 32, senderId: 2, date: '1018.3.2', fromSupport: true}
-              ]
+      {message: "wasso wasso wasso", id: 32, senderId: 2, date: '1018.3.2', fromSupport: true}
+    ]
   },
   {
     id: 4,
@@ -329,9 +329,9 @@ const newMockTickets = [
     firstMessage: 'sureasdasdasdasdas thing',
     subject: 'Other',
     messages: [
-     {message: "my second message", id: 61, senderId: 345, date: '1018.3.2', fromSupport: false},
-     {message: "my third message", id: 62, senderId: 345, date: '1018.4.2', fromSupport: false},
-     {message: "message from support", id: 63, senderId: 345, date: '1018.5.2', fromSupport: true}
+      {message: "my second message", id: 61, senderId: 345, date: '1018.3.2', fromSupport: false},
+      {message: "my third message", id: 62, senderId: 345, date: '1018.4.2', fromSupport: false},
+      {message: "message from support", id: 63, senderId: 345, date: '1018.5.2', fromSupport: true}
     ]
   },
   {
@@ -340,8 +340,8 @@ const newMockTickets = [
     firstMessage: 'hjoadsdasdasdasdas hjo',
     subject: 'Bug Report',
     messages: [{message: "putsikatsi", id: 71, senderId: 353, date: '1018.3.2', fromSupport: false},
-               {message: "wasso wasso wasso", id: 72, senderId: 345, date: '1018.3.2', fromSupport: true}
-              ]
+      {message: "wasso wasso wasso", id: 72, senderId: 345, date: '1018.3.2', fromSupport: true}
+    ]
   },
   {
     id: 8,
@@ -353,7 +353,7 @@ const newMockTickets = [
 ];
 const mockHistory = [];
 
-for(let i = 0; i<100; i++) {
+for (let i = 0; i < 100; i++) {
   mockHistory.push({
     id: i,
     date: moment().add(i + 2, 'weeks'),
@@ -364,6 +364,130 @@ for(let i = 0; i<100; i++) {
   })
 }
 
+const connectedAccounts = [
+  {
+    type: 'instagram', name: 'Cool Lad On Instagram', id: 1, pricing: [
+    {duration: 'Biolink', price: 10},
+    {duration: '5', price: 100}],
+    description: 'Want a piece of me?'
+  },
+  {
+    type: 'facebook', name: 'Cool Lad On Facebook', id: 2, pricing: [
+    {duration: 'Lifetime', price: 10},
+    {duration: '1', price: 100},
+    {duration: '2', price: 200},
+    {duration: '3', price: 300},
+    {duration: '4', price: 400},
+  ],
+    description: 'Come get it'
+  },
+  {
+    type: 'twitter', name: 'Cool Lad On Twitter', id: 3, pricing: [],
+    description: 'Rocky Balboa ftw!'
+  },
+];
+
+const connections = [
+  {
+    name: 'Natalie',
+    image: '',
+    brand: true,
+    website: 'www.insta.com',
+    brand_name: 'Keijon kauppa',
+    online: true,
+    connected: '2010-10-01'
+  },
+  {
+    name: 'John',
+    image: '',
+    brand: false,
+    website: 'www.telkku.com',
+    brand_name: 'Keijon kauppa',
+    online: true,
+    connected: '2010-10-01'
+  },
+  {
+    name: 'Amanda',
+    image: '',
+    brand: false,
+    website: 'www.kucoin.com',
+    brand_name: 'Keijon kauppa',
+    online: false,
+    connected: '2010-10-01'
+  },
+  {
+    name: 'Carl',
+    image: '',
+    brand: true,
+    website: 'www.iltalehti.com',
+    brand_name: 'Keijon kauppa',
+    online: false,
+    connected: '2010-10-01'
+  },
+  {
+    name: 'Moona',
+    image: '',
+    brand: false,
+    website: 'www.google.com',
+    brand_name: 'Keijon kauppa',
+    online: false,
+    connected: '2010-10-01'
+  },
+  {
+    name: 'Fiona',
+    image: '',
+    brand: true,
+    website: 'www.google.com',
+    brand_name: 'Keijon kauppa',
+    online: true,
+    connected: '2010-10-01'
+  },
+  {
+    name: 'Marco',
+    image: '',
+    brand: false,
+    website: 'www.google.com',
+    brand_name: 'Keijon kauppa',
+    online: true,
+    connected: '2010-10-01'
+  },
+  {
+    name: 'Jessica',
+    image: '',
+    brand: true,
+    website: 'www.google.com',
+    brand_name: 'Keijon kauppa',
+    online: false,
+    connected: '2010-10-01'
+  },
+];
+
+const connectionRequests = [
+  {
+    name: 'Natalie',
+    image: '',
+    brand: true,
+    website: 'www.insta.com',
+    brand_name: 'Keijon kauppa',
+    sent: '2010-10-01'
+  },
+  {
+    name: 'John',
+    image: '',
+    brand: false,
+    website: 'www.telkku.com',
+    brand_name: 'Keijon kauppa',
+    sent: '2010-10-01'
+  },
+  {
+    name: 'Amanda',
+    image: '',
+    brand: false,
+    website: 'www.kucoin.com',
+    brand_name: 'Keijon kauppa',
+    sent: '2010-10-01'
+  },
+];
 
 export const bookingsMocks = mockBookings;
 export const featuredMocks = mockFeatured;
@@ -374,3 +498,6 @@ export const offerDetailMock = mockOfferDetail;
 export const ticketsMocks = mockTickets;
 export const newTicketsMocks = newMockTickets;
 export const historyMocks = mockHistory;
+export const connectedMocks = connectedAccounts;
+export const connectionMocks = connections;
+export const connectionRequestMocks = connectionRequests;

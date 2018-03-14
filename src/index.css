@@ -90,6 +90,10 @@ input, button, select, textarea, optgroup, option {
     color: #66BB6A;
 }
 
+.c-success {
+    color: #449d44;
+}
+
 .c-blue {
     color: #2CC6DA;
 }

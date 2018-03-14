@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 
 import NfCollapseItem from "../../../components/collapse-item/nf-collapse-item";
-import NfSliderInput from "../../../components/slider-input/nf-slider-input";
 
-import Slider, { Range } from "rc-slider";
-import Tooltip from "rc-tooltip";
+import { Range } from "rc-slider";
 import "rc-slider/assets/index.css";
 
 import "./nf-search-filter.css";
@@ -26,7 +24,7 @@ class NfSearchFilter extends Component {
     this.props.filtersOnUpdate({location: {...this.props.filters.location, value: values.target.value}});
   };
   handleFollowerChange = (values) =>  {
-    this.props.filtersOnUpdate({followers: {...this.props.filters.followers, value_min: values[0], value_max: values[1] }});
+    this.props.filtersOnUpdate({followers: {...this.props.filters.followers, value_min: values[0], value_max: values[1]}});
   };
   handleEngagementChange = (values) =>  {
     this.props.filtersOnUpdate({rate: {...this.props.filters.rate, value_min: values[0], value_max: values[1] }});

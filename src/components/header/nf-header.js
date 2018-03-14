@@ -59,7 +59,7 @@ class NfHeader extends Component {
                     </NavLink>
                   </li>
                   <li className="nav-link">
-                    <NavLink to="/dashboard" activeClassName="nav-active" >
+                    <NavLink to="/platform/dashboard" activeClassName="nav-active" >
                       Dashboard
                     </NavLink>
                   </li>

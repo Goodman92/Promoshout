@@ -28,12 +28,12 @@ class NfOffer extends Component {
         <div className="row">
           <div className="col-lg-4">
             <NfCheckbox handleChange={this.onChange} item={offer} className={cursorClass()}/>
-            <Link to={"/offers/details/:id".replace(':id', offer.id)} className="hidden-link">
+            <Link to={"/platform/offers/details/:id".replace(':id', offer.id)} className="hidden-link">
               <span className="ml-1">{offer.author}</span>
             </Link>
           </div>
           <div className="col-lg-5">
-            <Link to={"/offers/details/:id".replace(':id', offer.id)} className="hidden-link">
+            <Link to={"/platform/offers/details/:id".replace(':id', offer.id)} className="hidden-link">
               <div className="items-center">
                 <span className="mr-2">{offer.msg}</span>
                 { !type ? <NfStatusBadge status={offer.status}/> : ""}
@@ -42,7 +42,7 @@ class NfOffer extends Component {
           </div>
           <div className="col-lg-3 text-right">
 
-            <Link to={"/offers/details/:id".replace(':id', offer.id)} className="hidden-link">
+            <Link to={"/platform/offers/details/:id".replace(':id', offer.id)} className="hidden-link">
               <span>{GraphTimeController.humanReadableTime(offer.date)}</span>
             </Link>
           </div>

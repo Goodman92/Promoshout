@@ -1,0 +1,41 @@
+div.connection-card {
+    background-color: #ffffff;
+    border: 1px solid #e7eaec;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+div.connection-image {
+    flex: 0.2;
+}
+
+div.connection-info {
+    flex: 0.8;
+    padding-left: 2em;
+}
+
+.chat-circle {
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, red 0%, #ff6100 100%, red 95%);
+    background-image: -webkit-radial-gradient(45px 45px, circle cover, red, #ff6100);
+    background-image: radial-gradient(45px 45px 45deg, circle cover, red 0%, #ff6100 100%, red 95%)
+}
+
+.chat-online {
+    background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, #00ff1f 0%, #c0ff00 100%, red 95%);
+    background-image: -webkit-radial-gradient(45px 45px, circle cover, #00ff1f, #c0ff00);
+    background-image: radial-gradient(45px 45px 45deg, circle cover, #00ff1f 0%, #c0ff00 100%, red 95%)
+}
+
+.chat-offline {
+    background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, red 0%, #ff6100 100%, red 95%);
+    background-image: -webkit-radial-gradient(45px 45px, circle cover, red, #ff6100);
+    background-image: radial-gradient(45px 45px 45deg, circle cover, red 0%, #ff6100 100%, red 95%)
+}
+
+div.connection-requests > .connection-request:last-child .feed-body {
+    border-bottom:0;
+}

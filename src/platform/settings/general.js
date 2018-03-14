@@ -38,6 +38,10 @@ class General extends Component {
               <input type="text" className="form-control" placeholder="Brand website"/>
             </div>
             <div className="form-group">
+              <label>Brand Name</label>
+              <input type="text" className="form-control" placeholder="Brand name"/>
+            </div>
+            <div className="form-group">
               <label>About your brand</label>
               <textarea className="form-control" rows="3"/>
               <small>Describe your brand, this way influencers can get to know you better</small>

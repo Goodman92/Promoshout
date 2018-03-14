@@ -102,7 +102,7 @@ ReactDOM.render(
                   <Switch>
                     <Route exact path="/platform/offers" component={() => (<OpenOffers/>)}/>
                     <Route exact path="/platform/offers/:type?" component={() => (<OpenOffers/>)}/>
-                    <Route exact path="/platform/offers/details/:id" component={() => (<OpenOffers/>)}/>
+                    <Route exact path="/platform/offers/details/:id" component={() => (<OfferDetails/>)}/>
                   </Switch>
                 )}/>
                 <Route path="/platform/tickets" component={() => (<Tickets/>)}/>

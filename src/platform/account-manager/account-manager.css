@@ -1,0 +1,16 @@
+div.account-selection > p {
+    margin-bottom: 0;
+    border-bottom: 1px solid #eaedef;
+    padding-bottom: 0.5em;
+}
+
+div.account-selection > p:not(:first-child) {
+    padding-top: 0.5em;
+}
+div.account-selection > p:last-child {
+    border-bottom:0;
+}
+
+div.account-selection > p > i {
+    width: 16px;
+}
