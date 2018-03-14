@@ -28,8 +28,7 @@ export default class NfCarouselItem extends Component {
               </p>
             </div>
 
-            <div className="" style={{display: 'flex', justifyContent: 'space-evenly', 
-              borderTop: 'solid lightgrey 1px', paddingTop: '1rem'}}>           
+            <div className="nf-carousel-small-info-wrapper">           
               <div className="gl-align-center" >
                 <span className="nf-carousel-item-desc-span"> {this.props.item.followers}</span>
                 <p className="nf-carousel-item-desc-followers"> followers</p>

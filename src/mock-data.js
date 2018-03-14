@@ -1,4 +1,5 @@
 import moment from 'moment';
+import uuidv4 from 'uuid/v4';
 
 
 /* mock data for influencers */
@@ -282,14 +283,14 @@ const mockTickets = [
   {
     id: 1,
     date: '2018-01-01',
-    firstMessage: 'I want to make an rabbort',
+    firstMessage: 'first messages 1',
     subject: 'Report user',
     messages: [{message: "some text", id: 11, senderId: 2, date: '1018.3.2', fromSupport: false}]
   },
   {
     id: 2,
     date: '2018-02-12',
-    firstMessage: 'sure thing',
+    firstMessage: 'first messages 2',
     subject: 'Other',
     messages: [
       {message: "my second message", id: 21, senderId: 2, date: '1018.3.2', fromSupport: false},
@@ -300,7 +301,7 @@ const mockTickets = [
   {
     id: 3,
     date: '2018-05-10',
-    firstMessage: 'hjo hjo',
+    firstMessage: 'first messages 3',
     subject: 'Bug Report',
     messages: [{message: "putsikatsi", id: 31, senderId: 2, date: '1018.3.2', fromSupport: false},
       {message: "wasso wasso wasso", id: 32, senderId: 2, date: '1018.3.2', fromSupport: true}
@@ -309,24 +310,24 @@ const mockTickets = [
   {
     id: 4,
     date: '2018-11-10',
-    firstMessage: 'my name is carlos maatooss',
+    firstMessage: 'first messages 4',
     subject: 'Other',
     messages: []
-  },
+  }
 ];
 
 const newMockTickets = [
   {
-    id: 5,
+    id: 55,
     date: '2018-01-01',
-    firstMessage: 'I want to asdasdasdmake an rabbort',
+    firstMessage: 'new messages ' + Math.floor((Math.random() * 1000) + 1),
     subject: 'Report user',
     messages: [{message: "some text", id: 51, senderId: 34, date: '1018.3.2', fromSupport: false}]
   },
   {
-    id: 6,
+    id: 66,
     date: '2018-02-12',
-    firstMessage: 'sureasdasdasdasdas thing',
+    firstMessage: 'new messages '+ Math.floor((Math.random() * 1000) + 1),
     subject: 'Other',
     messages: [
       {message: "my second message", id: 61, senderId: 345, date: '1018.3.2', fromSupport: false},
@@ -335,18 +336,18 @@ const newMockTickets = [
     ]
   },
   {
-    id: 7,
+    id: 77,
     date: '2018-05-10',
-    firstMessage: 'hjoadsdasdasdasdas hjo',
+    firstMessage: 'new messages ' +Math.floor((Math.random() * 1000) + 1),
     subject: 'Bug Report',
     messages: [{message: "putsikatsi", id: 71, senderId: 353, date: '1018.3.2', fromSupport: false},
       {message: "wasso wasso wasso", id: 72, senderId: 345, date: '1018.3.2', fromSupport: true}
     ]
   },
   {
-    id: 8,
+    id: 88,
     date: '2018-11-10',
-    firstMessage: 'my nadasdasdasdasdasde is carlos maatooss',
+    firstMessage: 'new messages '+Math.floor((Math.random() * 1000) + 1),
     subject: 'Other',
     messages: []
   },
