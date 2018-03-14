@@ -18,7 +18,6 @@ tr:nth-child(even) {
 }
 
 .ticket-th-buttons {
-	border: none!important;
 	display: flex;
 	justify-content: flex-end;
 }
@@ -46,4 +45,10 @@ tr:nth-child(even) {
 .ticket-table-empty > p {
 	padding-top: 1.5rem;
 	padding-bottom: 1rem;
+}
+
+@media (max-width: 767px) {
+    .ticket-table-date {
+    	display: none;
+    }
 }

@@ -30,6 +30,13 @@
     font-family: 'LatoLight';
     text-align: center;
 }
+
+.nf-carousel-small-info-wrapper {
+    display: flex;
+    justify-content: space-around;
+    border-top: solid lightgrey 1px;
+    padding-top: 1rem;
+}
  
 .nf-carousel-item-desc-button-wrapper {
     width: 100%;

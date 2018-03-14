@@ -269,6 +269,11 @@ a.hidden-link, a.hidden-link:hover {
     justify-content: unset;
 }
 
+.opacity0 {
+    opacity: 0;
+    cursor: default;
+}
+
 .c-not-allowed {
     cursor: not-allowed;
 }

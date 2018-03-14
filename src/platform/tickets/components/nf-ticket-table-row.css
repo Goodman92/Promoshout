@@ -14,3 +14,9 @@ td > i {
     color: #FFFFFF;
     cursor: pointer;
 }
+
+@media (max-width: 767px) {
+    .ticket-table-row-date {
+    	display: none;
+    }
+}

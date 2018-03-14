@@ -30,7 +30,7 @@ class NfTicketTableRow extends Component {
   }
 
   handleSubmit = (e) => {
-    
+
     this.props.dispatch(addTicketMessage({
         parentID: this.props.ticket.id, // this points to the parent object so we know where to put below message
         message: this.state.message, id: uuidv4(), senderId: uuidv4(), date: moment().format("MMM Do YY"), fromSupport: false
@@ -44,8 +44,13 @@ class NfTicketTableRow extends Component {
     const ticket = this.props.ticket;
 
     return (
-      <tr>
-        <td>{ticket.date}</td>
+      <tr
+        onClick={this.state.hideFirstComment ? this.showChat : null}
+        data-toggle={this.state.hideFirstComment ? "collapse" : ''}
+        data-target={"#table-row-collapse" + ticket.id}   
+      >
+      
+        <td className="ticket-table-row-date">{ticket.date}</td>
         <td>
 
           { this.state.hideFirstComment ? <span>{ticket.firstMessage}</span> : null }
@@ -81,11 +86,10 @@ class NfTicketTableRow extends Component {
           </div>
         </td>
 
-        <td         
-          onClick={this.showChat}
-          aria-hidden="true"
-          data-toggle="collapse"
-          data-target={"#table-row-collapse" + ticket.id}
+        <td   
+          onClick={this.state.hideFirstComment ? null : this.showChat}
+          data-toggle={this.state.hideFirstComment ? '' : "collapse"}
+          data-target={"#table-row-collapse" + ticket.id}   
         >
           <i className={this.state.hideFirstComment ? 'fa fa-angle-down fa-2x' : 'fa fa-angle-down fa-2x fa-rotate-180'}>
           </i>
