@@ -48,6 +48,7 @@ import NfHeader from './components/header/nf-header';
 import NfFooter from './components/footer/nf-footer';
 import NfSideNav from './components/side-nav/nf-side-nav';
 import NfPlatformHeader from './components/platform-header/nf-platform-header';
+import NfChat from './components/chat/nf-chat';
 
 import './index.css';
 
@@ -78,7 +79,7 @@ class RouteWrapper extends Component {
 ReactDOM.render(
   <Provider store={store}>
     <Router>
-      <div>
+      <div className="relative">
         <Route exact path="/" component={() => (
           <RouteWrapper component={<App/>}/>
         )}/>
@@ -137,6 +138,7 @@ ReactDOM.render(
                 <Route path="/platform/connections" component={() => (<Connections/>)}/>
               </Switch>
             </div>
+            <NfChat/>
           </div>
         )}>
         </Route>

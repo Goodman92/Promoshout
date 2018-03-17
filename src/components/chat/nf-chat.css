@@ -1,0 +1,51 @@
+div.footer-chat {
+    position:fixed;
+    bottom:0;
+    width: 100%;
+}
+
+span.chat-icon {
+    background-color: #1ab394;
+    color: #fff;
+    padding: 0 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.1em;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    cursor: pointer;
+}
+
+div.chat-connections {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-color: #f7f7f7;
+    padding: 1em;
+    border: 1px solid #eaedef;
+    min-width: 265px;
+    overflow-y: scroll;
+    max-height: 100%;
+}
+
+div.connection-header {
+    cursor: pointer;
+}
+
+div.chat-row {
+    display: flex;
+    padding: 0.4em 0;
+    border-bottom: 1px solid #eaedef;
+}
+
+div.chat-image {
+    flex: 0.2;
+}
+
+div.chat-body {
+    flex: 0.8;
+    padding-left: 0.6em;
+}
+
+.connections-wrapper {
+    padding-left: 265px;
+}

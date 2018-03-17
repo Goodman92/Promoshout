@@ -388,7 +388,7 @@ const connectedAccounts = [
   },
 ];
 
-const connections = [
+let connections = [
   {
     name: 'Natalie',
     image: '',
@@ -462,6 +462,9 @@ const connections = [
     connected: '2010-10-01'
   },
 ];
+
+// for(let i = 0; i < 10; i++)
+//   connections = connections.concat(connections);
 
 const connectionRequests = [
   {
