@@ -17,6 +17,13 @@
 		- Date when campaign should be shown? OR Deadline?
 
 
+    settings
+        - set timezone
+
+    connections
+        - remove timezone
+
+
 * WHAT WE DO topics *
 
 	- what is promoshout

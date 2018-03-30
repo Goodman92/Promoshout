@@ -6,7 +6,6 @@ body {
     margin: 0;
     min-height: 100%;
     position: relative;
-    padding-bottom: 50px;
     font-family: sans-serif;
 }
 
@@ -30,6 +29,7 @@ input, button, select, textarea, optgroup, option {
 
 .platform-wrapper {
     height: 100%;
+    position:relative;
 }
 
 @font-face {
