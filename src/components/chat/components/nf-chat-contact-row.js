@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import '../nf-chat.css';
 
-class NfChatRow extends Component {
+class NfChatContactRow extends Component {
 
   render() {
     const chatOnline = (isOnline) => {
@@ -28,4 +28,4 @@ class NfChatRow extends Component {
 }
 
 
-export default NfChatRow;
+export default NfChatContactRow;
