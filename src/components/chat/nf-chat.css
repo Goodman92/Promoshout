@@ -1,6 +1,6 @@
 div.footer-chat {
-    position:fixed;
-    bottom:0;
+    position: fixed;
+    bottom: 0;
     width: 100%;
 }
 
@@ -47,5 +47,32 @@ div.chat-body {
 }
 
 .connections-wrapper {
-    padding-left: 265px;
 }
+
+span.open-chat {
+    width: 230px;
+    border: 1px solid #eaedef;
+    background: #f7f7f7;
+    color: #000;
+    float: left;
+    cursor: pointer;
+}
+
+div.chat-section-left {
+    width: calc(100% - 270px);
+    display: inline-block;
+}
+
+div.open-chat-wrapper {
+    display: flex;
+    flex-flow: wrap-reverse;
+    justify-content: flex-end;
+}
+
+div.chat-section-right {
+    width: 270px;
+    display: inline-block;
+    position: relative;
+}
+
+
