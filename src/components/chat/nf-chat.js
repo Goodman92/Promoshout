@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
-
+import {connect} from 'react-redux';
 import NfOpenChatRow from './components/nf-open-chat-row';
 import NfChatConnections from './components/nf-chat-connections';
-
 
 import './nf-chat.css';
 
@@ -23,4 +22,4 @@ class NfChat extends Component {
 }
 
 
-export default NfChat;
+export default connect()(NfChat);
