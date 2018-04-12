@@ -7,7 +7,7 @@ class NfFooter extends Component {
     <div className="container-fluid footer-wrapper">
       <div className="row">
         <div className="col-lg-12">
-          <span className="text-center"> Copyright © Promoshout &bull; All rights reserved &bull; Images: Unsplash &bull; Design: Antti Virtanen & Juha Savikko</span>
+          <h6 className="text-center"> Copyright © Promoshout &bull; All rights reserved &bull; Images: Unsplash &bull; Design: Antti Virtanen & Juha Savikko</h6>
         </div>
       </div>
     </div>

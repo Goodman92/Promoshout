@@ -15,12 +15,13 @@ class NfConnectionRequest extends Component {
             <div className="feed-body">
               <div>
                 <strong>
-                  <Link to="/influencers/1">
+                  <Link to="/influencers/1" className="c-dark-grey">
                     {this.props.name}
                   </Link>
-                </strong> wants to connect with you.
+                </strong> 
+                <p className="d-inline"> wants to connect with you.</p>
                 <small className="pull-right">
-                  {this.props.sent}
+                  <p className="c-light-grey">{this.props.sent}</p>
                 </small>
               </div>
               <div className="mb-1">

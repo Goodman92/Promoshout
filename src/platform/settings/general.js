@@ -30,21 +30,21 @@ class General extends Component {
         return (
           <div>
             <div className="form-group">
-              <label>Profile picture</label>
+              <p className="gl-bold">Profile picture</p>
               <input className="d-block" type="file"/>
             </div>
             <div className="form-group">
-              <label>Brand website</label>
-              <input type="text" className="form-control" placeholder="Brand website"/>
+              <p className="gl-bold">Brand website</p>
+              <input type="text" className="form-control" />
             </div>
             <div className="form-group">
-              <label>Brand Name</label>
-              <input type="text" className="form-control" placeholder="Brand name"/>
+              <p className="gl-bold">Brand Name</p>
+              <input type="text" className="form-control" />
             </div>
             <div className="form-group">
-              <label>About your brand</label>
+              <p className="gl-bold">About your brand</p>
               <textarea className="form-control" rows="3"/>
-              <small>Describe your brand, this way influencers can get to know you better</small>
+              <small><p className="c-light-grey">Describe your brand, this way influencers can get to know you better</p></small>
             </div>
           </div>
         )
@@ -53,25 +53,25 @@ class General extends Component {
     return (
       <form>
         <div className="form-group">
-          <label>First name</label>
-          <input type="text" className="form-control" placeholder="First name"/>
-          <small>This information will not be visible to others</small>
+          <p className="gl-bold">First name</p>
+          <input type="text" className="form-control" />
+          <small><p className="c-light-grey">This information will not be visible to others</p></small>
         </div>
         <div className="form-group">
-          <label>Last name</label>
-          <input type="text" className="form-control" placeholder="Last name"/>
-          <small>This information will not be visible to others</small>
+          <p className="gl-bold">Last name</p>
+          <input type="text" className="form-control" />
+          <small><p className="c-light-grey">This information will not be visible to others</p></small>
         </div>
         {
           renderBrandExtraBlock()
         }
         <div className="form-group">
           <NfCheckbox handleChange={this.onOfferNoticationChange} item={this.state.offerNotification}/>
-          <label className="ml-1"> I want to receive e-mail notifications of offers</label>
+          <p className="d-inline gl-bold ml-1"> I want to receive e-mail notifications of offers</p>
         </div>
         <div className="form-group">
           <NfCheckbox handleChange={this.onMessageNoticationChange} item={this.state.messageNotification}/>
-          <label className="ml-1"> I want to receive e-mail notifications of messages</label>
+          <p className="d-inline gl-bold ml-1"> I want to receive e-mail notifications of messages</p>
         </div>
         <div className="text-center">
           <button type="submit" className="btn platform-btn btn-lg-sides">Save</button>

@@ -10,6 +10,10 @@ div.lift-box-header {
     padding: 1em;
 }
 
+.lift-box-header * {
+  margin-bottom: 0px;
+}
+
 div.lift-box-content {
     padding: 1em 1em 1em 1em;
     border: 1px solid #eaedef;
@@ -18,6 +22,7 @@ div.lift-box-content {
 
 
 /* CustomInput styles */
+
 
 .page__section {
     margin-top: 1.5rem;
@@ -171,5 +176,6 @@ div.lift-box-content {
 
 .badge.my-badge {
     color: #fff;
+    font-size: 12px;
 }
 

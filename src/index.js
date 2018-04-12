@@ -40,6 +40,7 @@ import influencers from './reducers/influencers';
 import login from './reducers/login';
 import offers from './reducers/offers';
 import tickets from './reducers/tickets';
+import offerModal from './reducers/offer-modal';
 import {default as transactions} from './reducers/transactions';
 
 
@@ -54,7 +55,7 @@ import './index.css';
 
 const nfReducers = combineReducers({
   featured, filters, feed, offers, transactions,
-  nav, influencers, orders, bookings, login, tickets
+  nav, influencers, orders, bookings, login, tickets, offerModal
 });
 
 

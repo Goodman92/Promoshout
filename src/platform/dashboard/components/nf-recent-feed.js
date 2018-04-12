@@ -36,11 +36,11 @@ class NfRecentFeed extends Component {
                 </div>
                 <div className="feed-body">
                   <div>
-                    <strong> {item.sender} </strong> {renderMessageString(item.type)}.
-                    <span className="pull-right"> {GraphTimeController.humanReadableTime(item.date)}</span>
+                    <p className="mb-0 gl-bold"><strong> {item.sender} </strong> {renderMessageString(item.type)}.</p>
+                    <span className="pull-right"> <p className="c-light-grey">{GraphTimeController.humanReadableTime(item.date)}</p></span>
                   </div>
                   <div>
-                    <small>{item.date}</small>
+                    <small><p className="c-light-grey">{item.date}</p></small>
                   </div>
                 </div>
               </div>

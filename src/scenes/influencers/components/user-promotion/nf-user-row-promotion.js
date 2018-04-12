@@ -20,11 +20,11 @@ class NfUserRowPromotion extends Component {
       <div className="user-promotion-row">
         <div className="row">
           <div className="col">
-            <Link to="/profile">@{this.props.item.username}</Link>
+            <Link to="/profile"><p className="gl-bold c-dblue">@{this.props.item.username}</p></Link>
           </div>
-          <div className="col">{this.suffixedNumber(this.props.item.followers)}</div>
-          <div className="col">${this.props.item.charge}</div>
-          <div className="col text-right">{GraphTimeController.humanReadableTime(this.props.item.last_online)}</div>
+          <div className="col"><p>{this.suffixedNumber(this.props.item.followers)}</p></div>
+          <div className="col"><p>${this.props.item.charge}</p></div>
+          <div className="col text-right"><p>{GraphTimeController.humanReadableTime(this.props.item.last_online)}</p></div>
         </div>
       </div>
     );

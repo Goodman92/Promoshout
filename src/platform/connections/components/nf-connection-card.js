@@ -19,17 +19,23 @@ class NfConnectionCard extends Component {
             </figure>
           </div>
           <div className="connection-info">
-            <p>{this.props.name}
+            <p className="gl-bold">{this.props.name}
               <span className="pull-right">
                 <div className={"chat-circle ".concat(chatOnline(this.props.online))}/>
               </span>
             </p>
-            <small>Connected since: {this.props.connected}</small>
+            <small><p>Connected since: {this.props.connected}</p></small>
             {
               this.props.brand ?
                   <div>
-                    <small>Brand: {this.props.brand_name}</small>
-                    <small className="d-block">Website: <a href={this.props.website}> {this.props.website}</a></small>
+                    <small><p>Brand: {this.props.brand_name}</p></small>
+                    <small className="d-block">
+                      <p>Website:&nbsp;
+                        <a href={this.props.website} className="c-dark-grey"> 
+                          {this.props.website}
+                        </a>
+                      </p>
+                    </small>
                   </div>
                   : ""
             }

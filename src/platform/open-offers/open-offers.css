@@ -8,9 +8,8 @@ div.open-offers-wrapper .lift-box-header {
 }
 
 .open-offers-container * {
-    /* font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif; */
-    letter-spacing: normal;
     color: #676a6c;
+    font-size: 15px;
 }
 
 

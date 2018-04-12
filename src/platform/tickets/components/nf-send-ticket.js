@@ -75,12 +75,12 @@ class NfSendTicket extends Component {
       <div className="container-fluid mt-2">
         <div className="send-ticket-wrapper">
           <NfLiftBox
-            header={<span> Send Ticket </span>}
+            header={<h5> Send Ticket </h5>}
             content={
               <div>
                 <form onSubmit={this.handleSubmit}>
-                <div className="form-group">
-                  <label>Subject</label>
+                <div className="gl-bold form-group">
+                  <p>Subject</p>
                   <select value={this.state.subject} onChange={this.handleSubject} className="form-control">
                     <option value="" defaultValue>Choose ticket type...</option>
                     <option value="other">Other</option>
@@ -91,7 +91,7 @@ class NfSendTicket extends Component {
                   </select>
                 </div>
 
-                <label className="send-ticket-header">Message</label>
+                <p className="gl-bold send-ticket-header">Message</p>
                   <textarea
                     ref="messageArea"
                     className="form-control"

@@ -10,10 +10,10 @@ class Setting extends Component {
   render() {
     return (
       <div className="container-fluid mt-2">
-        <NfLiftBox header={<span>Settings</span>} content={
+        <NfLiftBox header={<h5>Settings</h5>} content={
           <div className="settings-container">
             <div className="row mb-2">
-              <div className="col-lg-12">
+              <div className="settings-nav-container col-lg-12">
                 <ul className="nav nav-tabs">
                   <li className="nav-item">
                     <NavLink className="nav-link" exact to="/platform/settings" activeClassName="active">General</NavLink>

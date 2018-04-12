@@ -1,194 +1,224 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import { emptyOffer } from '../../actions/offer-modal';
 import {NfLiftBox} from '../../components/utility/nf-utility';
-import NfModalOffer from '../../components/modal/nf-modal-offer.js';
-
+import NfModalOffer from '../../components/modal/offer-modal/nf-modal-offer.js';
 import './profile.css';
 
 class Profile extends Component {
 
-    constructor(props) {
-      super(props);
+  constructor(props) {
+    super(props);
 
-      this.state = {
-        OfferModalIsOpen: false
-      };
-    }
+    this.state = {
+      OfferModalIsOpen: false
+    };
+  }
 
+  componentDidMount() {
+    this.props.dispatch(emptyOffer());
+  }
 
   render() {
     return (
+      <div>
       <div className="container-fluid">
-        <div className="row mt-3 mb-1">
-          <div className="col-lg-3">
-            <div className="c-white bg-dark-blue">
-              <h4 className="bold mb-0"> $200</h4>
-              <h6 className="text-center">Minimum bid price</h6>
-            </div>
-          </div>
-          <div className="col-lg-3">
-            <div className="c-white bg-dark-blue">
-              <h4 className="bold mb-0"> 30</h4>
-              <h6 className="text-center">Posts</h6>
-            </div>
-          </div>
-          <div className="col-lg-3">
-            <div className="c-white bg-dark-blue">
-              <h4 className="bold mb-0"> 563</h4>
-              <h6 className="text-center">Followers</h6>
-            </div>
-          </div>
-          <div className="col-lg-3">
-            <div className="c-white bg-dark-blue">
-              <h4 className="bold mb-0"> 2,022</h4>
-              <h6 className="text-center">Following</h6>
-            </div>
-          </div>
+      <div className="row">
+      
+      <div className="col-md-6 col-lg-3 profile-wrapper">
+        <div className="profile-info">
 
-        </div>
-        <div className="row">
-          <div className="col-lg-3">
-            <aside>
-              <NfLiftBox header={
-                <span>Influencer Contact Detail</span>
-              } content={
-                <div>
-                  <div className="profile-box-details">
-                    <figure>
-                      <img src="http://exprostudio.com/html/classified/images/author/img-02.jpg"
-                           className="rounded-circle" height="70" width="70"/>
-                    </figure>
-                    <div className="profile-box-info">
-                      <h4 className="text-left">
-                        <a href=""> @SHGR</a>
-                      </h4>
-                      <span> Member since Jun 27, 2017</span>
-                    </div>
-                  </div>
+          <div className="">
+            <img src="http://exprostudio.com/html/classified/images/img-01.jpg"
+              className="img-fluid"/>
+          </div>
+        
+          <div className="text-center">
+            <p className="profile-name">John Doe</p>
+            <p className="profile-desc">
+              Hi there! I'm an influencer, blogger, on-camera host, actor and a professional bicycle thief.
+              My audience is primarily made up of the active millennial
+              that loves all things fashion and beauty
+            </p>
 
-                    <a onClick={ () => this.setState({OfferModalIsOpen: true}) }>
-                      <div className="offer-box">
-                        <div className="offer-icon">
-                          <i className="fa fa-2x fa-briefcase"/>
-                        </div>
-                        <div className="offer-content">
-                            <h5> Make an offer</h5>
-                            <h6 className="h7">Place your best offer now</h6>
-                        </div>
-                      </div>
-                    </a>
+            <div className="profile-stats-wrapper">
+              <div className="row profile-stat-margin">
+                <div className="col">
+                  <p className="profile-font c-black">FOLLOWING</p>
+                  <p className="profile-font c-dark-grey">134K</p>
                 </div>
-              }/>
+                <div className="col">
+                  <p className="profile-font c-black">FOLLOWERS</p>
+                  <p className="profile-font c-dark-grey">1337</p>
+                </div>
+              </div>
+              <div className="row profile-stat-margin">
+                <div className="col">
+                  <p className="profile-font c-black">ENGAGEMENT</p>
+                  <p className="profile-font c-dark-grey">24%</p>
+                </div>
+                <div className="col">
+                  <p className="profile-font c-black">DEALS MADE</p>
+                  <p className="profile-font c-dark-grey">43</p>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col">
+                  <p className="profile-font c-black">POSTS</p>
+                  <p className="profile-font c-dark-grey">556</p>
+                </div>
+              </div>
+            </div>
 
-              <NfModalOffer isModalOpen={this.state.OfferModalIsOpen} closeModal={() => this.setState({OfferModalIsOpen: false}) } />
+            <button className="profile-offer-btn" onClick={ () => this.setState({OfferModalIsOpen: true}) }>Make Offer</button>
+            <NfModalOffer isModalOpen={this.state.OfferModalIsOpen} closeModal={() => this.setState({OfferModalIsOpen: false}) } />
 
-              <div className="mt-1">
-                <NfLiftBox header={<span> Engament rate</span>} content={
-                  <h3 className="text-center">
-                    7.3%
-                  </h3>
-                }/>
+            <div className="profile-more-accounts-btn" data-toggle="collapse" href="#collapseExample2">
+              <p className="profile-font c-dark-grey"> Check out my other accounts </p>
+               <i className='fa fa-angle-down fa-1x'></i>
+            </div>
+
+            <div className="collapse" id="collapseExample2">
+
+              <div className="row profile-other-accounts-wrapper">
+                <div className="col">
+                  <img src="http://exprostudio.com/html/classified/images/author/img-02.jpg"
+                     className="rounded-circle" height="50" width="50"/>
+                </div>
+                <div className="col gl-margin-auto">
+                  <p className="c-dark-grey profile-account-fonts"> Carlos Matos </p>
+                </div>
+                <div className="col gl-margin-auto">
+                  <i className="c-dark-grey fa fa-facebook-f"></i>
+                </div>
               </div>
-              <div className="mt-1">
-                <NfLiftBox header={<span> Deals made through Promoshout</span>} content={
-                  <h3 className="text-center">
-                    3
-                  </h3>
-                }/>
+
+              <div className="row profile-other-accounts-wrapper">
+                <div className="col gl-margin-auto">
+                  <img src="http://exprostudio.com/html/classified/images/author/img-04.jpg"
+                     className="rounded-circle" height="50" width="50"/>
+                </div>
+                <div className="col gl-margin-auto">              
+                  <p className="c-dark-grey profile-account-fonts"> Yas Bois </p>
+                </div>
+                <div className="col gl-margin-auto">
+                  <i className="c-dark-grey fa fa-instagram"></i>
+                </div>
               </div>
-            </aside>
+
+            </div>
           </div>
-          <div className="col-lg-9">
-            <main>
-              <NfLiftBox header={<span> Description</span>} content={
-                <p className="profile-description">
-                  Hi there! I'm an influencer, blogger, on-camera host, actor and a professional bicycle thief.
-                  My audience is primarily made up of the active millennial
-                  that loves all things fashion, beauty, lifestyle, fitness, health,
-                  and entertainment. Join us!!
-                </p>
-              }/>
-              <div className="mt-1">
-                <NfLiftBox header={<span> Photography</span>} content={
-                  <div className="photo-gallery">
-                    <div className="row">
-                      <div className="col-lg-2">
-                        <div className="photo-item">
-                          <img src="https://www.w3schools.com/howto/img_lights.jpg" className="img-fluid"/>
-                        </div>
-                      </div>
-                      <div className="col-lg-2">
-                        <div className="photo-item">
-                          <img src="https://www.w3schools.com/howto/img_lights.jpg" className="img-fluid"/>
-                        </div>
-                      </div>
-                      <div className="col-lg-2">
-                        <div className="photo-item">
-                          <img src="https://www.w3schools.com/howto/img_lights.jpg" className="img-fluid"/>
-                        </div>
-                      </div>
-                      <div className="col-lg-2">
-                        <div className="photo-item">
-                          <img src="https://www.w3schools.com/howto/img_lights.jpg" className="img-fluid"/>
-                        </div>
-                      </div>
-                      <div className="col-lg-2">
-                        <div className="photo-item">
-                          <img src="https://www.w3schools.com/howto/img_lights.jpg" className="img-fluid"/>
-                        </div>
-                      </div>
-                      <div className="col-lg-2">
-                        <div className="photo-item">
-                          <img src="https://www.w3schools.com/howto/img_lights.jpg" className="img-fluid"/>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                }/>
-              </div>
-              <div className="mt-1">
-                <NfLiftBox header={<span> Reviews from customers</span>} content={
-                  <div>
-                    <div className="review-box mb-1">
-                      <div className="review-item">
-                        <figure>
-                          <img src="http://exprostudio.com/html/classified/images/author/img-16.jpg"
-                               className="rounded-circle" height="40" width="40"/>
-                        </figure>
-                        <div className="review-info">
-                          <div className="review-text">
-                            <p>Was glad to do business with you, recommended.</p>
-                          </div>
-                          <div className="review-left">
-                            <p>January 12th, 2011</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="review-box mb-1">
-                      <div className="review-item">
-                        <figure>
-                          <img src="http://exprostudio.com/html/classified/images/author/img-17.jpg"
-                               className="rounded-circle" height="40" width="40"/>
-                        </figure>
-                        <div className="review-info">
-                          <div className="review-text">
-                            <p>Did deliver what we had agreed.</p>
-                          </div>
-                          <div className="review-left">
-                            <p>February 2th, 2010</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                }/>
-              </div>
-            </main>
-          </div>
+
         </div>
       </div>
+
+      <div className="col-md-6 col-lg-9">
+        <div className="profile-photos">
+          <p className="text-center gl-bold bottom-line">Photos</p>
+
+          <div className="profile-photos-wrapper">
+            <div className="row">
+              <div className="col-lg-3">
+                <div className="">
+                  <img src="http://exprostudio.com/html/classified/images/gallery/img-01.jpg" className="img-fluid"/>
+                </div>
+              </div>
+              <div className="col-lg-3">
+                <div className="">
+                  <img src="http://exprostudio.com/html/classified/images/gallery/img-02.jpg" className="img-fluid"/>
+                </div>
+              </div>
+              <div className="col-lg-3">
+                <div className="">
+                  <img src="http://exprostudio.com/html/classified/images/gallery/img-06.jpg" className="img-fluid"/>
+                </div>
+              </div>
+              <div className="col-lg-3">
+                <div className="">
+                  <img src="http://exprostudio.com/html/classified/images/gallery/img-09.jpg" className="img-fluid"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="profile-reviews">
+          <p className="text-center gl-bold bottom-line">Reviews</p>
+
+          <div className="review-item">
+            <figure>
+              <img src="http://exprostudio.com/html/classified/images/author/img-16.jpg"
+                   className="rounded-circle" height="40" width="40"/>
+            </figure>
+            <div className="review-info">
+              <div className="review-text">
+                <p className="mb-0 gl-bold">Was glad to do business with you, recommended.</p>
+              </div>
+              <div className="review-left">
+                <p className="c-light-grey">January 12th, 2011</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="review-item">
+            <figure>
+              <img src="http://exprostudio.com/html/classified/images/author/img-17.jpg"
+                   className="rounded-circle" height="40" width="40"/>
+            </figure>
+            <div className="review-info">
+              <div className="review-text">
+                <p className="mb-0 gl-bold">Did deliver what we had agreed.</p>
+              </div>
+              <div className="review-left">
+                <p className="c-light-grey">February 2th, 2010</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="review-item">
+            <figure>
+              <img src="http://exprostudio.com/html/classified/images/author/img-15.jpg"
+                   className="rounded-circle" height="40" width="40"/>
+            </figure>
+            <div className="review-info">
+              <div className="review-text">
+                <p className="mb-0 gl-bold">We are coming in waves!</p>
+              </div>
+              <div className="review-left">
+                <p className="c-light-grey">February 2th, 2010</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="review-item">
+            <figure>
+              <img src="http://exprostudio.com/html/classified/images/author/img-13.jpg"
+                   className="rounded-circle" height="40" width="40"/>
+            </figure>
+            <div className="review-info">
+              <div className="review-text">
+                <p className="mb-0 gl-bold">
+                  wasso wasoo beeconeee! this is long text to see how it will scale and it scales pretty great thiethie </p>
+              </div>
+              <div className="review-left">
+                <p className="c-light-grey">February 2th, 2010</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+ </div>
+ </div>
+ </div>
+
+    
+
     );
   }
 }
 
-export default Profile;
+
+const mapStateToProps = (state) => state.offerModal;
+
+export default connect(mapStateToProps)(Profile);

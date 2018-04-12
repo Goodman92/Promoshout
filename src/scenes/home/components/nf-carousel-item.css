@@ -10,13 +10,6 @@
 
 .nf-carousel-item-desc-followers {
 	color: #4D606F;
-    font-family: LatoLight;
-    letter-spacing: 0px;
-}
-.nf-carousel-item-desc-followers > span {
-    color: #151515;
-    font-family: LatoBold;
-    letter-spacing: 0px;
 }
 
 .nf-carousel-item-desc-name {
@@ -26,8 +19,6 @@
 }
 
 .nf-carousel-item-desc-content {
-    letter-spacing: '0px';
-    font-family: 'LatoLight';
     text-align: center;
 }
 
@@ -43,7 +34,7 @@
 }
 
 .nf-carousel-item-desc-span {
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .nf-carousel-item-desc-button-wrapper > button {

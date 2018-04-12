@@ -1,0 +1,33 @@
+.modal-prop-content {
+    font-family: 'LatoLight';
+}
+
+.modal-summary-button-wrapper {
+	display: flex;
+	margin-top: 1rem;
+}
+
+.modal-summary-back-button {
+	flex-grow: 1;
+	background-color: #bdbdbd!important;
+}
+
+.modal-summary-send-button {
+	flex-grow: 14;
+}
+
+.offer-modal-button-wrapper {
+    background-color: #00CC67;
+    border: 1px solid #fff;
+    padding: 11px 0px;
+    color: white;
+}
+
+.offer-modal-button-wrapper:hover {
+    background-color: #00a352;
+    -webkit-transition: background-color 0.3s ease-in;
+    -moz-transition: background-color 0.3s ease-in;
+    -o-transition: background-color 0.3s ease-in;
+    -ms-transition: background-color 0.3s ease-in;
+    transition: background-color 0.3s ease-in;
+}

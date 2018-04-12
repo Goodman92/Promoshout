@@ -15,10 +15,11 @@ export default class NfTicketTableRowChat extends Component {
                 <p>{this.props.message}</p>
               </div>
               <div className="ticket-table-row-review-left">
-                <p>
-                    <span className="logo-first-part">Promo</span>
-                    <span className="logo-last-part">shout</span>
-                    &nbsp;{this.props.date}</p>
+                <div className="d-flex mt-1 justify-content-end">
+                  <h6 className="mb-0 logo-first-part">Promo</h6>
+                  <h6 className="mb-0 logo-last-part">shout</h6>
+                </div>
+                    <p className="mb-0 float-right">{this.props.date}&nbsp;</p>
               </div>
             </div>
             <figure>
@@ -44,10 +45,10 @@ export default class NfTicketTableRowChat extends Component {
             </figure>
             <div className="ticket-table-row-review-info">
               <div className="ticket-table-row-review-text">
-                <p>{this.props.message}</p>
+                <p className="mb-0">{this.props.message}</p>
               </div>
               <div className="ticket-table-row-review-left">
-                <p>{this.props.date}</p>
+                <p className="c-light-grey">{this.props.date}</p>
               </div>
             </div>
           </div>

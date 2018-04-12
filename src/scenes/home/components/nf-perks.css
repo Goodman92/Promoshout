@@ -1,15 +1,10 @@
-.perks-main-title, .perks-main-content, .perk-blocks h2, h3, h4, h5 {
+.perks-main-title, .perks-main-content, .perk-blocks h2, h3, h4 {
     text-align: center;
 }
 
 .perks-main-title, .perks-main-content {
     margin-top: 1rem;
     margin-bottom: 3rem;
-    letter-spacing: 0px;
-}
-
-.perks-main-content, .perk-desc {
-    font-family: Quicksand;
 }
 
 .perk-block {
@@ -18,10 +13,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.perk-block * {
-    letter-spacing: 0px;
 }
 
 .perk-icon-wrapper {
@@ -35,7 +26,6 @@
 }
 
 .perk-title {
-    font-family: QuicksandBold;
     padding-top: 5px;
 }
 

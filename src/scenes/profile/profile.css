@@ -1,63 +1,128 @@
-div.green-box {
-    position: relative;
-    background: #00cc67;
-    color: #fff;
+.profile-info {
+	margin-top: 1rem;
+	box-shadow: 2px 1px 7px #888888;
 }
 
-div.profile-box-intro {
-    background: #f7f7f7;
-    border: 1px solid #eaedef;
-    color: #000;
-    border-radius: 0;
-    padding: 1em;
+.profile-wrapper {
+	margin-bottom: 4rem;
 }
 
-div.profile-box-bottom {
-    padding: 1em 1em 1em 1em;
-    border: 1px solid #eaedef;
-}
-
-div.profile-box-details {
-    display: flex;
-    align-items: center;
-}
-
-div.profile-box-info {
-    padding-left: 0.5em;
-}
-
-div.offer-box {
-    background: #00cc67;
-    color: #fff;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    padding: 0.7em;
-}
-
-div.offer-icon {
-    flex: 0.2;
-    text-align: center;
-    /*background: rgba(0, 0, 0, 0.10); */
-}
-
-div.offer-content {
-    flex: 0.8;
-    text-align: center;
-}
-
-div.offer-content h5, h6 {
-    margin: 0;
+@media (max-width: 767px) {
+	.profile-wrapper {
+		margin-bottom: unset;
+	}
 }
 
 
+.profile-photos-wrapper {
+	padding: .2rem;
+}
+
+.profile-photos {
+	margin-top: 1rem;
+	box-shadow: 2px 1px 7px #888888;
+	padding: 1rem;
+}
+
+.bottom-line {
+	font-size: 19px;
+}
+.bottom-line:after {
+    content: "";
+    display: block;
+    width: 48px;
+    border-bottom: 3px solid #e8e8e8;
+    margin: 15px auto 20px;
+}
+
+
+
+.profile-name {
+	font-family: MontserratBold;
+	letter-spacing: 0px;
+	margin: 1.6rem 0px;
+	color: #2a2a2acf;
+}
+
+.profile-desc {
+	font-family: MontserratRegular;
+	letter-spacing: 0px;
+	padding: 0px 1.4rem;
+	padding-bottom: 1rem;
+	color: #2a2a2abd;	
+}
+
+.profile-stat-margin {
+	margin-bottom: 22px;
+}
+
+.profile-font {
+	font-family: MontserratRegular;
+	letter-spacing: 0px;
+	font-size: 14px;
+	margin-bottom: 3px;
+}
+
+.profile-stats-wrapper {
+	background-color: #F1F5F8;
+	padding-top: 1.5rem;
+}
+.profile-stats-wrapper > .row:last-child {
+	padding-bottom: 1rem;
+}
+
+.profile-offer-btn {
+	margin: 2rem 0px;
+	padding: 13px;
+	font-family: MontserratBold;
+	background-color: #62BF6E;
+	border: none;
+	color: white;
+	border-radius: 3px;
+  font-size: 14px;
+	box-shadow: 0px 2px 1px #57A961;
+}
+
+.profile-more-accounts-btn {
+	border-top: 1px solid #d8dcdf;
+	background-color: #F1F5F8;
+	padding: .5rem 0px;
+	cursor: pointer;
+}
+
+.profile-other-accounts-wrapper {
+	padding: .5rem 0px;
+/*	display: flex;
+	justify-content: space-around;
+	align-items: center;*/
+}
+div .profile-other-accounts-wrapper {
+}
+
+.profile-account-fonts {
+	margin-top: unset;
+	margin-bottom: unset;
+	font-family: MontserratRegular;
+	letter-spacing: 0px;
+}
+
+
+.profile-reviews {
+	padding: 1rem 0px 0px;
+	margin-top: 1rem;
+	margin-bottom: 4rem;
+	box-shadow: 2px 1px 7px #888888;
+}
+
+.review-item:nth-of-type(even) {
+	background-color: #f6f9fa;
+}
 
 /* REVIEW ITEM */
 div.review-item {
     display: flex;
     align-items: center;
+    padding-left: 1rem;
 }
 
 div.review-item figure {
@@ -69,21 +134,5 @@ div.review-info {
 }
 
 div.review-text {
-    padding: 0.8em;
-    background: #f7f7f7;
-    border-radius: 10px 10px 10px 0px;
+    padding: 1rem 0px 9px 0px;
 }
-
-.review-text p, .review-left p, .profile-description {
-    font-family: SourceSansPro;
-    letter-spacing: 0px;
-}
-
-.review-left p {
-    color: #999999;
-}
-
-
-
-
-

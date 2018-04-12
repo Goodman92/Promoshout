@@ -23,38 +23,38 @@ class Dashboard extends Component {
         <div className="container-fluid mt-2">
           <div className="row">
             <div className="col-lg-3">
-              <NfLiftBox header={<span> Deals made </span>} content={
-                <h3 className="text-center">
+              <NfLiftBox header={<h6> Deals made </h6>} content={
+                <p className="text-center rbc-p-content">
                   22
-                </h3>
+                </p>
               }/>
             </div>
             <div className="col-lg-3">
-              <NfLiftBox header={<span> Open Offers</span>} content={
-                <h3 className="text-center">
+              <NfLiftBox header={<h6> Open Offers</h6>} content={
+                <p className="text-center rbc-p-content">
                   1
-                </h3>
+                </p>
               }/>
             </div>
             <div className="col-lg-3">
-              <NfLiftBox header={<span> All Time Profit/Cost</span>} content={
-                <h3 className="text-center">
+              <NfLiftBox header={<h6> All Time Profit/Cost</h6>} content={
+                <p className="text-center rbc-p-content">
                   $300
-                </h3>
+                </p>
               }/>
             </div>
             <div className="col-lg-3">
-              <NfLiftBox header={<span> Money in Reserve</span>} content={
-                <h3 className="text-center">
+              <NfLiftBox header={<h6> Money in Reserve</h6>} content={
+                <p className="text-center rbc-p-content">
                   $5
-                </h3>
+                </p>
               }/>
             </div>
           </div>
           <div className="row mt-1">
             <div className="col-lg-12">
               <NfLiftBox header={
-                <span> Activity</span>
+                <h6> Activity</h6>
               } content={
                 <div className="row">
                   <div className="col-lg-12">
@@ -69,7 +69,7 @@ class Dashboard extends Component {
               <NfLiftBox header={
                 <div className="row ai-center">
                   <div className="col-lg-6">
-                    <span> Deal history</span>
+                    <h6> Deal history</h6>
                   </div>
                   <div className="col-lg-6 text-right">
                     <NfOrderController/>
@@ -83,7 +83,7 @@ class Dashboard extends Component {
           <div className="row mt-1">
             <div className="col-lg-12">
               <NfLiftBox header={
-                <span> Your Bookings</span>
+                <h6> Your Bookings</h6>
               } content={
                 <div className="row">
                   <div className="col-lg-12">

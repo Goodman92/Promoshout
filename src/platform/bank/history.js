@@ -25,7 +25,7 @@ class History extends Component {
           <div className="row mb-2">
             <div className="col-lg-12">
               <NfLiftBox header={
-                <p className="text-left mb-0">Transaction history</p>
+                <h5 className="text-left mb-0">Transaction history</h5>
               } content={
                 <div>
                   <div className="row">
@@ -62,11 +62,11 @@ class History extends Component {
                         <tbody>
                         {history.items.map((item, index) => (
                             <tr key={index}>
-                              <td>{GraphTimeController.parseFromMoment(item.date)}</td>
-                              <td>{item.method}</td>
-                              <td>{item.type}</td>
-                              <td>{item.status}</td>
-                              <td>{item.amount}$</td>
+                              <td><p className="mb-0">{GraphTimeController.parseFromMoment(item.date)}</p></td>
+                              <td><p className="mb-0">{item.method}</p></td>
+                              <td><p className="mb-0">{item.type}</p></td>
+                              <td><p className="mb-0">{item.status}</p></td>
+                              <td><p className="mb-0">{item.amount}$</p></td>
                             </tr>))
                         }
                         </tbody>

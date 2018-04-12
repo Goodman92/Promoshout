@@ -20,28 +20,28 @@ export default class NfCarouselItem extends Component {
           </div>
 
             <div className="col-lg-12">
-              <p className="nf-carousel-item-desc-name"> {this.props.item.name} </p>
+              <p className="nf-carousel-item-desc-name gl-bold c-dblue"> {this.props.item.name} </p>
             </div>
             <div className="col-lg-12">
               <p className="nf-carousel-item-desc-content"> 
-              Token you should be kewl while we are all here at schewl <br /> "Cartman" 
+              Teeny Tiny bicicleta to schewl <br /> "Cartman" 
               </p>
             </div>
 
             <div className="nf-carousel-small-info-wrapper">           
               <div className="gl-align-center" >
-                <span className="nf-carousel-item-desc-span"> {this.props.item.followers}</span>
+                <p className="gl-bold mb-0 nf-carousel-item-desc-span"> {this.props.item.followers}</p>
                 <p className="nf-carousel-item-desc-followers"> followers</p>
               </div>
 
               <div className="gl-align-center">
-                <span className="nf-carousel-item-desc-span"> {this.props.item.following}</span>
+                <p className="gl-bold mb-0 nf-carousel-item-desc-span"> {this.props.item.following}</p>
                 <p className="nf-carousel-item-desc-followers"> following</p>
               </div>
             </div>
 
           <div className="nf-carousel-item-desc-button-wrapper">
-            <button> From <span className="nf-carousel-item-desc-span"> ${this.props.item.price}</span></button>
+            <button> From <h5 className="d-inline nf-carousel-item-desc-span"> ${this.props.item.price}</h5></button>
           </div>
         </div>
     );
