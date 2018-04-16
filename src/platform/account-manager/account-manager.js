@@ -25,7 +25,7 @@ class AccountManager extends Component {
           <div className="row">
             <div className="col-lg-4">
               <NfLiftBox header={
-                <span>Connected accounts</span>
+                <h6 className="mb-0">Connected accounts</h6>
               } content={
                 <div className="row">
                   <div className="col-lg-12">
@@ -36,7 +36,7 @@ class AccountManager extends Component {
             </div>
             <div className="col-lg-8">
               <NfLiftBox header={
-                <span>Edit account</span>
+                <h6 className="mb-0">Edit account</h6>
               } content={
                 <div className="row">
                   <div className="col-lg-12">
@@ -49,21 +49,21 @@ class AccountManager extends Component {
           <div className="row mt-3">
             <div className="col-lg-12">
               <NfLiftBox header={
-                <p className="mb-0">Add new social account
+                <div className="mb-0">Add new social account
                   <span className="pull-right">
                   <i className="fa fa-instagram instagram-color" aria-hidden="true"/>
                   <i className="fa fa-facebook-official ml-1 mr-1 facebook-blue" aria-hidden="true"/>
                   <i className="fa fa-twitter-square ml-1 mr-1 twitter-blue" aria-hidden="true"/>
                 </span>
-                </p>
+                </div>
               } content={
                 <div className="row">
                   <div className="col-lg-12">
-                    <small>Connect new social account into your Promoshout account and start monetizing your
+                    <small><p>Connect new social account into your Promoshout account and start monetizing your
                       fame. Promoshout will not store any login information regarding your social account. Your social
                       account will be linked within few hours to your Promoshout account after verification has been
                       completed. Accounts with 1000 followers/likes or more are eligible.
-                    </small>
+                    </p></small>
                   </div>
                   <div className="col-lg-4 mt-3">
                     <button type="btn" className="btn btn-primary btn-lg-sides btn-instagram">

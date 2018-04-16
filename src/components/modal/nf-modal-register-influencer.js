@@ -16,7 +16,7 @@ class NfModalInfluencerRegistration extends Component {
             ariaHideApp={false}>
           <div>
             <div className="modal-logo-desktop-wrapper">
-              <span className="modal-logo-first-part">Promo</span><span className="modal-logo-last-part">shout</span>
+              <h2 className="modal-logo-first-part">Promo</h2><h2 className="modal-logo-last-part">shout</h2>
             </div>
             <div className="gl-align-center">
               <button type="button" className="gl-insta-button"><i className="fa fa-instagram left"/> Sign In With

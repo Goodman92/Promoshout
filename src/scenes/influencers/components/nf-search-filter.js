@@ -39,12 +39,12 @@ class NfSearchFilter extends Component {
       <form onSubmit={this.onSubmit}>
         <div className="search-box">
           <div className="search-box-top">
-            <span> Narrow Your Search </span>
+            <h5 className="c-white mb-0"> Narrow Your Search </h5>
           </div>
           <div className="search-box-bottom">
             <NfCollapseItem
               toggle="3"
-              header={<span> By Price Range </span>}
+              header={<h6 className="c-darker-grey d-inline"> By Price Range </h6>}
               content={
                 <div className="input-group">
                   <input
@@ -68,7 +68,7 @@ class NfSearchFilter extends Component {
 
             <NfCollapseItem
               toggle="4"
-              header={<span> By Estimated Audience Location </span>}
+              header={<h6 className="c-darker-grey d-inline"> By Estimated Audience Location </h6>}
               content={
                 <select
                   className="form-control"
@@ -83,7 +83,7 @@ class NfSearchFilter extends Component {
             />
             <NfCollapseItem
               toggle="5"
-              header={<span> By Followers </span>}
+              header={<h6 className="c-darker-grey d-inline"> By Followers </h6>}
               content={
                 <div>
                   <div className="row">
@@ -104,7 +104,7 @@ class NfSearchFilter extends Component {
             />
             <NfCollapseItem
               toggle="6"
-              header={<span> By Engagement Rate </span>}
+              header={<h6 className="c-darker-grey d-inline"> By Engagement Rate </h6>}
               content={
                 <div>
                   <div className="row">
@@ -124,7 +124,7 @@ class NfSearchFilter extends Component {
             />
             <NfCollapseItem
               toggle="8"
-              header={<span> By Age </span>}
+              header={<h6 className="c-darker-grey d-inline"> By Age </h6>}
               content={
                 <select
                   className="form-control"

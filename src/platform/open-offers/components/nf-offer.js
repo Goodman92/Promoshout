@@ -11,7 +11,6 @@ class NfOffer extends Component {
     if(this.props.offer.status !== 'pending')
       this.props.onChecked(value, this.props.offer.id);
   };
-
   render() {
     const {offer, type} = this.props;
 
@@ -29,7 +28,7 @@ class NfOffer extends Component {
           <div className="col-lg-4">
             <NfCheckbox handleChange={this.onChange} item={offer} className={cursorClass()}/>
             <Link to={"/platform/offers/details/:id".replace(':id', offer.id)} className="hidden-link">
-              <span className="ml-1">{offer.author}</span>
+              <p className="d-inline ml-1">{offer.author}</p>
             </Link>
           </div>
           <div className="col-lg-5">
@@ -43,7 +42,7 @@ class NfOffer extends Component {
           <div className="col-lg-3 text-right">
 
             <Link to={"/platform/offers/details/:id".replace(':id', offer.id)} className="hidden-link">
-              <span>{GraphTimeController.humanReadableTime(offer.date)}</span>
+              <span className="c-light-grey">{GraphTimeController.humanReadableTime(offer.date)}</span>
             </Link>
           </div>
         </div>

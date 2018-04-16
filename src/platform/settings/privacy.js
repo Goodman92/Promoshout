@@ -10,16 +10,16 @@ class Privacy extends Component {
     return (
       <form>
         <div className="form-group">
-          <label>Old password</label>
-          <input type="password" className="form-control" placeholder="Old password"/>
+          <p className="gl-bold">Old password</p>
+          <input type="password" className="form-control" />
         </div>
         <div className="form-group">
-          <label>New password</label>
-          <input type="password" className="form-control" placeholder="New password"/>
+          <p className="gl-bold">New password</p>
+          <input type="password" className="form-control" />
         </div>
         <div className="form-group">
-          <label>Enter new password again</label>
-          <input type="password" className="form-control" placeholder="New password"/>
+          <p className="gl-bold">Enter new password again</p>
+          <input type="password" className="form-control" />
         </div>
         <div className="text-center">
           <button type="submit" className="btn platform-btn btn-lg-sides">Save</button>

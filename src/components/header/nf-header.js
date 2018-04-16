@@ -13,8 +13,6 @@ import './nf-header.css';
 
 class NfHeader extends Component {
   
-
-
   render() {
     const onLoginClick = (e) => {
       e.preventDefault();
@@ -31,12 +29,12 @@ class NfHeader extends Component {
               <span className="navbar-toggler-icon"/>
             </button>
 
-            <Link to="/" className="navbar-brand main-logo">
-              <div className="logo-desktop-wrapper">
-                <span className="logo-first-part">Promo</span><span className="logo-last-part">shout</span>
+            <Link to="/" className="navbar-brand">
+              <div className="d-flex logo-desktop-wrapper">
+                <h5 className="logo-first-part">Promo</h5><h5 className="logo-last-part">shout</h5>
               </div>
-              <div className="logo-phone-wrapper">
-                <span className="logo-first-part">P</span><span className="logo-last-part">S</span>
+              <div className="d-flex logo-phone-wrapper">
+                <h4 className="logo-first-part">P</h4><h4 className="logo-last-part">S</h4>
               </div>
             </Link>
             <div className="collapse navbar-collapse nf-navbar-list" id="navbarSupportedContent">
@@ -66,7 +64,7 @@ class NfHeader extends Component {
 
                 </div>
                 <li key="loginParent" id="loginParent">
-                  <span className="nav-link" onClick={(e) => onLoginClick(e)}>Login</span>                      
+                  <a className="nav-link nav-login-btn" onClick={(e) => onLoginClick(e)}>Login</a>                      
                 </li>
               </ul>
             </div>
@@ -80,7 +78,7 @@ class NfHeader extends Component {
                 transitionEnter={false}
                 transitionLeave={false}>
 
-                <NfLiftBox header={<span> Sign in</span>} content={
+                <NfLiftBox header={<h5> Sign in</h5>} content={
                   <NfLoginForm/>
                 }/>
 

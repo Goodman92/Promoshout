@@ -6,3 +6,7 @@ div.general-information-container {
 div.general-information-container .form-group {
     margin-bottom: 0.5rem;
 }
+
+.settings-nav-container * {
+    color: #676a6c;
+}

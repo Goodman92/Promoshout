@@ -7,6 +7,10 @@ td > i {
 	color: #7f7f7f;
 }
 
+.table-row-date-label {
+    font-size: 13px;
+}
+
 .ticket-delete-button {
 		float: right;
     background-color: #ef627d;

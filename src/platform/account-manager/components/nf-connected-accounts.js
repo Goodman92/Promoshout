@@ -25,7 +25,7 @@ class NfConnectedAccounts extends Component {
                 <i className={"fa mr-1 ".concat(getSomeClass(item.type))} aria-hidden="true"/>
                 {item.name}
                 <span className="pull-right">
-                  <a href="" onClick={(e) => this.editOnClick(e, item)}>
+                  <a className="pointer gl-bold" onClick={(e) => this.editOnClick(e, item)}>
                     Edit
                     <i className="fa fa-angle-double-right" aria-hidden="true"/>
                   </a>

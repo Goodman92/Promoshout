@@ -1,0 +1,24 @@
+
+.modal-offer-content-label {
+	font-size: 14px;
+}
+
+
+.modal-offer-img-preview-wrapper {
+	width: 100%;
+	text-align: center;
+}
+
+.modal-offer-img-preview {
+	margin-top: 1rem;
+}
+
+.modal-dropdown-wrapper {
+    width: 100%;
+    padding: .5rem .55rem;
+    border-radius: .25rem;
+}
+
+.modal-button-wrapper {
+    margin-top: 2rem;
+}

@@ -23,7 +23,7 @@ class OfferDetails extends Component {
       <div className="row offer-detail-footer">
         <div className="col-lg-12">
           <NfCheckbox handleChange={(value) => this.setState({selected: value})} item={this.state.selected}/>
-          <label className="ml-2"> Attach a message to reply</label>
+          <p className="ml-2 gl-bold d-inline"> Attach a message to reply</p>
           {
             this.state.selected ?
               <textarea className="form-control mb-2"
@@ -41,8 +41,8 @@ class OfferDetails extends Component {
     const renderLockedFooter = () => (
       <div className="row">
         <div className="col-lg-12">
-          <p><strong>Respond message</strong></p>
-          <blockquote className="b-quote">{this.offer.answer}</blockquote>
+          <p className="gl-bold">Respond message</p>
+          <blockquote className="b-quote"><p>{this.offer.answer}</p></blockquote>
         </div>
       </div>
     );
@@ -81,37 +81,37 @@ class OfferDetails extends Component {
               <div className="col-lg-8">
                 <div className="row">
                   <div className="col-lg-6">
-                    <p><strong>User</strong></p>
+                    <p className="gl-bold">User</p>
                     <p>{this.offer.user}</p>
                   </div>
                   <div className="col-lg-6">
-                    <p><strong>Order left</strong></p>
+                    <p className="gl-bold">Order sent</p>
                     <p>{this.offer.created}</p>
                   </div>
                 </div>
                 <div className="row">
                   <div className="col-lg-12">
-                    <p><strong>Message from bidder</strong></p>
-                    <blockquote className="b-quote">{this.offer.msg}</blockquote>
+                    <p className="gl-bold">Message from bidder</p>
+                    <blockquote className="b-quote"><p>{this.offer.msg}</p></blockquote>
                   </div>
                 </div>
                 <div className="row">
                   <div className="col-lg-12">
-                    <p><strong>Post caption</strong></p>
+                    <p className="gl-bold">Post caption</p>
                     <p>{this.offer.caption}</p>
                   </div>
                 </div>
                 <div className="row">
                   <div className="col-lg-4">
-                    <p><strong>Price</strong></p>
+                    <p className="gl-bold">Price</p>
                     <p>{this.offer.price}$</p>
                   </div>
                   <div className="col-lg-4">
-                    <p><strong>Length</strong></p>
+                    <p className="gl-bold">Length</p>
                     <p>{this.offer.length} hours</p>
                   </div>
                   <div className="col-lg-4">
-                    <p><strong>Requested posting time</strong></p>
+                    <p className="gl-bold">Requested posting time</p>
                     <p>{this.offer.requestedTime}</p>
                   </div>
                 </div>

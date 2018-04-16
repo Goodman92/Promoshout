@@ -83,8 +83,8 @@ class NfModalProductRegistration extends Component {
           <form onSubmit={this.handleSubmit}>
             <div ref="content">
               <div className="modal-logo-desktop-wrapper">
-                <span className="modal-logo-first-part">Promo</span><span
-                  className="modal-logo-last-part">shout</span>
+                <h2 className="modal-logo-first-part">Promo</h2>
+                <h2 className="modal-logo-last-part">shout</h2>
               </div>
 
               <NfInput type={'text'} value={this.state.registerForm.firstName} label={'First Name'}

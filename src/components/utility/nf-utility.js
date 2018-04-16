@@ -25,7 +25,7 @@ class CustomField extends Component {
           <label className="field field_type2">
             {this.props.children}
             <span className="field__label-wrap">
-            <span className="field__label">{this.props.label}</span>
+            <p className="gl-bold field__label">{this.props.label}</p>
           </span>
           </label>
         </div>
@@ -94,18 +94,19 @@ class loginForm extends Component {
 
         <form key={1} className="mw-326">
           <div className="form-group">
-            <label>Email address</label>
-            <input type="email" className="form-control" placeholder="Email"/>
+            <p className="gl-bold">Email address</p>
+            <input type="email" className="form-control" />
           </div>
           <div className="form-group"> { this.state.showForgotForm ? null :
               <div>
-                <label>Password</label>
-                <input type="password" className="form-control" placeholder="Password"/>
+                <p className="gl-bold">Password</p>
+                <input type="password" className="form-control" />
               </div>}
 
             <small className="form-text text-muted">
-              Forgot your password? Click
-              <span className="pointer td-underline" onClick={this.onForgotClick}> here </span>
+              <p>Forgot your password? Click&nbsp;
+              <span className="gl-bold pointer td-underline" onClick={this.onForgotClick}> here </span>
+           </p>
             </small>
           </div>
           { renderButtons()}

@@ -30,22 +30,22 @@ class Deposit extends Component {
         <div className="row mb-2">
           <div className="col-lg-12">
             <NfLiftBox header={
-              <p className="text-left mb-0">Paypal <i className="fa fa-cc-paypal pull-right text-primary"/></p>
+              <h5 className="text-left mb-0">Paypal <i className="fa fa-cc-paypal pull-right text-primary"/></h5>
             } content={
               <div className="bank-summary">
                 <div className="row">
                   <div className="col-lg-12">
-                    <small>Deposit funds on to your Promoshout account via Paypal transfer. Once the transaction has
+                    <small><p>Deposit funds on to your Promoshout account via Paypal transfer. Once the transaction has
                       been completed, funds will be added to your account instantly. Deposited funds can be withdrew
                       anytime via
                       <Link to="/bank/withdraw"> withdraw</Link> page.
-                    </small>
+                    </p></small>
                   </div>
                 </div>
                 <div className="row mt-2">
                   <div className="col-lg-12">
                     <div className="form-group">
-                      <label>Amount</label>
+                      <p className="gl-bold">Amount</p>
                       <input type="number" className="form-control" placeholder="Enter amount"/>
                     </div>
                   </div>
@@ -67,18 +67,18 @@ class Deposit extends Component {
         <div className="row">
           <div className="col-lg-12">
             <NfLiftBox header={
-              <p className="text-left mb-0">Credit card <i className="fa fa-cc-visa pull-right text-visa"/></p>
+              <h5 className="text-left mb-0">Credit card <i className="fa fa-cc-visa pull-right text-visa"/></h5>
             } content={
               <form role="form" id="payment-form">
                 <div className="row mb-2">
                   <div className="col-lg-12">
-                    <small>No credit card information is ever stored on our servers.</small>
+                    <small><p>No credit card information is ever stored on our servers.</p></small>
                   </div>
                 </div>
                 <div className="row">
                   <div className="col-lg-12">
                     <div className="form-group">
-                      <label>CARD NUMBER</label>
+                      <p className="gl-bold">Card Number</p>
                       <div className="input-group">
                         <input type="text" className="form-control" name="Number" placeholder="Valid Card Number"
                                required=""/>
@@ -90,13 +90,13 @@ class Deposit extends Component {
                 <div className="row">
                   <div className="col-xs-7 col-md-7">
                     <div className="form-group">
-                      <label>EXPIRATION DATE</label>
+                      <p className="gl-bold">Expiration Date</p>
                       <input type="text" className="form-control" name="Expiry" placeholder="MM / YY" required=""/>
                     </div>
                   </div>
                   <div className="col-xs-5 col-md-5 pull-right">
                     <div className="form-group">
-                      <label>CV CODE</label>
+                      <p className="gl-bold">CV Code</p>
                       <input type="text" className="form-control" name="CVC" placeholder="CVC" required=""/>
                     </div>
                   </div>
@@ -104,15 +104,15 @@ class Deposit extends Component {
                 <div className="row">
                   <div className="col-lg-12">
                     <div className="form-group">
-                      <label>NAME OF CARD</label>
-                      <input type="text" className="form-control" name="nameCard" placeholder="NAME AND SURNAME"/>
+                      <p className="gl-bold">Name Of Card</p>
+                      <input type="text" className="form-control" name="nameCard" placeholder="Name And Surname"/>
                     </div>
                   </div>
                 </div>
                 <div className="row">
                   <div className="col-lg-12">
                     <div className="form-group">
-                      <label>Amount</label>
+                      <p className="gl-bold">Amount</p>
                       <input type="text" className="form-control" placeholder="Amount"/>
                     </div>
                   </div>

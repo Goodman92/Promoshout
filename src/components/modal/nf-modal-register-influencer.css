@@ -1,10 +1,11 @@
-.modal-logo-desktop-wrapper {
-	  text-align: center;
+/*.modal-logo-desktop-wrapper {
+    display: flex;
+	text-align: center;
     font-size: 29px;
     padding: 7px 65px;
-}
+}*/
 
-.modal-logo-first-part {
+/*.modal-logo-first-part {
     border: 1px solid black;
     padding-left: 2px;
     padding-right: 1px;
@@ -15,4 +16,4 @@
     background-color: #000;
     color: #fff;
     padding-right: 1px;
-}
+}*/

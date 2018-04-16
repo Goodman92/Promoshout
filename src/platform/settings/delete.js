@@ -9,19 +9,23 @@ class Delete extends Component {
   render() {
     return (
       <form>
-        <small className="c-red d-block"> Please make sure there is no account balance left, in case there is withdrew
-          them first via
-          <Link to="/bank/withdraw"> withdraw</Link> page.
-        </small>
-        <small> We are sorry to hear that our service did not match your needs. Please supply optional information
-          why you chose to leave Promoshout, this way we can develop our service further for our future users.
+        <small className="c-red d-block"> 
+          <p className="c-red">
+            Please make sure there is no account balance left, in case there is withdrew
+            them first via
+            <Link to="/bank/withdraw"> withdraw</Link> page.
+          </p>
+          <p>
+            We are sorry to hear that our service did not match your needs. Please supply optional information
+            why you chose to leave Promoshout, this way we can develop our service further for our future users.
+          </p>
         </small>
         <div className="form-group mt-3">
-          <label>Password</label>
-          <input type="password" className="form-control" placeholder="Password"/>
+          <p className="gl-bold">Password</p>
+          <input type="password" className="form-control" />
         </div>
         <div className="form-group">
-          <label>Reason for account deletion</label>
+          <p className="gl-bold">Reason for account deletion</p>
           <textarea className="form-control" rows="3" placeholder="Optional information"/>
         </div>
         <div className="text-center">

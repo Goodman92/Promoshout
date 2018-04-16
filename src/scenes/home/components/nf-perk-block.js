@@ -9,7 +9,7 @@ export default class NfPerkBlock extends Component {
       		<i className={this.props.icon} aria-hidden="true"></i>
       	</div>
       	<div>
-	        <h6 className="perk-title"> {this.props.title}</h6>
+	        <h5 className="perk-title"> {this.props.title}</h5>
 	        <p className="perk-desc"> {this.props.desc}</p>
         </div>
       </div>

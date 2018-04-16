@@ -62,7 +62,7 @@ class OpenOffers extends Component {
         <NfLiftBox header={
           <div className="row ai-center">
             <div className="col-lg-8">
-              <span className="text-left mb-0"> Offers({this.props.items.length})</span>
+              <h5 className="text-left mb-0"> Offers ({this.props.items.length})</h5>
             </div>
             <div className="col-lg-4 text-right">
               <form onSubmit={this.searchOnClick}>

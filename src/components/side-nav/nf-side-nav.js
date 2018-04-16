@@ -36,53 +36,53 @@ class NfSideNav extends Component {
           <li>
             <Link to="/platform/dashboard">
               <i className="fa fa-th-large"/>
-              <span className="nav-item-label"> Dashboard </span>
+              <h6 className="nav-item-label"> Dashboard </h6>
             </Link>
           </li>
           <li>
             <Link to="/platform/account-manager">
               <i className="fa fa-id-card-o"/>
-              <span className="nav-item-label"> Account manager </span>
+              <h6 className="nav-item-label"> Account manager </h6>
             </Link>
           </li>
           <li>
             <Link to="/platform/offers">
               <i className="fa fa-suitcase"/>
-              <span className="nav-item-label"> Offers </span>
+              <h6 className="nav-item-label"> Offers </h6>
             </Link>
           </li>
           <li>
             <Link to="/platform/settings"><i className="fa fa-cog"/>
-              <span className="nav-item-label"> Settings </span></Link>
+              <h6 className="nav-item-label"> Settings </h6></Link>
           </li>
           <li>
             <Link to="/platform/connections"><i className="fa fa-handshake-o"/>
-              <span className="nav-item-label"> Connections </span></Link>
+              <h6 className="nav-item-label"> Connections </h6></Link>
           </li>
           <li>
             <Link to="/platform/tickets">
               <i className="fa fa-ticket"/>
-              <span className="nav-item-label"> Tickets </span>
+              <h6 className="nav-item-label"> Tickets </h6>
             </Link>
           </li>
           <li onClick={() => this.setState({bankCollapsed: !this.state.bankCollapsed})}>
             <a data-toggle="collapse" href="#collapseBank" aria-expanded="false">
               <i className="fa fa-university"/>
-              <span className="nav-item-label">Bank</span>
+              <h6 className="nav-item-label">Bank</h6>
               <i className={["hidden-sm-down", "fa", "pull-right", bankCollapsed()].join(" ")}/>
             </a>
             <ul className="list-unstyled sub-nav collapse" id="collapseBank">
               <li>
                 <Link to="/platform/bank/deposit">
-                  <span> Deposit </span></Link>
+                  <h6> Deposit </h6></Link>
               </li>
               <li>
                 <Link to="/platform/bank/withdraw">
-                  <span> Withdraw </span></Link>
+                  <h6> Withdraw </h6></Link>
               </li>
               <li>
                 <Link to="/platform/bank/transactions">
-                  <span> Transaction History </span></Link>
+                  <h6> Transaction History </h6></Link>
               </li>
             </ul>
           </li>

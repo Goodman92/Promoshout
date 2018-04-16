@@ -9,12 +9,34 @@ body {
     font-family: sans-serif;
 }
 
-*:not(a) {
+*:not(p) {
     font-family: BebasNeue, serif;
     letter-spacing: 1px;
 }
 
-input, button, select, textarea, optgroup, option {
+p, span {
+    font-family: MontserratRegular;
+    letter-spacing: 0px;
+    color: #585858;
+}
+
+input[type=submit] {
+    font-family: BebasNeue, serif;
+    letter-spacing: 1px;
+    color: white!important;
+}
+
+input, select, textarea {
+    font-family: MontserratRegular;
+    letter-spacing: 0px;
+    color: #585858!important;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #bdbdbd!important;
+}
+
+button, optgroup, option {
     font-family: inherit;
 }
 
@@ -30,6 +52,16 @@ input, button, select, textarea, optgroup, option {
 .platform-wrapper {
     height: 100%;
     position:relative;
+}
+
+@font-face {
+    font-family: MontserratBold;
+    src: url("./Montserrat-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: MontserratRegular;
+    src: url("./Montserrat-Regular.ttf") format("truetype");
 }
 
 @font-face {
@@ -82,8 +114,32 @@ input, button, select, textarea, optgroup, option {
     src: url("./Quicksand_Dash.otf") format("opentype");
 }
 
+.gl-bold {
+    font-weight: bold;
+}
+
 .pointer {
     cursor: pointer;
+}
+
+.c-darker-grey {
+    color: #3f3f3f;
+}
+
+.c-dark-grey {
+    color: #2a2a2abd;
+}
+
+.c-light-grey {
+    color: #2a2a2a7d;
+}
+
+.c-black {
+    color: #000;
+}
+
+.c-dblue {
+    color: #056571ad;
 }
 
 .c-green {
@@ -173,6 +229,10 @@ h6.h7 {
     text-align: center;
 }
 
+.gl-margin-auto {
+    margin: auto;
+}
+
 .platform-btn {
     background-color: #1ab394;
     border-color: #1ab394;
@@ -202,6 +262,10 @@ button {
     flex-direction: column;
 }
 
+.nav-item-label {
+    display: inline;
+}
+
 @media (min-width: 767px) {
     #sidebar {
         min-width: 250px;
@@ -214,7 +278,7 @@ button {
     }
 
     .collapse-nav .nav-item-label {
-        display: none;
+        display: none!important;
     }
 
     .collapse-nav#sidebar {

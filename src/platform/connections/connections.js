@@ -14,7 +14,7 @@ class Connections extends Component {
         <div className="container-fluid mt-2">
           <div className="row">
             <div className="col-lg-12">
-              <NfLiftBox header={<span>Connection requests({connectionRequestMocks.length})</span>} content={
+              <NfLiftBox header={<h5>Connection requests ({connectionRequestMocks.length})</h5>} content={
                 <div className="connection-requests">
                   {
                     connectionRequestMocks.map((item, index) => (
