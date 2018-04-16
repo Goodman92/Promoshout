@@ -10,12 +10,8 @@ class NfOpenChat extends Component {
 
     return (
       <div className="chat-window">
-        <div className="chat-window-title">
-          <h6> {item.name}
-            <span className="pull-right pointer" onClick={() => this.props.onToggleChat(item.id)}>
-              <i className="fa fa-times mr-1 ml-1" aria-hidden="true"/>
-            </span>
-          </h6>
+        <div className="chat-window-title" onClick={() => this.props.onToggleChat(item.id)}>
+          <h6> {item.name}</h6>
         </div>
         <div className="chat-window-content">
           Gimme dat Content

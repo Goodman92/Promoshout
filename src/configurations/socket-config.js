@@ -5,7 +5,7 @@ const accumulated = socketEvents.reduce((acc, item) => {
 }, {});
 
 const chatSocketAddressFn = (id) => {
-  return 'ws://localhost:8000/ws/chat/:id/'.replace(':id', id);
+  return 'ws://localhost:8000/ws/connections/:id/'.replace(':id', id);
 };
 
 

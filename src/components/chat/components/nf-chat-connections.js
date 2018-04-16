@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {NfMainLogo} from '../../utility/nf-utility';
 import NfChatContactRow from './../components/nf-chat-contact-row';
-import {receiveConnections, toggleConnection} from '../../../actions/sockets';
+import {receiveConnections, toggleConnectionOpen} from '../../../actions/sockets';
 import {chatDenormalizer} from '../../../reducers/chat';
 
 import '../nf-chat.css';
@@ -16,7 +16,7 @@ class NfChatConnections extends Component {
   }
 
   onChatClick = (id) => {
-    this.props.dispatch(toggleConnection(id));
+    this.props.dispatch(toggleConnectionOpen(id));
   };
 
   render() {

@@ -5,12 +5,12 @@ import '../nf-chat.css';
 
 class NfClosedChat extends Component {
 
-  onChatClose = (id) => {
-    this.props.onChatClose(id);
+  onChatClose = (item) => {
+    this.props.onChatClose(item.id);
   };
 
-  onToggleChat = (id) => {
-    this.props.onToggleChat(id);
+  onToggleChat = (item) => {
+    this.props.onToggleChat(item.id);
   };
 
   render() {
@@ -21,15 +21,17 @@ class NfClosedChat extends Component {
     };
 
     return (
-      <div className="open-chat mr-1">
-        <i className="fa fa-times mr-1 ml-1" aria-hidden="true" onClick={(e) => this.onChatClose(item.id)}/>
-        <span onClick={(e) => this.onToggleChat(item.id)}>
-          {item.name}
-          <span className="pull-right">
-            <div className={"chat-circle ".concat(chatOnline(item.online))}/>
-          </span>
-        </span>
-      </div>
+        <div className="open-chat mr-1">
+          <div className="chat-closer">
+            <i className="fa fa-times mr-1 ml-1" aria-hidden="true" onClick={(e) => this.onChatClose(item)}/>
+          </div>
+          <div className="w-100" onClick={(e) => this.onToggleChat(item)}>
+            {item.name}
+            <span className="pull-right">
+                <div className={"chat-circle ".concat(chatOnline(item.online))}/>
+              </span>
+          </div>
+        </div>
     );
   }
 }

@@ -8,7 +8,8 @@ import {
   CONNECTION_CLOSED,
   CONNECTION_MESSAGE,
   CONNECTION_TOGGLED,
-  CONNECTION_SHOW
+  CONNECTION_SHOW,
+  UNSHIFT_CONNECTION_FIRST
 } from '../actions/sockets';
 
 
@@ -26,7 +27,7 @@ const chatNormalizer = (state = {}, action) => {
     }
     case CONNECTION_SHOW: {
       const item = state[action.id];
-      return {...state, [action.id]: {...item, open: !item.open}};
+      return {...state, [action.id]: {...item, open: !item.open, active: true}};
     }
     default:
       return state;
@@ -40,6 +41,8 @@ const chat = (state = {}, action) => {
     case CONNECTION_CLOSED:
       return {...state, open: false};
     case CONNECTION_MESSAGE:
+      console.log("Reducer");
+      console.log(action.payload);
     case CONNECTION_SHOW:
       return {...state, connections: chatNormalizer(state.connections, action)};
     case CONNECTION_TOGGLED:
@@ -55,6 +58,8 @@ const chat = (state = {}, action) => {
 
 const chatsById = (state = [], action) => {
   switch (action.type) {
+    case UNSHIFT_CONNECTION_FIRST:
+      return [action.id].concat(_.without(state, action.id));
     case RECEIVE_CONNECTIONS:
       return action.connections.map((item) => item.id);
     default:

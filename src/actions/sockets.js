@@ -4,6 +4,7 @@ import {connectionMocks} from '../mock-data';
 
 
 const initializeChatSockets = (dispatch) => {
+  /*
   const address = chatSocketAddress('1');
   const socket = new WebSockHop(address);
 
@@ -14,6 +15,7 @@ const initializeChatSockets = (dispatch) => {
       dispatch({type, payload});
     });
   });
+  */
 };
 
 const receiveConnectionsDispatcher = (connections) => {
@@ -43,6 +45,13 @@ const toggleConnectionOpenDispatcher = (id) => {
   }
 };
 
+const unshiftConnectionDispatcher = (id) => {
+  return {
+    type: UNSHIFT_CONNECTION_FIRST,
+    id:id
+  }
+};
+
 
 const receive = () => {
   return (dispatch, getState) => {
@@ -57,6 +66,7 @@ export const CONNECTION_CLOSED = 'connection_closed';
 export const CONNECTION_MESSAGE = 'connection_message';
 export const CONNECTION_TOGGLED = 'connection_togled';
 export const CONNECTION_SHOW = 'connection_show';
+export const UNSHIFT_CONNECTION_FIRST = 'connection_shift_to_first';
 
 export const REQUEST_CONNECTIONS = 'connection_request_connections';
 export const RECEIVE_CONNECTIONS = 'connection_receive_connections';
@@ -65,3 +75,4 @@ export const chatSocketInitializer = initializeChatSockets;
 export const receiveConnections = receive;
 export const toggleConnection = toggleConnectionDispatcher;
 export const toggleConnectionOpen = toggleConnectionOpenDispatcher;
+export const unshiftConnection = unshiftConnectionDispatcher;
