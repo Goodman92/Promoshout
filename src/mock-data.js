@@ -390,6 +390,7 @@ const connectedAccounts = [
 
 let connections = [
   {
+    id:1,
     name: 'Natalie',
     image: '',
     brand: true,
@@ -399,6 +400,7 @@ let connections = [
     connected: '2010-10-01'
   },
   {
+    id:2,
     name: 'John',
     image: '',
     brand: false,
@@ -408,6 +410,7 @@ let connections = [
     connected: '2010-10-01'
   },
   {
+    id:3,
     name: 'Amanda',
     image: '',
     brand: false,
@@ -417,6 +420,7 @@ let connections = [
     connected: '2010-10-01'
   },
   {
+    id:4,
     name: 'Carl',
     image: '',
     brand: true,
@@ -426,6 +430,7 @@ let connections = [
     connected: '2010-10-01'
   },
   {
+    id:5,
     name: 'Moona',
     image: '',
     brand: false,
@@ -435,6 +440,7 @@ let connections = [
     connected: '2010-10-01'
   },
   {
+    id:6,
     name: 'Fiona',
     image: '',
     brand: true,
@@ -444,6 +450,7 @@ let connections = [
     connected: '2010-10-01'
   },
   {
+    id:7,
     name: 'Marco',
     image: '',
     brand: false,
@@ -453,6 +460,7 @@ let connections = [
     connected: '2010-10-01'
   },
   {
+    id:8,
     name: 'Jessica',
     image: '',
     brand: true,
@@ -463,11 +471,10 @@ let connections = [
   },
 ];
 
-// for(let i = 0; i < 10; i++)
-//   connections = connections.concat(connections);
 
 const connectionRequests = [
   {
+    id: 1,
     name: 'Natalie',
     image: '',
     brand: true,
@@ -476,6 +483,7 @@ const connectionRequests = [
     sent: '2010-10-01'
   },
   {
+    id: 2,
     name: 'John',
     image: '',
     brand: false,
@@ -484,6 +492,7 @@ const connectionRequests = [
     sent: '2010-10-01'
   },
   {
+    id: 3,
     name: 'Amanda',
     image: '',
     brand: false,
