@@ -33,7 +33,6 @@
 	- Mention about instant instagram account activation  					(in shoutcart this takes 2-3 days)
 	- Mention about that we only charge fees on completed shoutouts (shoutcart robs fees even buyer does not get a shoutout)
 
-commit "Ticket pages + ticket table row collapse + responsive on phone"
 
 * Progressbar Idea *
 
@@ -57,4 +56,3 @@ https://kissmyui.com/tutorial/creating-a-card-animation-with-principle/
 https://dribbble.com/shots/1813306-Appon-User-Profile/attachments/300082
 
 
-git commit -m "updated offer modal + updated profile page + refactor fonts"
