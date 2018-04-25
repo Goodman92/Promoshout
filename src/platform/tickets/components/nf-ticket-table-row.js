@@ -50,7 +50,7 @@ class NfTicketTableRow extends Component {
         data-target={"#table-row-collapse" + ticket.id}   
       >
       
-        <td className="ticket-table-row-date"><p className="table-row-date-label gl-bold">{ticket.date}</p></td>
+        <td className="ticket-table-row-date">{ticket.date}</td>
         <td>
 
           { this.state.hideFirstComment ? <span>{ticket.firstMessage}</span> : null }

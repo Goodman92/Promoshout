@@ -1,4 +1,4 @@
-import {combineReducers} from 'redux'
+import {combineReducers} from 'redux';
 import {REQUEST_INFLUENCERS, RECEIVE_INFLUENCERS, INVALIDATE_INFLUENCERS, PAGE_CHANGED} from '../actions/influencers';
 
 let initialState = {
